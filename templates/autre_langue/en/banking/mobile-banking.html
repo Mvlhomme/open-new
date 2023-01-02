@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Mobile Banking</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Bank on the go, wherever you go.">
+    <meta name="author" content="../../index.html">
+    {% include 'en/head.html' %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Mobile Banking</h1>
+                <span class="sub-title text-dark">Bank on the go, wherever you go.</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../../en.html">Home</a></li>
+                    <li class="active">Mobile Banking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <section class="section section-height-3 border-0 mb-0" data-plugin-parallax data-image-src="../../img/parallax/parallax-8.jpg">
+        <div class="container container-lg-custom">
+            <div class="row align-items-center text-color-white">
+                <div class="col-lg-12">
+                    <div class="pr-5">
+                        <span class="text-center d-block font-weight-light negative-ls-1 text-5 mb-1"><em class="text-2 opacity-8 text-color-white">Banking</em></span>
+                        <h2 class="text-center font-weight-medium negative-ls-3 line-height-1 text-7 mb-3 text-color-white"><em>Mobile Banking Benefits.</em></h2>
+                        <span class="text-center d-block alternative-font text-color-primary text-5 mb-4 pb-2">ONE BANK INTERNATIONAL</span>
+                        <div class="row text-color-white">
+                            <div class="col-md-6">
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Use Mobile Check Deposit.</a></h4>
+                                        <p class="text-color-white">With Mobile Check Deposit, just sign the check, open the Mobile Banking App, take a picture of your check, and your deposit is a go!</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Stay organized with BillPay.</a></h4>
+                                        <p class="text-color-white">Save a stamp and cut clutter with BillPay. Simply log in to pay your bills securely and quickly..</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Glance fast with Quick Balance.</a></h4>
+                                        <p class="text-color-white">Check your account balance on your phone, right from your home screen, without logging in to the Mobile Banking App</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Make transfers.</a></h4>
+                                        <p class="text-color-white">Transfer funds between your accounts, to other bank customers, or to any financial institution, at no cost, in a few clicks.</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Manage cards.</a></h4>
+                                        <p class="text-color-white">Create/change PIN, activate debit and credit cards, put a misplaced card on hold, report a card lost or stolen, and request replacements. Do all this and take control with our highly rated Mobile Banking App.</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Manage alerts.</a></h4>
+                                        <p class="text-color-white">Select and customize the alerts you want to receive, with customizable alerts on Account Deposit(s), Debit(s), Low Balance, Available Credit, and more; plus, refine alert settings, and choose whether to receive them via text, email, or both.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'en/footer.html' %}
+
+</div>
+    {% include 'en/racourcis.html' %}
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        We would like to collect data from your device while you use this website. We do this using cookies. Collecting this data helps us provide the best experience for you, keeps your account secure, helps us provide social media features and allows us to personalise advert and service message content. Please accept cookies to allow us to collect your data in this way.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Allow cookies
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+<!-- Mirrored from one.open-int-bank.com/en/banking/mobile-banking by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:44:19 GMT -->
+</html>

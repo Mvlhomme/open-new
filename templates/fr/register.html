@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>Mon Compte | COEM GROUP </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.html' %}">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="{% static 'ui/css/auth.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="form">
+<div class="form-container">
+    <div class="form-form">
+        <div class="form-form-wrap">
+            <div class="form-container">
+                <div class="form-content">
+
+                    
+    <h2 class="">Ouvrez un Compte Client</h2>
+    <p class="signup-link">Vous avez déjà un compte? <a href="{% url 'fr_login' %}">Connectez Vous</a></p>
+    {% include 'fr/alerts.html' %}
+    <form class="text-left" method="POST" action="{% url 'fr_register' %}">
+        {% csrf_token %}
+        <div class="form">
+            <div id="username-field" class="field-wrapper input">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input id="name" type="text" placeholder="Nom" class="form-control " name="first_name" value="" autocomplete="name" autofocus>
+            </div>
+            <div id="username-field" class="field-wrapper input">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input id="name" type="text" placeholder="Prenom" class="form-control " name="last_name" value="" autocomplete="name" autofocus>
+            </div>
+            <div id="email-field" class="field-wrapper input">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                <input id="email" name="email" type="email" class="form-control " placeholder="Adresse email" value="" autocomplete="email">
+            </div>
+            <div id="country-field" class="field-wrapper input pb-4">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <select name="pays" id="country" class="form-control  border-0"  style="border-bottom: 1px solid #e0e6ed!important;border-radius: 0">
+                    <option value="">&nbsp;&nbsp;&nbsp;Choisissez votre pays</option>
+                    <option value="AF" >&nbsp;&nbsp;&nbsp;Afghanistan</option>
+                    <option value="ZA" >&nbsp;&nbsp;&nbsp;Afrique du Sud</option>
+                    <option value="AL" >&nbsp;&nbsp;&nbsp;Albanie</option>
+                    <option value="DZ" >&nbsp;&nbsp;&nbsp;Algérie</option>
+                    <option value="DE" >&nbsp;&nbsp;&nbsp;Allemagne</option>
+                    <option value="AD" >&nbsp;&nbsp;&nbsp;Andorre</option>
+                    <option value="AO" >&nbsp;&nbsp;&nbsp;Angola</option>
+                    <option value="AI" >&nbsp;&nbsp;&nbsp;Anguilla</option>
+                    <option value="AQ" >&nbsp;&nbsp;&nbsp;Antarctique</option>
+                    <option value="AG" >&nbsp;&nbsp;&nbsp;Antigua-et-Barbuda</option>
+                    <option value="SA" >&nbsp;&nbsp;&nbsp;Arabie saoudite</option>
+                    <option value="AR" >&nbsp;&nbsp;&nbsp;Argentine</option>
+                    <option value="AM" >&nbsp;&nbsp;&nbsp;Arménie</option>
+                    <option value="AW" >&nbsp;&nbsp;&nbsp;Aruba</option>
+                    <option value="AU" >&nbsp;&nbsp;&nbsp;Australie</option>
+                    <option value="AT" >&nbsp;&nbsp;&nbsp;Autriche</option>
+                    <option value="AZ" >&nbsp;&nbsp;&nbsp;Azerbaïdjan</option>
+                    <option value="BS" >&nbsp;&nbsp;&nbsp;Bahamas</option>
+                    <option value="BH" >&nbsp;&nbsp;&nbsp;Bahreïn</option>
+                    <option value="BD" >&nbsp;&nbsp;&nbsp;Bangladesh</option>
+                    <option value="BB" >&nbsp;&nbsp;&nbsp;Barbade</option>
+                    <option value="BE" >&nbsp;&nbsp;&nbsp;Belgique</option>
+                    <option value="BZ" >&nbsp;&nbsp;&nbsp;Belize</option>
+                    <option value="BJ" >&nbsp;&nbsp;&nbsp;Bénin</option>
+                    <option value="BM" >&nbsp;&nbsp;&nbsp;Bermudes</option>
+                    <option value="BT" >&nbsp;&nbsp;&nbsp;Bhoutan</option>
+                    <option value="BY" >&nbsp;&nbsp;&nbsp;Biélorussie</option>
+                    <option value="BO" >&nbsp;&nbsp;&nbsp;Bolivie</option>
+                    <option value="BA" >&nbsp;&nbsp;&nbsp;Bosnie-Herzégovine</option>
+                    <option value="BW" >&nbsp;&nbsp;&nbsp;Botswana</option>
+                    <option value="BR" >&nbsp;&nbsp;&nbsp;Brésil</option>
+                    <option value="BN" >&nbsp;&nbsp;&nbsp;Brunéi Darussalam</option>
+                    <option value="BG" >&nbsp;&nbsp;&nbsp;Bulgarie</option>
+                    <option value="BF" >&nbsp;&nbsp;&nbsp;Burkina Faso</option>
+                    <option value="BI" >&nbsp;&nbsp;&nbsp;Burundi</option>
+                    <option value="KH" >&nbsp;&nbsp;&nbsp;Cambodge</option>
+                    <option value="CM" >&nbsp;&nbsp;&nbsp;Cameroun</option>
+                    <option value="CA" >&nbsp;&nbsp;&nbsp;Canada</option>
+                    <option value="CV" >&nbsp;&nbsp;&nbsp;Cap-Vert</option>
+                    <option value="CL" >&nbsp;&nbsp;&nbsp;Chili</option>
+                    <option value="CN" >&nbsp;&nbsp;&nbsp;Chine</option>
+                    <option value="CY" >&nbsp;&nbsp;&nbsp;Chypre</option>
+                    <option value="CO" >&nbsp;&nbsp;&nbsp;Colombie</option>
+                    <option value="KM" >&nbsp;&nbsp;&nbsp;Comores</option>
+                    <option value="CG" >&nbsp;&nbsp;&nbsp;Congo-Brazzaville</option>
+                    <option value="CD" >&nbsp;&nbsp;&nbsp;Congo-Kinshasa</option>
+                    <option value="KP" >&nbsp;&nbsp;&nbsp;Corée du Nord</option>
+                    <option value="KR" >&nbsp;&nbsp;&nbsp;Corée du Sud</option>
+                    <option value="CR" >&nbsp;&nbsp;&nbsp;Costa Rica</option>
+                    <option value="CI" >&nbsp;&nbsp;&nbsp;Côte d’Ivoire</option>
+                    <option value="HR" >&nbsp;&nbsp;&nbsp;Croatie</option>
+                    <option value="CU" >&nbsp;&nbsp;&nbsp;Cuba</option>
+                    <option value="CW" >&nbsp;&nbsp;&nbsp;Curaçao</option>
+                    <option value="DK" >&nbsp;&nbsp;&nbsp;Danemark</option>
+                    <option value="DJ" >&nbsp;&nbsp;&nbsp;Djibouti</option>
+                    <option value="DM" >&nbsp;&nbsp;&nbsp;Dominique</option>
+                    <option value="EG" >&nbsp;&nbsp;&nbsp;Égypte</option>
+                    <option value="AE" >&nbsp;&nbsp;&nbsp;Émirats arabes unis</option>
+                    <option value="EC" >&nbsp;&nbsp;&nbsp;Équateur</option>
+                    <option value="ER" >&nbsp;&nbsp;&nbsp;Érythrée</option>
+                    <option value="ES" >&nbsp;&nbsp;&nbsp;Espagne</option>
+                    <option value="EE" >&nbsp;&nbsp;&nbsp;Estonie</option>
+                    <option value="SZ" >&nbsp;&nbsp;&nbsp;Eswatini</option>
+                    <option value="VA" >&nbsp;&nbsp;&nbsp;État de la Cité du Vatican</option>
+                    <option value="FM" >&nbsp;&nbsp;&nbsp;États fédérés de Micronésie</option>
+                    <option value="US" >&nbsp;&nbsp;&nbsp;États-Unis</option>
+                    <option value="ET" >&nbsp;&nbsp;&nbsp;Éthiopie</option>
+                    <option value="FJ" >&nbsp;&nbsp;&nbsp;Fidji</option>
+                    <option value="FI" >&nbsp;&nbsp;&nbsp;Finlande</option>
+                    <option value="FR" >&nbsp;&nbsp;&nbsp;France</option>
+                    <option value="GA" >&nbsp;&nbsp;&nbsp;Gabon</option>
+                    <option value="GM" >&nbsp;&nbsp;&nbsp;Gambie</option>
+                    <option value="GE" >&nbsp;&nbsp;&nbsp;Géorgie</option>
+                    <option value="GS" >&nbsp;&nbsp;&nbsp;Géorgie du Sud et îles Sandwich du Sud</option>
+                    <option value="GH" >&nbsp;&nbsp;&nbsp;Ghana</option>
+                    <option value="GI" >&nbsp;&nbsp;&nbsp;Gibraltar</option>
+                    <option value="GR" >&nbsp;&nbsp;&nbsp;Grèce</option>
+                    <option value="GD" >&nbsp;&nbsp;&nbsp;Grenade</option>
+                    <option value="GL" >&nbsp;&nbsp;&nbsp;Groenland</option>
+                    <option value="GP" >&nbsp;&nbsp;&nbsp;Guadeloupe</option>
+                    <option value="GU" >&nbsp;&nbsp;&nbsp;Guam</option>
+                    <option value="GT" >&nbsp;&nbsp;&nbsp;Guatemala</option>
+                    <option value="GG" >&nbsp;&nbsp;&nbsp;Guernesey</option>
+                    <option value="GN" >&nbsp;&nbsp;&nbsp;Guinée</option>
+                    <option value="GQ" >&nbsp;&nbsp;&nbsp;Guinée équatoriale</option>
+                    <option value="GW" >&nbsp;&nbsp;&nbsp;Guinée-Bissau</option>
+                    <option value="GY" >&nbsp;&nbsp;&nbsp;Guyana</option>
+                    <option value="GF" >&nbsp;&nbsp;&nbsp;Guyane française</option>
+                    <option value="HT" >&nbsp;&nbsp;&nbsp;Haïti</option>
+                    <option value="HN" >&nbsp;&nbsp;&nbsp;Honduras</option>
+                    <option value="HU" >&nbsp;&nbsp;&nbsp;Hongrie</option>
+                    <option value="BV" >&nbsp;&nbsp;&nbsp;Île Bouvet</option>
+                    <option value="CX" >&nbsp;&nbsp;&nbsp;Île Christmas</option>
+                    <option value="IM" >&nbsp;&nbsp;&nbsp;Île de Man</option>
+                    <option value="NF" >&nbsp;&nbsp;&nbsp;Île Norfolk</option>
+                    <option value="AX" >&nbsp;&nbsp;&nbsp;Îles Åland</option>
+                    <option value="KY" >&nbsp;&nbsp;&nbsp;Îles Caïmans</option>
+                    <option value="CC" >&nbsp;&nbsp;&nbsp;Îles Cocos</option>
+                    <option value="CK" >&nbsp;&nbsp;&nbsp;Îles Cook</option>
+                    <option value="FO" >&nbsp;&nbsp;&nbsp;Îles Féroé</option>
+                    <option value="HM" >&nbsp;&nbsp;&nbsp;Îles Heard et McDonald</option>
+                    <option value="FK" >&nbsp;&nbsp;&nbsp;Îles Malouines</option>
+                    <option value="MP" >&nbsp;&nbsp;&nbsp;Îles Mariannes du Nord</option>
+                    <option value="MH" >&nbsp;&nbsp;&nbsp;Îles Marshall</option>
+                    <option value="UM" >&nbsp;&nbsp;&nbsp;Îles mineures éloignées des États-Unis</option>
+                    <option value="PN" >&nbsp;&nbsp;&nbsp;Îles Pitcairn</option>
+                    <option value="SB" >&nbsp;&nbsp;&nbsp;Îles Salomon</option>
+                    <option value="TC" >&nbsp;&nbsp;&nbsp;Îles Turques-et-Caïques</option>
+                    <option value="VG" >&nbsp;&nbsp;&nbsp;Îles Vierges britanniques</option>
+                    <option value="VI" >&nbsp;&nbsp;&nbsp;Îles Vierges des États-Unis</option>
+                    <option value="IN" >&nbsp;&nbsp;&nbsp;Inde</option>
+                    <option value="ID" >&nbsp;&nbsp;&nbsp;Indonésie</option>
+                    <option value="IQ" >&nbsp;&nbsp;&nbsp;Irak</option>
+                    <option value="IR" >&nbsp;&nbsp;&nbsp;Iran</option>
+                    <option value="IE" >&nbsp;&nbsp;&nbsp;Irlande</option>
+                    <option value="IS" >&nbsp;&nbsp;&nbsp;Islande</option>
+                    <option value="IL" >&nbsp;&nbsp;&nbsp;Israël</option>
+                    <option value="IT" >&nbsp;&nbsp;&nbsp;Italie</option>
+                    <option value="JM" >&nbsp;&nbsp;&nbsp;Jamaïque</option>
+                    <option value="JP" >&nbsp;&nbsp;&nbsp;Japon</option>
+                    <option value="JE" >&nbsp;&nbsp;&nbsp;Jersey</option>
+                    <option value="JO" >&nbsp;&nbsp;&nbsp;Jordanie</option>
+                    <option value="KZ" >&nbsp;&nbsp;&nbsp;Kazakhstan</option>
+                    <option value="KE" >&nbsp;&nbsp;&nbsp;Kenya</option>
+                    <option value="KG" >&nbsp;&nbsp;&nbsp;Kirghizistan</option>
+                    <option value="KI" >&nbsp;&nbsp;&nbsp;Kiribati</option>
+                    <option value="KW" >&nbsp;&nbsp;&nbsp;Koweït</option>
+                    <option value="RE" >&nbsp;&nbsp;&nbsp;La Réunion</option>
+                    <option value="LA" >&nbsp;&nbsp;&nbsp;Laos</option>
+                    <option value="LS" >&nbsp;&nbsp;&nbsp;Lesotho</option>
+                    <option value="LV" >&nbsp;&nbsp;&nbsp;Lettonie</option>
+                    <option value="LB" >&nbsp;&nbsp;&nbsp;Liban</option>
+                    <option value="LR" >&nbsp;&nbsp;&nbsp;Libéria</option>
+                    <option value="LY" >&nbsp;&nbsp;&nbsp;Libye</option>
+                    <option value="LI" >&nbsp;&nbsp;&nbsp;Liechtenstein</option>
+                    <option value="LT" >&nbsp;&nbsp;&nbsp;Lituanie</option>
+                    <option value="LU" >&nbsp;&nbsp;&nbsp;Luxembourg</option>
+                    <option value="MK" >&nbsp;&nbsp;&nbsp;Macédoine du Nord</option>
+                    <option value="MG" >&nbsp;&nbsp;&nbsp;Madagascar</option>
+                    <option value="MY" >&nbsp;&nbsp;&nbsp;Malaisie</option>
+                    <option value="MW" >&nbsp;&nbsp;&nbsp;Malawi</option>
+                    <option value="MV" >&nbsp;&nbsp;&nbsp;Maldives</option>
+                    <option value="ML" >&nbsp;&nbsp;&nbsp;Mali</option>
+                    <option value="MT" >&nbsp;&nbsp;&nbsp;Malte</option>
+                    <option value="MA" >&nbsp;&nbsp;&nbsp;Maroc</option>
+                    <option value="MQ" >&nbsp;&nbsp;&nbsp;Martinique</option>
+                    <option value="MU" >&nbsp;&nbsp;&nbsp;Maurice</option>
+                    <option value="MR" >&nbsp;&nbsp;&nbsp;Mauritanie</option>
+                    <option value="YT" >&nbsp;&nbsp;&nbsp;Mayotte</option>
+                    <option value="MX" >&nbsp;&nbsp;&nbsp;Mexique</option>
+                    <option value="MD" >&nbsp;&nbsp;&nbsp;Moldavie</option>
+                    <option value="MC" >&nbsp;&nbsp;&nbsp;Monaco</option>
+                    <option value="MN" >&nbsp;&nbsp;&nbsp;Mongolie</option>
+                    <option value="ME" >&nbsp;&nbsp;&nbsp;Monténégro</option>
+                    <option value="MS" >&nbsp;&nbsp;&nbsp;Montserrat</option>
+                    <option value="MZ" >&nbsp;&nbsp;&nbsp;Mozambique</option>
+                    <option value="MM" >&nbsp;&nbsp;&nbsp;Myanmar (Birmanie)</option>
+                    <option value="NA" >&nbsp;&nbsp;&nbsp;Namibie</option>
+                    <option value="NR" >&nbsp;&nbsp;&nbsp;Nauru</option>
+                    <option value="NP" >&nbsp;&nbsp;&nbsp;Népal</option>
+                    <option value="NI" >&nbsp;&nbsp;&nbsp;Nicaragua</option>
+                    <option value="NE" >&nbsp;&nbsp;&nbsp;Niger</option>
+                    <option value="NG" >&nbsp;&nbsp;&nbsp;Nigéria</option>
+                    <option value="NU" >&nbsp;&nbsp;&nbsp;Niue</option>
+                    <option value="NO" >&nbsp;&nbsp;&nbsp;Norvège</option>
+                    <option value="NC" >&nbsp;&nbsp;&nbsp;Nouvelle-Calédonie</option>
+                    <option value="NZ" >&nbsp;&nbsp;&nbsp;Nouvelle-Zélande</option>
+                    <option value="OM" >&nbsp;&nbsp;&nbsp;Oman</option>
+                    <option value="UG" >&nbsp;&nbsp;&nbsp;Ouganda</option>
+                    <option value="UZ" >&nbsp;&nbsp;&nbsp;Ouzbékistan</option>
+                    <option value="PK" >&nbsp;&nbsp;&nbsp;Pakistan</option>
+                    <option value="PW" >&nbsp;&nbsp;&nbsp;Palaos</option>
+                    <option value="PA" >&nbsp;&nbsp;&nbsp;Panama</option>
+                    <option value="PG" >&nbsp;&nbsp;&nbsp;Papouasie-Nouvelle-Guinée</option>
+                    <option value="PY" >&nbsp;&nbsp;&nbsp;Paraguay</option>
+                    <option value="NL" >&nbsp;&nbsp;&nbsp;Pays-Bas</option>
+                    <option value="BQ" >&nbsp;&nbsp;&nbsp;Pays-Bas caribéens</option>
+                    <option value="PE" >&nbsp;&nbsp;&nbsp;Pérou</option>
+                    <option value="PH" >&nbsp;&nbsp;&nbsp;Philippines</option>
+                    <option value="PL" >&nbsp;&nbsp;&nbsp;Pologne</option>
+                    <option value="PF" >&nbsp;&nbsp;&nbsp;Polynésie française</option>
+                    <option value="PR" >&nbsp;&nbsp;&nbsp;Porto Rico</option>
+                    <option value="PT" >&nbsp;&nbsp;&nbsp;Portugal</option>
+                    <option value="QA" >&nbsp;&nbsp;&nbsp;Qatar</option>
+                    <option value="HK" >&nbsp;&nbsp;&nbsp;R.A.S. chinoise de Hong Kong</option>
+                    <option value="MO" >&nbsp;&nbsp;&nbsp;R.A.S. chinoise de Macao</option>
+                    <option value="CF" >&nbsp;&nbsp;&nbsp;République centrafricaine</option>
+                    <option value="DO" >&nbsp;&nbsp;&nbsp;République dominicaine</option>
+                    <option value="RO" >&nbsp;&nbsp;&nbsp;Roumanie</option>
+                    <option value="GB" >&nbsp;&nbsp;&nbsp;Royaume-Uni</option>
+                    <option value="RU" >&nbsp;&nbsp;&nbsp;Russie</option>
+                    <option value="RW" >&nbsp;&nbsp;&nbsp;Rwanda</option>
+                    <option value="EH" >&nbsp;&nbsp;&nbsp;Sahara occidental</option>
+                    <option value="BL" >&nbsp;&nbsp;&nbsp;Saint-Barthélemy</option>
+                    <option value="KN" >&nbsp;&nbsp;&nbsp;Saint-Christophe-et-Niévès</option>
+                    <option value="SM" >&nbsp;&nbsp;&nbsp;Saint-Marin</option>
+                    <option value="MF" >&nbsp;&nbsp;&nbsp;Saint-Martin</option>
+                    <option value="SX" >&nbsp;&nbsp;&nbsp;Saint-Martin (partie néerlandaise)</option>
+                    <option value="PM" >&nbsp;&nbsp;&nbsp;Saint-Pierre-et-Miquelon</option>
+                    <option value="VC" >&nbsp;&nbsp;&nbsp;Saint-Vincent-et-les-Grenadines</option>
+                    <option value="SH" >&nbsp;&nbsp;&nbsp;Sainte-Hélène</option>
+                    <option value="LC" >&nbsp;&nbsp;&nbsp;Sainte-Lucie</option>
+                    <option value="SV" >&nbsp;&nbsp;&nbsp;Salvador</option>
+                    <option value="WS" >&nbsp;&nbsp;&nbsp;Samoa</option>
+                    <option value="AS" >&nbsp;&nbsp;&nbsp;Samoa américaines</option>
+                    <option value="ST" >&nbsp;&nbsp;&nbsp;Sao Tomé-et-Principe</option>
+                    <option value="SN" >&nbsp;&nbsp;&nbsp;Sénégal</option>
+                    <option value="RS" >&nbsp;&nbsp;&nbsp;Serbie</option>
+                    <option value="SC" >&nbsp;&nbsp;&nbsp;Seychelles</option>
+                    <option value="SL" >&nbsp;&nbsp;&nbsp;Sierra Leone</option>
+                    <option value="SG" >&nbsp;&nbsp;&nbsp;Singapour</option>
+                    <option value="SK" >&nbsp;&nbsp;&nbsp;Slovaquie</option>
+                    <option value="SI" >&nbsp;&nbsp;&nbsp;Slovénie</option>
+                    <option value="SO" >&nbsp;&nbsp;&nbsp;Somalie</option>
+                    <option value="SD" >&nbsp;&nbsp;&nbsp;Soudan</option>
+                    <option value="SS" >&nbsp;&nbsp;&nbsp;Soudan du Sud</option>
+                    <option value="LK" >&nbsp;&nbsp;&nbsp;Sri Lanka</option>
+                    <option value="SE" >&nbsp;&nbsp;&nbsp;Suède</option>
+                    <option value="CH" >&nbsp;&nbsp;&nbsp;Suisse</option>
+                    <option value="SR" >&nbsp;&nbsp;&nbsp;Suriname</option>
+                    <option value="SJ" >&nbsp;&nbsp;&nbsp;Svalbard et Jan Mayen</option>
+                    <option value="SY" >&nbsp;&nbsp;&nbsp;Syrie</option>
+                    <option value="TJ" >&nbsp;&nbsp;&nbsp;Tadjikistan</option>
+                    <option value="TW" >&nbsp;&nbsp;&nbsp;Taïwan</option>
+                    <option value="TZ" >&nbsp;&nbsp;&nbsp;Tanzanie</option>
+                    <option value="TD" >&nbsp;&nbsp;&nbsp;Tchad</option>
+                    <option value="CZ" >&nbsp;&nbsp;&nbsp;Tchéquie</option>
+                    <option value="TF" >&nbsp;&nbsp;&nbsp;Terres australes françaises</option>
+                    <option value="IO" >&nbsp;&nbsp;&nbsp;Territoire britannique de l’océan Indien</option>
+                    <option value="PS" >&nbsp;&nbsp;&nbsp;Territoires palestiniens</option>
+                    <option value="TH" >&nbsp;&nbsp;&nbsp;Thaïlande</option>
+                    <option value="TL" >&nbsp;&nbsp;&nbsp;Timor oriental</option>
+                    <option value="TG" >&nbsp;&nbsp;&nbsp;Togo</option>
+                    <option value="TK" >&nbsp;&nbsp;&nbsp;Tokelau</option>
+                    <option value="TO" >&nbsp;&nbsp;&nbsp;Tonga</option>
+                    <option value="TT" >&nbsp;&nbsp;&nbsp;Trinité-et-Tobago</option>
+                    <option value="TN" >&nbsp;&nbsp;&nbsp;Tunisie</option>
+                    <option value="TM" >&nbsp;&nbsp;&nbsp;Turkménistan</option>
+                    <option value="TR" >&nbsp;&nbsp;&nbsp;Turquie</option>
+                    <option value="TV" >&nbsp;&nbsp;&nbsp;Tuvalu</option>
+                    <option value="UA" >&nbsp;&nbsp;&nbsp;Ukraine</option>
+                    <option value="UY" >&nbsp;&nbsp;&nbsp;Uruguay</option>
+                    <option value="VU" >&nbsp;&nbsp;&nbsp;Vanuatu</option>
+                    <option value="VE" >&nbsp;&nbsp;&nbsp;Venezuela</option>
+                    <option value="VN" >&nbsp;&nbsp;&nbsp;Vietnam</option>
+                    <option value="WF" >&nbsp;&nbsp;&nbsp;Wallis-et-Futuna</option>
+                    <option value="YE" >&nbsp;&nbsp;&nbsp;Yémen</option>
+                    <option value="ZM" >&nbsp;&nbsp;&nbsp;Zambie</option>
+                    <option value="ZW" >&nbsp;&nbsp;&nbsp;Zimbabwe</option>
+                                    </select>
+                            </div>
+            <div id="city-field" class="field-wrapper input">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <input id="city" name="city" type="text" class="form-control " placeholder="Ville" value="" autocomplete="city">
+            </div>
+            <div id="preferred_language-field" class="field-wrapper input pb-4">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="5.5" cy="11.5" r="4.5"></circle><circle cx="18.5" cy="11.5" r="4.5"></circle><line x1="5.5" y1="16" x2="18.5" y2="16"></line></svg>
+                <select name="langue" id="preferred_language" class="form-control  border-0"  style="border-bottom: 1px solid #e0e6ed!important;border-radius: 0">
+                    <option value="">&nbsp;&nbsp;&nbsp;Langue préférée</option>
+                                            <option value="Deutsch" >&nbsp;&nbsp;&nbsp;Deutsch (de)</option>
+                                            <option value="English" >&nbsp;&nbsp;&nbsp;English (en)</option>
+                                            <option value="español" >&nbsp;&nbsp;&nbsp;español (es)</option>
+                                            <option value="français" >&nbsp;&nbsp;&nbsp;français (fr)</option>
+                                            <option value="magyar" >&nbsp;&nbsp;&nbsp;magyar (hu)</option>
+                                            <option value="Nederlands" >&nbsp;&nbsp;&nbsp;Nederlands (nl)</option>
+                                            <option value="polski" >&nbsp;&nbsp;&nbsp;polski (pl)</option>
+                                            <option value="português" >&nbsp;&nbsp;&nbsp;português (pt)</option>
+                                            <option value="română" >&nbsp;&nbsp;&nbsp;română (ro)</option>
+                                            <option value="slovenčina" >&nbsp;&nbsp;&nbsp;slovenčina (sk)</option>
+                                            <option value="slovenščina" >&nbsp;&nbsp;&nbsp;slovenščina (sl)</option>
+                                            <option value="svenska" >&nbsp;&nbsp;&nbsp;svenska (sv)</option>
+                                            <option value="Türkçe" selected>&nbsp;&nbsp;&nbsp;Türkçe (0)</option>
+                                            <option value="čeština" >&nbsp;&nbsp;&nbsp;čeština (cs)</option>
+                                            <option value="Ελληνικά" >&nbsp;&nbsp;&nbsp;Ελληνικά (el)</option>
+                                            <option value="български" >&nbsp;&nbsp;&nbsp;български (bg)</option>
+                                            <option value="русский" >&nbsp;&nbsp;&nbsp;русский (ru)</option>
+                                            <option value="қазақ тілі" >&nbsp;&nbsp;&nbsp;қазақ тілі (kk)</option>
+                </select>
+            </div>
+            <div id="currency_id-field" class="field-wrapper input pb-4">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <select name="devise" id="currency_id" class="form-control  border-0"  style="border-bottom: 1px solid #e0e6ed!important;border-radius: 0">
+                    <option value="">&nbsp;&nbsp;&nbsp;Devise</option>
+                    <option value="€" >&nbsp;&nbsp;&nbsp;EURO (€)</option>
+                    <option value="$" >&nbsp;&nbsp;&nbsp;DOLLAR ($)</option>
+                    <option value="Chf" >&nbsp;&nbsp;&nbsp;Franc suisse (Chf)</option>
+                </select>
+                            </div>
+            <div id="password-field" class="field-wrapper input mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <input id="password" name="password" type="password" class="form-control " autocomplete="off" placeholder="Mot de passe">
+            </div>
+
+            <div class="field-wrapper input mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <input name="confirm_password" type="password" class="form-control" placeholder="Confirmez votre mot de passe">
+            </div>
+
+            <div class="d-sm-flex justify-content-between">
+                <div class="field-wrapper toggle-pass">
+                    <p class="d-inline-block">Afficher le Mot de passe</p>
+                    <label class="switch s-primary">
+                        <input type="checkbox" id="toggle-password" class="d-none">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="field-wrapper terms_condition mt-5">
+                <div class="n-chk new-checkbox checkbox-outline-primary">
+                    <label class="new-control new-checkbox checkbox-outline-primary">
+                        <input type="checkbox" class="new-control-input" name="terms">
+                        <span class="new-control-indicator"></span><span>J&#039;accepte <a href="javascript:void(0);">  les termes et conditions </a></span>
+                    </label>
+            </div>
+            </div>
+            <div class="d-sm-flex justify-content-between">
+                <div class="field-wrapper toggle-pass">
+                </div>
+                <div class="field-wrapper">
+                    <button type="submit" class="btn btn-danger" value="">Commencer!</button>
+                </div>
+            </div>
+
+        </div>
+        {{ form.email.errors }}
+        {{ form.non_field_errors }}
+    </form>
+
+
+                    <p class="terms-conditions mt-3">© 2023 All Rights Reserved. <a href="{% url 'fr' %}">COEM GROUP</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-image">
+        <div class="l-image" style="background-image: url({% static 'img/online-banking.png' %});" >
+        </div>
+    </div>
+</div>
+<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+<script src="{% static 'ui/js/auth.js' %}"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+</html>

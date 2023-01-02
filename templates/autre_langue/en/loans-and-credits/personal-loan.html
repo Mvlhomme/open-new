@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Personal Loan</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="RELIABLE, HASSLE-FREE LENDING">
+    <meta name="author" content="../../index.html">
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Personal Loan</h1>
+                <span class="sub-title text-dark">RELIABLE, HASSLE-FREE LENDING</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../../en.html">Home</a></li>
+                    <li class="active">Personal Loan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>The advantages of a personal loan</h2>
+                <p class="lead">Sometimes you don&#039;t have enough cash to finance the project of your dreams. Planning a wedding, traveling, changing cars, or doing chores are expensive life projects that sometimes require a personal loan.</p>
+                <p>At OPEN BANK INTERNATIONAL, we are offering you a new 100% online personal loan experience for the financing of your project; you can sign your contract remotely and directly download your documents required to complete your personal credit report. This online personal loan application experience is simple, fast and transparent. A financing solution that allows you, in addition, to benefit from a particularly attractive fixed annual borrowing rate (or annual percentage rate). Enough to bring your project to life without having to worry about the next day!</p>
+
+                <h2>What is a personal loan?</h2>
+                <p>A personal loan is a credit that is said to be &quot;unaffected&quot;. Indeed, the amount borrowed from a personal loan does not correspond to the precise purchase of a property (car, motorcycle, real estate, etc.). Therefore, the personal loan is not triggered on presentation of an invoice as for &quot;assigned&quot; loans, but simply meets a household cash requirement. Ultimately, the borrower is free to use the amount of the loan as he sees fit, whether for financing a consumer good (car, refrigerator, food, etc.) or for any other service. This type of credit can be issued either by a bank or by a financing organization specializing in loans.</p>
+                <p>The repayment of a personal loan is usually done every month. Its duration, stipulated in the contract, varies according to the amount of the loan and the financial capacities of the borrower. The monthly payments take into account the total amount of the loan and its duration, the APR (annual percentage rate) as well as the insurance, if the borrower has subscribed to it.</p>
+
+                <h2>What about borrower death insurance?</h2>
+                <p>Before granting credit, the lender may require the borrower to take out insurance. And this, although the law does not require it. In any case, it is in the borrower&#039;s best interest to consider this optional insurance. Because in the event of a payment incident resulting, for example, from loss of employment or death, it is the insurance that will reimburse the outstanding capital.</p>
+                <p class="lead">It is also important to know that, even if the lender offers you to insure your personal loan, you are free to contact the establishment of your choice.</p>
+
+                <h2>Supporting documents to set up a personal loan file</h2>
+                <p>The acceptance of a personal loan depends mainly on the resources and assets of the applicant. It is indeed crucial to ensure, upstream, that its financial situation and capital will enable it to meet the monthly repayment installments.</p>
+                <p>Thus, for the assembly of your file, OPEN BANK INTERNATIONAL requests the supporting documents required by law or in accordance with the practices of banking establishments. However, we will not ask you to provide original documents: you just need to upload your supporting documents on our platform.</p>
+                <p>Finally, you will be asked to provide a complete file to be able to obtain a loan offer.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+</html>

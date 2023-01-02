@@ -1,0 +1,426 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Versicherungen</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Unsere Versicherung für Ihre Sicherheit">
+    <meta name="author" content="../index.html">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.html">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'css/frontend.css' %}">
+    <!-- Head Libs -->
+    <script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'de/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Versicherungen</h1>
+                <span class="sub-title text-dark">Unsere Versicherung für Ihre Sicherheit</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'de' %}">Zuhause</a></li>
+                    <li class="active">Versicherungen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h2 class="font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                        Wir sind hier, um dir zu helfen
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                        Versicherung ist ein Vertrag, der es seinen Begünstigten ermöglicht, sich im Falle von Lebensversicherungen zu schützen. Versicherungsverträge beziehen sich beispielsweise auf das Auto, die Wohnung oder die Gesundheit des Versicherungsnehmers.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <a href="contact.html" class="btn btn-modern btn-dark mt-1">Ein Angebot bekommen!</a>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section bg-color-grey section-height-3 border-0 mt-5 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="row align-items-center pt-4 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="{% static 'img/legal-protection-insurance.jpg' %}" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Rechtsschutzversicherung</h2>
+                            <p class="text-4">Im Streitfall schützt OPEN BANK INTERNATIONAL Sie und Ihre Lieben! Profitieren Sie dank der Rechtsschutzgarantie von der vollen Unterstützung zur Verteidigung Ihrer Rechte und Interessen.</p>
+                            <p>
+                                <a href="{% url 'de_legal_protection_insurance' %}">
+                                    Mehr erfahren
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInRightShorter">
+                        <div class="col-md-8 pr-md-5 mb-5 mb-md-0">
+                            <h2 class="font-weight-normal text-6 mb-3">Income Maintenance Insurance</h2>
+                            <p class="text-4">In schwierigen Zeiten hilft OPEN BANK INTERNATIONAL! Im Falle eines schweren Schlags können Sie mit der Einkommensgarantie Ihre laufenden Ausgaben decken.</p>
+                            <p>
+                                <a href="{% url 'de_income_maintenance_insurance' %}">
+                                    Mehr erfahren
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 px-5 px-md-3">
+                            <img class="img-fluid scale-2 my-4" src="{% static 'img/income-maintenance-insurance.jpg' %}" alt="style switcher" />
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="{% static 'img/car-insurance.jpg' %}" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Autoversicherung</h2>
+                            <p class="text-4">Das Gesetz von 1958 machte die Kfz-Versicherung obligatorisch. Es erfordert, dass Ihr Auto mindestens mit einer Haftpflichtversicherung versichert ist, die von den Versicherern auch als Haftpflichtversicherung bezeichnet wird.</p>
+                            <p>
+                                <a href="{% url 'de_car_insurance' %}">
+                                    Mehr erfahren
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInRightShorter">
+                        <div class="col-md-8 pr-md-5 mb-5 mb-md-0">
+                            <h2 class="font-weight-normal text-6 mb-3">Hausratsversicherung</h2>
+                            <p class="text-4">Für jeden Mieter sieht das Gesetz Nr. 89-462 vom 6. Juli 1989 vor, dass er verpflichtet ist, sich gegen die Risiken zu versichern, auf die er als Mieter reagieren muss.</p>
+                            <p>
+                                <a href="{% url 'de_home_insurance' %}">
+                                    Mehr erfahren
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 px-5 px-md-3">
+                            <img class="img-fluid scale-2 my-4" src="../img/home-insurance.jpg" alt="style switcher" />
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="../img/loan-insurance.jpg" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Darlehensversicherung</h2>
+                            <p class="text-4">Um langfristige Kredite zu erhalten, muss fast immer eine Kreditversicherung abgeschlossen werden, damit sich die Bank vor dem Risiko der Nichtzahlung schützen kann.</p>
+                            <p>
+                                <a href="{% url 'de_loan_insurance' %}">
+                                    Mehr erfahren
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Was für eine einwandfreie Arbeit Sie geleistet haben. Du hast wirklich meinen Tag gemacht. Ich danke dir sehr.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="../img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Mehr als begeistert. Schneller, professioneller und klar menschlicher Service. Eine Antwort in weniger als 4 Stunden ist unglaublich!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="../img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Diese Firma ist unglaublich! Sie sind schnell, höflich, leicht zugänglich und helfen mir, aus der Verschuldung herauszukommen!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="../img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey content-align-center call-to-action-in-footer">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col-md-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h2 class="font-weight-normal text-7 mb-0">Entdecken Sie unsere Kreditnehmerversicherung</h2>
+                        <p class="mb-0">Sie haben Fragen zur Kreditnehmerversicherung OPEN BANK INTERNATIONAL?</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="contact.html" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3 mt-5">Contact us</a><span class="arrow hlb d-none d-md-block" data-appear-animation="rotateInUpLeft" style="top: -90px; left: 70%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+{% include 'de/footer.html' %}
+
+</div>
+    <a href="{% url 'de_request_form' %}" class="btn btn-sm btn-secondary" style="position:fixed;bottom:40px;right:40px;z-index:100;">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Darlehen beantragen
+    </a>
+    <a href="{% url 'de_register' %}" class="btn btn-sm btn-primary" style="position:fixed;bottom:80px;right:40px;z-index:100;">
+        <i class="fas fa-user-plus mr-2"></i>
+        Eröffnen Sie Ihr Konto
+    </a>
+<a href="https://api.whatsapp.com/send?phone=+302521888006&amp;text=Hello!"
+   class="float"
+   target="_blank"
+   style="position:fixed;bottom:120px;right:40px;text-align:center;font-size:15px;color:#00509D!important;z-index:100;text-decoration: none;font-weight: 400">
+
+    <i class="fab fa-whatsapp my-float" style="padding-top:5px;color: #ffffff!important;font-size:20px;width:30px;height:30px;background-color:#25d366;border-radius:50px;box-shadow: 0 0 4px #141414;"></i>
+</a>
+<!-- Vendor -->
+<script src="{% static 'js/frontend.js' %}"></script>
+<!-- Livewire Scripts -->
+
+<script src="{% static 'livewire/livewireb1f3.js' %}" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        Wir möchten Daten von Ihrem Gerät sammeln, während Sie diese Website nutzen. Wir machen das mit Cookies. Durch das Sammeln dieser Daten können wir Ihnen die bestmögliche Erfahrung bieten, Ihr Konto schützen, Social Media-Funktionen bereitstellen und den Inhalt von Werbe- und Servicemeldungen personalisieren. Bitte akzeptieren Sie Cookies, damit wir Ihre Daten auf diese Weise sammeln können.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Akzeptieren
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

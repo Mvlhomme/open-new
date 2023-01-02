@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <title>Mon Compte - COEM GROUP</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+        <link rel="apple-touch-icon" href="https://one.open-int-bank.com/img/apple-touch-icon.png">
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+        <link href="https://one.open-int-bank.com/client_assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/animate/animate.css" rel="stylesheet" type="text/css"/>
+        <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/promise-polyfill.js"></script>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css"/>
+        <!--  BEGIN CUSTOM STYLE FILE  -->
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/widgets/modules-widgets.css" rel="stylesheet" type="text/css"/>
+        <!--  END CUSTOM STYLE FILE  -->
+        <style>
+            @media (min-width: 992px) {
+                .topbar-nav.header #topbar {
+                    background: #EC0000!important;
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu:not(:last-child) > a {
+                    border-right: 1px solid #EC0000;
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu.active > a > div svg:not(.feather-chevron-down) {
+                    color: #1A1A1A;
+                    fill: rgba(255, 213, 1, 0.2);
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu.active > a > div span {
+                    color: #1A1A1A;
+                    font-weight: 700;
+                }
+            }
+
+            .widget-account-invoice-one .invoice-box h5 {
+                color: #EC0000;
+            }
+
+            .btn-danger {
+                color: #fff !important;
+                background-color: #EC0000;
+                border-color: #EC0000;
+            }
+
+            .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media .media-body h6 {
+                color: #EC0000;
+            }
+
+            .widget-activity-four .tm-action-btn button {
+                color: #EC0000;
+            }
+
+            .widget-activity-three .mt-container {
+                height: 230px;
+            }
+
+            .user-profile .widget-content-area .user-info-list ul.contacts-block {
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body class="sidebar-noneoverflow">
+        <!--  BEGIN NAVBAR  -->
+        <div class="header-container">
+            {% include 'fr/header_compte.html' %}
+        </div>
+        <!--  END NAVBAR  -->
+        <!--  BEGIN MAIN CONTAINER  -->
+        <div class="main-container" id="container">
+            <div class="overlay"></div>
+            <div class="search-overlay"></div>
+            <!--  BEGIN TOPBAR  -->
+            {% include 'fr/topbar.html' %}
+            <!--  END TOPBAR  -->
+            <!--  BEGIN CONTENT AREA  -->
+            <div id="content" class="main-content">
+                <div class="layout-px-spacing">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="font-weight-lighter">Tableau de bord</h3>
+                        </div>
+                    </div>
+                    <div class="row sales analytics mt-3">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+                            <div class="widget widget-account-invoice-one">
+                                <div class="widget-heading">
+                                    <h5 class="">Info Compte</h5>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="invoice-box">
+                                        <div class="acc-total-info">
+                                            <h5>Solde</h5>
+                                            <p class="acc-amount">1.00 {{user.devise}}</p>
+                                        </div>
+                                        <div class="inv-detail">
+                                            <div class="info-detail-1">
+                                                <p>Type de Compte</p>
+                                                <p>Compte Epargne</p>
+                                            </div>
+                                            <div class="info-detail-2">
+                                                <p>N° de Compte</p>
+                                                <p>3912442{{user.id}}</p>
+                                            </div>
+                                            <div class="info-detail-3">
+                                                <p>Date de création</p>
+                                                <p>{{user.date_joined}}</p>
+                                            </div>
+                                            <!-- <div class="info-detail-3">
+                                                <p>Dernière mise à jour</p>
+                                                <p>24 décembre 2022 16:39</p>
+                                            </div> -->
+                                        </div>
+                                        <div class="inv-action">
+                                            <a href="{% url 'fr_mabanque' %}" class="btn btn-danger">Transférer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+                            <div class="widget widget-activity-four">
+                                <div class="widget-heading">
+                                    <h5 class="">Activités Récentes</h5>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="mt-container mx-auto">
+                                        <div class="timeline-line">
+                                            <div class="item-timeline timeline-primary">
+                                                <div class="t-dot" data-original-title="" title=""></div>
+                                                <div class="t-text">
+                                                    <p>Log in</p>
+                                                    <p class="t-time">{{user.last_login}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tm-action-btn">
+                                        <button class="btn">
+                                            View All 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row analytics"></div>
+                </div>
+            </div>
+            <!--  END CONTENT AREA  -->
+        </div>
+        <!-- END MAIN CONTAINER -->
+        <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/libs/jquery-3.1.1.min.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/bootstrap/js/popper.min.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/app.js"></script>
+        <script>
+            $(document).ready(function() {
+                App.init();
+            });
+        </script>
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/custom.js"></script>
+        <!-- END GLOBAL MANDATORY SCRIPTS -->
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/scrollspyNav.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert2.min.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/custom-sweetalert.js"></script>
+        <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/dashboard/dash_2.js"></script>
+        <script src="https://one.open-int-bank.com/client_assets/assets/js/widgets/modules-widgets.js"></script>
+        <!--  END CUSTOM SCRIPTS FILE  -->
+    </body>
+</html>

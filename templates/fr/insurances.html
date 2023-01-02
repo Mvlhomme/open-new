@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Assurances</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Nos assurances pour votre tranquillité">
+    <meta name="author" content="../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Assurances</h1>
+                <span class="sub-title text-dark">Nos assurances pour votre tranquillité</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Assurances</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container pb-1">
+
+        <div class="row pt-4">
+            <div class="col">
+                <div class="overflow-hidden mb-3">
+                    <h2 class="font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                        Nous sommes là pour vous aider
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="overflow-hidden">
+                    <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                        L’Assurance est un contrat qui permet à ses bénéficiaires de se protéger en cas d’aléas de la vie. Les contrats d’assurance sont par exemple liés à l’automobile, l’habitation ou encore la santé du souscripteur.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <a href="{% url 'fr_contact' %}" class="btn btn-modern btn-dark mt-1">Obtenez un devis!</a>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section bg-color-grey section-height-3 border-0 mt-5 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="row align-items-center pt-4 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="{% static 'img/legal-protection-insurance.jpg' %}" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Assurance Protection Juridique</h2>
+                            <p class="text-4">En cas de litige, COEM GROUP vous protège ainsi que vos proches ! Grâce à la garantie Protection Juridique, bénéficiez d&#039;un accompagnement total pour défendre vos droits et vos intérêts.</p>
+                            <p>
+                                <a href="{% url 'fr_legal_protection_insurance' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInRightShorter">
+                        <div class="col-md-8 pr-md-5 mb-5 mb-md-0">
+                            <h2 class="font-weight-normal text-6 mb-3">Assurance Maintien des Revenus</h2>
+                            <p class="text-4">Dans les moments difficiles, COEM GROUP est là pour vous aider ! En cas de coup dur, la garantie Maintien des revenus, vous permettra de faire face à vos dépenses courantes.</p>
+                            <p>
+                                <a href="{% url 'fr_income_maintenance_insurance' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 px-5 px-md-3">
+                            <img class="img-fluid scale-2 my-4" src="{% static 'img/income-maintenance-insurance.jpg' %}" alt="style switcher" />
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="{% static 'img/car-insurance.jpg' %}" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Assurance Auto</h2>
+                            <p class="text-4">La loi de 1958 a rendu l’assurance automobile obligatoire. Elle impose d’assurer sa voiture au minimum avec une assurance responsabilité civile, appelée également assurance au tiers par les assureurs.</p>
+                            <p>
+                                <a href="{% url 'fr_car_insurance' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInRightShorter">
+                        <div class="col-md-8 pr-md-5 mb-5 mb-md-0">
+                            <h2 class="font-weight-normal text-6 mb-3">Assurance Habitation</h2>
+                            <p class="text-4">Pour tout locataire, la loi loi n° 89-462 du 6 juillet 1989 précise qu’il est obligé de s’assurer contre les risques dont il doit répondre en tant que locataire.</p>
+                            <p>
+                                <a href="{% url 'fr_home_insurance' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 px-5 px-md-3">
+                            <img class="img-fluid scale-2 my-4" src="{% static 'img/home-insurance.jpg' %}" alt="style switcher" />
+                        </div>
+                    </div>
+
+                    <hr class="solid my-5">
+
+                    <div class="row align-items-center pt-5 pb-3 appear-animation" data-appear-animation="fadeInLeftShorter">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <img class="img-fluid scale-2 pr-5 pr-md-0 my-4" src="{% static 'img/loan-insurance.jpg' %}" alt="layout styles" />
+                        </div>
+                        <div class="col-md-8 pl-md-5">
+                            <h2 class="font-weight-normal text-6 mb-3">Assurance Emprunteur</h2>
+                            <p class="text-4">Obtenir un crédit à long terme implique quasi systématiquement de souscrire une assurance de prêt, afin de permettre à la banque de se protéger des risques de non-paiement</p>
+                            <p>
+                                <a href="{% url 'fr_loan_insurance' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Quel travail impeccable vous avez fait. Vous avez vraiment fait ma journée. Merci beaucoup.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Plus que ravi. Service rapide, professionnel et clairement humain. Une réponse en moins de 4 heures est assez incroyable!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Cette entreprise est incroyable! Ils sont rapides, courtois, facilement accessibles et ils m&#039;aident à sortir de ma dette!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey content-align-center call-to-action-in-footer">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col-md-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h2 class="font-weight-normal text-7 mb-0">Découvrez notre assurance emprunteur</h2>
+                        <p class="mb-0">Vous avez des questions sur les assurances emprunteurs de COEM GROUP ?</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="contact.html" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3 mt-5">Contact us</a><span class="arrow hlb d-none d-md-block" data-appear-animation="rotateInUpLeft" style="top: -90px; left: 70%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+   {% include 'fr/footer.html' %}
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

@@ -1,0 +1,717 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Bienvenue</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="COEM GROUP - Le meilleur du crédit en ligne">
+    <meta name="author" content="index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+        
+        
+    <section class="section section-concept section-no-border section-dark section-angled section-angled-reverse pt-5 m-0" id="section-concept" style="background-size: cover; background-position: center; animation-duration: 750ms; animation-delay: 300ms; animation-fill-mode: forwards;" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="{% static 'img/landing/header_bg.jpg' %}">
+    <div class="container">
+        <div class="row align-items-center pt-3 justify-content-center" style="margin-top: 50px!important;margin-bottom: 50px!important;">
+            
+            <div class="col-lg-8 mb-3 text-center">
+                <img src="{% static 'img/logo.png' %}" class="img-fluid" alt="" style="height: 100px"/>
+                
+                <h1 class="font-weight-bold text-12 line-height-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" data-appear-animation-duration="750">COEM GROUP</h1>
+                <p class="custom-font-size-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900" data-appear-animation-duration="750">Facile, Rapide, Conviviale</p>
+                <a href="{% url 'fr_register' %}" class="btn btn-primary text-uppercase">
+                    Ouvrez votre compte
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="home-intro mb-0" id="home-intro">
+    <div class="container">
+
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <p class="mb-0">
+                    Ouvrez un compte et bénéficiez de 150 € à l&#039;ouverture du compte
+                    <span>COEM GROUP</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="container mt-5">
+
+    <div class="row pt-4 appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="col-lg-7 pr-lg-5">
+            <h2 class="font-weight-normal line-height-1">Le crédit, en plus simple</h2>
+            <p class="lead">
+                Chez COEM GROUP, obtenir un prêt personnel n&#039;a jamais été aussi simple et rapide. Marque de confiance, nous offrons un service de premier ordre pour vous aider à atteindre vos objectifs financiers afin que vous puissiez commencer à construire votre pécule.
+            </p>
+            <p>
+                La mission de COEM GROUP est de transformer la façon dont vous empruntez de l’argent. COEM GROUP vous aide à accéder à de nombreux types de prêts auprès d&#039;un seul prêteur de confiance tout en personnalisant vos options de financement dans le confort de votre maison. Le processus de demande est simple, personnalisé et instantané sans affecter votre pointage de crédit.
+            </p>
+
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-user text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Vous avez un revenu.</h4>
+                            <p class="mb-4">Mais vous cherchez à accéder à plus d&#039;argent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4 mb-lg-0">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-fast-forward text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Vous voulez de l&#039;argent rapidement.</h4>
+                            <p class="mb-4">La plupart des clients peuvent s&#039;attendre à voir leurs fonds sur leur compte bancaire en un jour ouvrable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-arrow-circle-up text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Vous voulez faire un changement.</h4>
+                            <p class="mb-4">Tout le monde a une histoire différente en matière de finances, mais vous êtes prêt à faire quelque chose.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-hands-helping text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Vous voulez de l&#039;argent sans tracas.</h4>
+                            <p class="mb-4">Nous simplifions les choses grâce à un processus de candidature rapide qui pourrait vous faire approuver en quelques minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-5">
+            <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+            <div class="small">
+                <img src="{% static 'img/img1.jpg' %}" alt="" class="img-fluid">
+            </div>
+
+            <ul class="list list-icons list-icons-style-3 mt-5">
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> 20, avenue de Paris 94811 Villejuif Cedex France</li>
+
+                                    <li><i class="fas fa-map-marker-alt"></i> <strong>Adresse #2:</strong> Via Arrigo Boito, 10, 20121</li>
+                                                <li><i class="fas fa-phone"></i> <strong>Téléphone:</strong> +302</li>
+                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@coem-groups.com">info@coem-groups.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+    <section class="section mt-0 mb-0 border-0">
+    <div class="container">
+        <div class="row">
+            <div class="featured-boxes featured-boxes-style-2">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-user icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Gestion de compte</h4>
+                                <p class="px-3">L&#039;ouverture et la fermeture de comptes bancaires sont-elles une activité longue et lourde dans votre entreprise?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-feed icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Bank en Ligne</h4>
+                                <p class="px-3">Notre système vous aide à effectuer vos opérations bancaires où que vous soyez, où que vous alliez.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-screen-tablet icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Bank Mobile</h4>
+                                <p class="px-3">Il est facile d&#039;envoyer et de recevoir de l&#039;argent ou de partager le coût d&#039;une facture avec vos amis et votre famille directement dans notre application Mobile Banking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1500">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-credit-card icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Lignes de Crédit</h4>
+                                <p class="px-3">Avec un prêt ou une marge de crédit de notre banque, vous pouvez être prêt à faire face aux dépenses de la vie, quand elles surviennent.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1300">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-badge icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Crédits</h4>
+                                <p class="px-3">Lorsque vous souhaitez emprunter un montant spécifique pour un besoin ponctuel - que vous cherchiez à moderniser vos appareils électroménagers, à effectuer des réparations domiciliaires ou automobiles ou à consolider vos dettes -, un prêt bancaire peut être la meilleure solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-briefcase icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Investissement</h4>
+                                <p class="px-3">Vous avez des idées pour l&#039;avenir. Quelle que soit votre vision, nos services d&#039;investissement peuvent vous aider à créer une stratégie financière claire, facile à comprendre et personnalisée pour vous.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container-fluid">
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/personal-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_personal_loan' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Prêt personnel
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Un prêt personnel est un crédit que l’on dit « non affecté ». En effet, le montant emprunté d’un prêt personnel ne correspond pas à l’achat précis d’un bien (voiture, moto, immobilier, etc.).
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_personal_loan' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_loan_without_contribution' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Prêt sans apport
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Vous avez un projet d&#039;achat de logement ? Rassurez-vous : emprunter sans apport est compliqué, mais certainement pas impossible.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_loan_without_contribution' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-without-contribution.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-between-individuals.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_loan_between_individuals' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Prêt entre particuliers
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Le crédit ou prêt entre particuliers, ou PAP/P2P, est aussi appelé le crédit sans banquier, car généralement les organismes de prêt entre particuliers ne sont pas des organismes agréés ou des banques.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_loan_between_individuals' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_consumer_credit' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Crédit à la consommation
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Le crédit à la consommation est un prêt qui concerne les opérations autres que celles relatives à l&#039;immobilier. Il répond plus particulièrement à un besoin de trésorerie d’un emprunteur souhaitant financer l’achat de biens de consommation.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_consumer_credit' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/consumer-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/car-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_car_loan' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Prêt Auto
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Vous avez l’intention d’acquérir un véhicule, mais comme une grande majorité de ménages, vous ne disposez pas du capital nécessaire à son financement ?
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_car_loan' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="{% url 'fr_works_credit' %}" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Crédit travaux
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Votre logement a besoin d’un coup de neuf ? Vous souhaitez agrandir ? Oui, mais les travaux de rénovation ou d’éco-rénovation, tout comme les travaux d’aménagement, ont souvent un coût important.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="{% url 'fr_works_credit' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/works-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Quel travail impeccable vous avez fait. Vous avez vraiment fait ma journée. Merci beaucoup.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Plus que ravi. Service rapide, professionnel et clairement humain. Une réponse en moins de 4 heures est assez incroyable!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Cette entreprise est incroyable! Ils sont rapides, courtois, facilement accessibles et ils m&#039;aident à sortir de ma dette!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="{% static 'img/parallax/parallax-2.jpg' %}">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Prêt à recevoir l&#039;argent dont vous avez besoin pour vous retrouver bien?</h3>
+                        <p class="mb-0">COEM GROUP vous offre le meilleur du service financier.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'fr_about' %}" target="_blank" class="btn btn-modern text-2 btn-primary">Qui sommes-nous ?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <div class="container py-4">
+    <div class="row py-3 justify-content-center">
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="{% static 'img/legal-protection-insurance.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Assurance Protection Juridique
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">En cas de litige, COEM GROUP vous protège ainsi que vos proches ! Grâce à la garantie Protection Juridique, bénéficiez d&#039;un accompagnement total pour défendre vos droits et vos intérêts.</p>
+                        <p class="text-2">
+                            <a href="{% url 'fr_legal_protection_insurance' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="{% static 'img/income-maintenance-insurance.jpg'%}" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Assurance Maintien des Revenus
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Dans les moments difficiles, COEM GROUP est là pour vous aider ! En cas de coup dur, la garantie Maintien des revenus, vous permettra de faire face à vos dépenses courantes.</p>
+                        <p class="text-2">
+                            <a href="{% url 'fr_income_maintenance_insurance' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="{% static 'img/car-insurance.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Assurance Auto
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">La loi de 1958 a rendu l’assurance automobile obligatoire. Elle impose d’assurer sa voiture au minimum avec une assurance responsabilité civile, appelée également assurance au tiers par les assureurs.</p>
+                        <p class="text-2">
+                            <a href="{% url 'fr_car_insurance' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="{% static 'img/home-insurance.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Assurance Habitation
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Pour tout locataire, la loi loi n° 89-462 du 6 juillet 1989 précise qu’il est obligé de s’assurer contre les risques dont il doit répondre en tant que locataire.</p>
+                        <p class="text-2">
+                            <a href="{% url 'fr_home_insurance' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="{% static 'img/loan-insurance.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Assurance Emprunteur
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Obtenir un crédit à long terme implique quasi systématiquement de souscrire une assurance de prêt, afin de permettre à la banque de se protéger des risques de non-paiement</p>
+                        <p class="text-2">
+                            <a href="{% url 'fr_loan_insurance' %}">
+                                En savoir plus
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey call-to-action-in-footer">
+    <div class="container">
+        <div class="row text-center pb-4 mt-4">
+            <div class="owl-carousel owl-theme carousel-center-active-item mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-1.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-2.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-3.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-4.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-5.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-6.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-7.png' %}" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="{% static 'img/logos/logo-2.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+{% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+<!-- Livewire Scripts -->
+
+</body>
+
+</html>

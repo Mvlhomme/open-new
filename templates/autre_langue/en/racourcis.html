@@ -1,0 +1,21 @@
+{% load static %}
+<a href="{% url 'en_request_form' %}" class="btn btn-sm btn-secondary" style="position:fixed;bottom:40px;right:40px;z-index:100;">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Request a loan
+    </a>
+    <a href="{% url 'en_register' %}" class="btn btn-sm btn-primary" style="position:fixed;bottom:80px;right:40px;z-index:100;">
+        <i class="fas fa-user-plus mr-2"></i>
+        Open your account
+    </a>
+<a href="https://api.whatsapp.com/send?phone=+302521888006&amp;text=Hello!"
+   class="float"
+   target="_blank"
+   style="position:fixed;bottom:120px;right:40px;text-align:center;font-size:15px;color:#00509D!important;z-index:100;text-decoration: none;font-weight: 400">
+
+    <i class="fab fa-whatsapp my-float" style="padding-top:5px;color: #ffffff!important;font-size:20px;width:30px;height:30px;background-color:#25d366;border-radius:50px;box-shadow: 0 0 4px #141414;"></i>
+</a>
+<!-- Vendor -->
+<script src="{% static 'js/frontend.js' %}"></script>
+<!-- Livewire Scripts -->
+
+<script src="{% static 'livewire/livewireb1f3.js' %}" data-turbo-eval="false" data-turbolinks-eval="false"></script>

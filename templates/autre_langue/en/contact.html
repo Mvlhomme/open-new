@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Contact us</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Contact our team">
+    <meta name="author" content="../index.html">
+    <!-- Favicon -->
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Contact us</h1>
+                <span class="sub-title text-dark">Contact our team</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../en.html">Home</a></li>
+                    <li class="active">Contact us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="home-intro bg-dark mb-0" id="home-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        Have you a question ?
+                        <span>OPEN BANK INTERNATIONAL provides accessible lending to all customers regardless of their credit. Our goal is to provide a great experience throughout the lending process.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row py-4">
+            <div class="col-lg-6">
+
+                <div class="overflow-hidden mb-5">
+                    <h2 class="font-weight-normal text-7 mt-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200"><strong class="font-weight-extra-bold">Write us a message</strong></h2>
+                </div>
+
+                <div wire:id="7HT0i7Dp9GSZyhoW3mNh" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;7HT0i7Dp9GSZyhoW3mNh&quot;,&quot;name&quot;:&quot;contact-form&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;en\/contact&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b25fdd9b&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;subject&quot;:null,&quot;message&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;8280174831c97ab14c5d102ec5393e4825228cdf2c42a114b52f218341d0194b&quot;}}">
+    <form class="contact-form" wire:submit.prevent="sendContactForm">
+                
+        <div class="form-row">
+            <div class="form-group col-lg-6">
+                <label class="required font-weight-bold text-dark text-2">Full Name</label>
+                <input id="name" type="text" wire:model="name" class="form-control">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label class="required font-weight-bold text-dark text-2">Email Address</label>
+                <input id="email" type="email" wire:model="email" class="form-control">
+                            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label class="font-weight-bold text-dark text-2">Subject</label>
+                <input id="subject" type="text" wire:model="subject" class="form-control">
+                            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label class="required font-weight-bold text-dark text-2">Message</label>
+                <textarea id="message" rows="8" wire:model="message" class="form-control"></textarea>
+                            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Send Message" class="btn btn-primary btn-modern">
+            </div>
+        </div>
+    </form>
+</div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800">
+                    <h4 class="mt-2 mb-1"><strong>Our Offices</strong></h4>
+                                            <ul class="list list-icons list-icons-style-2 mt-2">
+                            <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark"> Address :</strong> 20, avenue de Paris 94811 Villejuif Cedex France</li>
+                                                            <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark"> Address #2:</strong> Via Arrigo Boito, 10, 20121</li>
+                                                                                    <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Phone:</strong> +302</li>
+                            <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></li>
+                        </ul>
+                                    </div>
+
+                <h4 class="pt-5"><strong>FOLLOW US</strong></h4>
+                <ul class="social-icons">
+                    <li class="social-icons-facebook">
+                        <a href="#" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-twitter">
+                        <a href="#" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-linkedin">
+                        <a href="#" target="_blank" title="Linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="../img/parallax/parallax-2.jpg">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Ready to get the money you need to get back to the good?</h3>
+                        <p class="mb-0">OPEN BANK INTERNATIONAL offers you the best of financial service.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="about.html" target="_blank" class="btn btn-modern text-2 btn-primary">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+    </div>
+
+    {% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        We would like to collect data from your device while you use this website. We do this using cookies. Collecting this data helps us provide the best experience for you, keeps your account secure, helps us provide social media features and allows us to personalise advert and service message content. Please accept cookies to allow us to collect your data in this way.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Allow cookies
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Bank Mobile</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Votre Banque partout où vous allez.">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Bank Mobile</h1>
+                <span class="sub-title text-dark">Votre Banque partout où vous allez.</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Bank Mobile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <section class="section section-height-3 border-0 mb-0" data-plugin-parallax data-image-src="{% static 'img/parallax/parallax-8.jpg' %}">
+        <div class="container container-lg-custom">
+            <div class="row align-items-center text-color-white">
+                <div class="col-lg-12">
+                    <div class="pr-5">
+                        <span class="text-center d-block font-weight-light negative-ls-1 text-5 mb-1"><em class="text-2 opacity-8 text-color-white">Banque</em></span>
+                        <h2 class="text-center font-weight-medium negative-ls-3 line-height-1 text-7 mb-3 text-color-white"><em>Avantages de la Banque mobile.</em></h2>
+                        <span class="text-center d-block alternative-font text-color-primary text-5 mb-4 pb-2">COEM GROUP</span>
+                        <div class="row text-color-white">
+                            <div class="col-md-6">
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Utilisez le dépôt de chèque mobile.</a></h4>
+                                        <p class="text-color-white">Avec le dépôt de chèque mobile, signez simplement le chèque, ouvrez l&#039;application Mobile Banking, prenez une photo de votre chèque et votre dépôt est parti!</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Restez organisé avec BillPay.</a></h4>
+                                        <p class="text-color-white">Enregistrez un tampon et réduisez l&#039;encombrement avec BillPay. Connectez-vous simplement pour payer vos factures rapidement et en toute sécurité..</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                    <div class="loc_service_text text-right">
+                                        <h4><a href="javascript:void(0);">Regardez vite avec Quick Balance.</a></h4>
+                                        <p class="text-color-white">Vérifiez le solde de votre compte sur votre téléphone, directement depuis votre écran d&#039;accueil, sans vous connecter à l&#039;application Mobile Banking</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Faites des transferts.</a></h4>
+                                        <p class="text-color-white">Transférez des fonds entre vos comptes, vers d&#039;autres clients bancaires ou vers n&#039;importe quelle institution financière, sans frais, en quelques clics.</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Gérez les cartes.</a></h4>
+                                        <p class="text-color-white">Créez / modifiez le code PIN, activez les cartes de débit et de crédit, mettez une carte égarée en attente, signalez une carte perdue ou volée et demandez des remplacements. Faites tout cela et prenez le contrôle avec notre application Mobile Banking très appréciée.</p>
+                                    </div>
+                                </div>
+                                <div class="loc_service_section icon_left wow fadeInRight" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
+                                    <div class="loc_service_text">
+                                        <h4><a href="javascript:void(0);">Gérez les alertes.</a></h4>
+                                        <p class="text-color-white">Sélectionnez et personnalisez les alertes que vous souhaitez recevoir, avec des alertes personnalisables sur le (s) dépôt (s) de compte, le (s) débit (s), le solde bas, le crédit disponible, etc. De plus, affinez les paramètres d&#039;alerte et choisissez de les recevoir par SMS, e-mail ou les deux.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+
+
+</body>
+</html>

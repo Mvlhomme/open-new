@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="sk">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Welcome</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="ONE BANK INTERNATIONAL - To najlepšie z online kreditu">
+    <meta name="author" content="index.html">
+    {% include 'sk/head.html' %}
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+    {% include 'sk/header.html' %}
+
+    <div role="main" class="main">
+
+        
+        
+    <section class="section section-concept section-no-border section-dark section-angled section-angled-reverse pt-5 m-0" id="section-concept" style="background-size: cover; background-position: center; animation-duration: 750ms; animation-delay: 300ms; animation-fill-mode: forwards;" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="img/landing/header_bg.jpg">
+    <div class="container">
+        <div class="row align-items-center pt-3 justify-content-center" style="margin-top: 50px!important;margin-bottom: 50px!important;">
+            
+            <div class="col-lg-8 mb-3 text-center">
+                <img src="img/logo-big.png" class="img-fluid" alt="" style="height: 100px"/>
+                
+                <h1 class="font-weight-bold text-12 line-height-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" data-appear-animation-duration="750">ONE BANK INTERNATIONAL</h1>
+                <p class="custom-font-size-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900" data-appear-animation-duration="750">Ľahké, rýchle, priateľské</p>
+                <a href="sk/register.html" class="btn btn-primary text-uppercase">
+                    Otvorte si účet
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="home-intro mb-0" id="home-intro">
+    <div class="container">
+
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <p class="mb-0">
+                    Otvorte si účet a zvýhodnite pri otvorení účtu 150 €
+                    <span>ONE BANK INTERNATIONAL</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="container mt-5">
+
+    <div class="row pt-4 appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="col-lg-7 pr-lg-5">
+            <h2 class="font-weight-normal line-height-1">Úver, v jednoduchšej podobe</h2>
+            <p class="lead">
+                Vo OPEN BANK INTERNATIONAL nebolo nikdy jednoduchšie a jednoduchšie získať osobnú pôžičku. Dôveryhodná značka, poskytujeme najlepšie služby vo svojej triede, ktoré vám pomôžu dosiahnuť vaše finančné ciele, aby ste mohli začať stavať svoje hniezdo.
+            </p>
+            <p>
+                Poslaním OPEN BANK INTERNATIONALY je zmeniť spôsob, akým si požičiavate peniaze. OPEN BANK INTERNATIONAL vám pomôže získať prístup k mnohým rôznym typom pôžičiek od jedného dôveryhodného veriteľa a zároveň vám z pohodlia domova prispôsobiť možnosti financovania. Proces podania žiadosti je ľahký, osobný a okamžitý bez toho, aby to malo vplyv na vaše kreditné skóre.
+            </p>
+
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-user text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Máte príjem.</h4>
+                            <p class="mb-4">Hľadáte však prístup k ďalším peniazom.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4 mb-lg-0">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-fast-forward text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Chceš peniaze rýchlo.</h4>
+                            <p class="mb-4">Väčšina zákazníkov môže očakávať, že ich finančné prostriedky sa zobrazia na ich bankovom účte v jeden pracovný deň.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-arrow-circle-up text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Chceš urobiť zmenu.</h4>
+                            <p class="mb-4">Každý má iný príbeh, pokiaľ ide o financie, ale ste pripravení s tým niečo urobiť.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-hands-helping text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Chcete mať peniaze bezproblémové.</h4>
+                            <p class="mb-4">Snažíme sa uľahčiť prácu pomocou rýchleho procesu podania žiadosti, ktorý by vás mohol dostať za pár minút.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-5">
+            <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+            <div class="small">
+                <img src="img/img1.jpg" alt="" class="img-fluid">
+            </div>
+
+            <ul class="list list-icons list-icons-style-3 mt-5">
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Adresa :</strong> 20, avenue de Paris 94811 Villejuif Cedex France</li>
+
+                                    <li><i class="fas fa-map-marker-alt"></i> <strong>Adresa #2:</strong> Via Arrigo Boito, 10, 20121</li>
+                                                <li><i class="fas fa-phone"></i> <strong>Telefón:</strong> +302</li>
+                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+    <section class="section mt-0 mb-0 border-0">
+    <div class="container">
+        <div class="row">
+            <div class="featured-boxes featured-boxes-style-2">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-user icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Vedenie účtu</h4>
+                                <p class="px-3">Je otváranie a zatváranie bankových účtov dlhou a ťažkopádnou činnosťou vo vašej spoločnosti?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-feed icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Online bankovníctvo</h4>
+                                <p class="px-3">Náš systém vám pomáha bankovať, nech ste kdekoľvek, nech ste kdekoľvek.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-screen-tablet icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Mobilné bankovníctvo</h4>
+                                <p class="px-3">Priamo v našej aplikácii pre mobilné bankovníctvo je ľahké posielať a prijímať peniaze alebo rozdeliť náklady na účet medzi priateľov a rodinu.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1500">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-credit-card icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Úverové línie</h4>
+                                <p class="px-3">Vďaka pôžičke alebo úverovej linke od našej banky môžete byť pripravení na životné náklady, kedykoľvek k nim dôjde.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1300">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-badge icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Pôžičky</h4>
+                                <p class="px-3">Ak si chcete požičať konkrétnu sumu na jednorazovú potrebu - či už hľadáte modernizáciu spotrebiča, opravu domu alebo automobilu alebo splácanie dlhu - potom môže byť vašim najlepším riešením bankový úver.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-briefcase icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Investícia</h4>
+                                <p class="px-3">Máte nápady do budúcnosti. Nech už je vaša vízia akákoľvek, naše investičné služby vám môžu pomôcť vytvoriť jasnú a ľahko pochopiteľnú finančnú stratégiu prispôsobenú pre vás.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container-fluid">
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/personal-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/personal-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Osobná pôžička
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Osobná pôžička je úver, o ktorom sa hovorí, že je „nedotknutý“. Suma požičaná z osobnej pôžičky v skutočnosti nezodpovedá presnému nákupu tovaru (auto, motocykel, nehnuteľnosť atď.).
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/personal-loan.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-without-contribution.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Pôžička bez príspevku
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Máte projekt na kúpu domu? Buďte si istí: požičiavanie bez akontácie je komplikované, ale určite nie nemožné.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-without-contribution.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-without-contribution.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-between-individuals.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-between-individuals.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Pôžička medzi jednotlivcami
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Úver alebo pôžička medzi jednotlivcami alebo PAP / P2P sa nazýva aj úver bez bankára, pretože organizácie pôžičiek medzi jednotlivcami nie sú všeobecne schválenými organizáciami alebo bankami.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-between-individuals.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/consumer-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Spotrebný úver
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Spotrebný úver je pôžička, ktorá sa týka iných operácií ako tých, ktoré sa týkajú nehnuteľností. Presnejšie reaguje na požiadavku na peňažné toky dlžníka, ktorý chce financovať nákup spotrebného tovaru.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/consumer-credit.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/consumer-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/car-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/car-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Pôžička na auto
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Máte v úmysle kúpiť si vozidlo, ale ako veľká väčšina domácností nemáte kapitál na jeho financovanie?
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/car-loan.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/works-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Dielo zápočet
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Potrebuje váš dom plastickú operáciu? Chcete zväčšiť? Áno, ale rekonštrukčné alebo ekologické renovačné práce, rovnako ako terénne úpravy, sú často spojené so značnými nákladmi.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/works-credit.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/works-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Akú dokonalú prácu ste odviedli. Skutočne si mi urobil deň. Ďakujem ti veľmi pekne.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Viac ako potešený. Rýchla, profesionálna a jednoznačne ľudská služba. Odpoveď za menej ako 4 hodiny je neuveriteľná!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Táto spoločnosť je úžasná! Sú pohotové, zdvorilé, ľahko dostupné a pomáhajú mi dostať sa z dlhov!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="img/parallax/parallax-2.jpg">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Ste pripravení získať peniaze, ktoré potrebujete, aby ste sa dostali späť k dobru?</h3>
+                        <p class="mb-0">OPEN BANK INTERNATIONAL vám ponúka to najlepšie z finančných služieb.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="sk/about.html" target="_blank" class="btn btn-modern text-2 btn-primary">O nás</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <div class="container py-4">
+    <div class="row py-3 justify-content-center">
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/legal-protection-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Poistenie právnej ochrany
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">V prípade sporu OPEN BANK INTERNATIONAL chráni vás a vašich blízkych! Vďaka záruke právnej ochrany môžete ťažiť z plnej podpory na ochranu svojich práv a záujmov.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/legal-protection-insurance.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/income-maintenance-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Poistenie výživného
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">V zložitých časoch je tu OPEN BANK INTERNATIONAL, ktorá vám pomôže! V prípade tvrdého úrazu vám záruka na udržanie príjmu umožní pokryť vaše súčasné výdavky.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/income-maintenance-insurance.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/car-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Poistenie auta
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Zákon z roku 1958 stanovil povinné poistenie automobilov. Vyžaduje, aby vaše auto bolo poistené minimálne poistením zodpovednosti, ktoré poisťovatelia označujú aj ako poistenie zodpovednosti za škodu.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/car-insurance.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/home-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Poistenie domácnosti
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Zákon č. 89-462 zo 6. júla 1989 pre každého nájomcu stanovuje, že je povinný sa poistiť proti rizikám, na ktoré musí ako nájomca reagovať.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/home-insurance.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/loan-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Poistenie pôžičky
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Získanie dlhodobého úveru takmer vždy zahŕňa uzatvorenie poistenia úveru, aby sa banka mohla chrániť pred rizikom nesplácania.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/loan-insurance.html">
+                                Uč sa viac
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey call-to-action-in-footer">
+    <div class="container">
+        <div class="row text-center pb-4 mt-4">
+            <div class="owl-carousel owl-theme carousel-center-active-item mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-5.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-7.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+    {% include 'sk/footer.html' %}
+
+</div>
+    {% include 'sk/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        Počas používania tejto webovej stránky by sme chceli zhromažďovať údaje z vášho zariadenia. Robíme to pomocou cookies. Zhromažďovanie týchto údajov nám pomáha poskytovať pre vás to najlepšie prostredie, zaisťuje bezpečnosť vášho účtu, pomáha nám poskytovať funkcie sociálnych médií a umožňuje nám personalizovať obsah reklamy a servisných správ. Prijmite súbory cookie, aby sme mohli zhromažďovať vaše údaje týmto spôsobom.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Súhlasím
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+<!-- Mirrored from one.open-int-bank.com/sk by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:39:40 GMT -->
+</html>

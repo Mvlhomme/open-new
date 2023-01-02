@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Prêt entre particuliers</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="DES PRÊTS FIABLES ET SANS TRACAS">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Prêt entre particuliers</h1>
+                <span class="sub-title text-dark">DES PRÊTS FIABLES ET SANS TRACAS</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Prêt entre particuliers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Qu&#039;est-ce que le prêt entre particuliers ?</h2>
+                <p>COEM GROUP est la première plateforme en Suisse de prêt sans banquiers. Nous proposons un crédit issu d&#039;un système collaboratif, mais il ne s&#039;agit pas de crédit entre particuliers à proprement dit. Les fonds des crédits sont collectés auprès d&#039;Investisseurs professionnels (particuliers, entreprises, caisses de retraite, assureurs, fondations, etc.). Explications sur les spécificités et le mode de fonctionnement du prêt entre particuliers.</p>
+
+                <h2>Crédit entre particuliers : un terme nouveau</h2>
+                <p class="lead">Le prêt ou crédit entre particuliers est un terme « à la mode » depuis quelques années déjà. Certains profils d&#039;emprunteurs ne faisant plus confiance aux banques se tournent désormais vers le système collaboratif pour y faire leur demande de crédit.</p>
+                <p>Aux États-Unis, le prêt entre particuliers existe déjà depuis 2006 avec la première plateforme mondiale de crédit entre particuliers : Lending Club. Cette société, fondée par un Français, connaît un véritable succès dès son lancement. Presque dix années plus tard, elle affirme avoir octroyés plus de 4 milliards d&#039;euros de prêts.</p>
+
+                <h2>Mentions et forme d&#039;un contrat de prêt entre particuliers</h2>
+                <p>Le prêt entre particuliers est régi de la même manière qu&#039;un crédit « classique ». Cela suppose inéluctablement l&#039;établissement d&#039;un contrat entre l&#039;emprunteur et le prêteur privé. Cet écrit peut prendre la forme :</p>
+                <ul>
+                    <li>Soit d&#039;un contrat de prêt (formulaire n°2062, à signer par l&#039;emprunteur et le prêteur, qui conservent chacun un exemplaire).</li>
+                    <li>Soit d&#039;une reconnaissance de dette (à rédiger, dater et signer par l&#039;emprunteur ; un original pour le prêteur, un autre pour le service des impôts, et une copie pour l&#039;emprunteur). Au-delà de 1 500 euros, ce document doit être rédigé par un notaire.</li>
+                </ul>
+                <p>Ledit contrat devra principalement mentionner :</p>
+                <ul>
+                    <li>Les noms, prénoms et adresses complètes des deux parties ;</li>
+                    <li>Les conditions du prêt (montant, durée, fréquence des mensualités de remboursement, taux d&#039;intérêt).</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

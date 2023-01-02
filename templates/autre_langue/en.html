@@ -1,0 +1,802 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Welcome</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+    <div role="main" class="main">
+
+        
+        
+    <section class="section section-concept section-no-border section-dark section-angled section-angled-reverse pt-5 m-0" id="section-concept" style="background-size: cover; background-position: center; animation-duration: 750ms; animation-delay: 300ms; animation-fill-mode: forwards;" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="img/landing/header_bg.jpg">
+    <div class="container">
+        <div class="row align-items-center pt-3 justify-content-center" style="margin-top: 50px!important;margin-bottom: 50px!important;">
+            
+            <div class="col-lg-8 mb-3 text-center">
+                <img src="img/logo-big.png" class="img-fluid" alt="" style="height: 100px"/>
+                
+                <h1 class="font-weight-bold text-12 line-height-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" data-appear-animation-duration="750">ONE BANK INTERNATIONAL</h1>
+                <p class="custom-font-size-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900" data-appear-animation-duration="750">Easy, Fast, Friendly</p>
+                <a href="en/register.html" class="btn btn-primary text-uppercase">
+                    Open your account
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="home-intro mb-0" id="home-intro">
+    <div class="container">
+
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <p class="mb-0">
+                    Open an account and benefit from 150 € when opening the account
+                    <span>ONE BANK INTERNATIONAL</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="container mt-5">
+
+    <div class="row pt-4 appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="col-lg-7 pr-lg-5">
+            <h2 class="font-weight-normal line-height-1">Credit, in simpler form</h2>
+            <p class="lead">
+                At OPEN BANK INTERNATIONAL, getting a personal loan has never been faster and easier. A trustworthy brand, we provide best-in-class service to help you achieve your financial goals so you can start building your nest egg.
+            </p>
+            <p>
+                OPEN BANK INTERNATIONAL’s mission is to transform the way you borrow money. OPEN BANK INTERNATIONAL helps you access many different types of loans from one trusted lender while customizing your financing options from the comfort of your home. The application process is easy, personable, and instant without affecting your credit score.
+            </p>
+
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-user text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">You have income.</h4>
+                            <p class="mb-4">But, you&#039;re looking to access more money.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4 mb-lg-0">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-fast-forward text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">You want money fast.</h4>
+                            <p class="mb-4">Most customers can expect to see their funds in their bank account in one business day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-arrow-circle-up text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">You want to make a change.</h4>
+                            <p class="mb-4">Everyone has a different story when it comes to finances, but you’re ready to do something about it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-hands-helping text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">You want money hassle-free.</h4>
+                            <p class="mb-4">We keep things simple with a quick application process that could get you approved in minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-5">
+            <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+            <div class="small">
+                <img src="img/img1.jpg" alt="" class="img-fluid">
+            </div>
+
+            <ul class="list list-icons list-icons-style-3 mt-5">
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Address :</strong> 20, avenue de Paris 94811 Villejuif Cedex France</li>
+
+                                    <li><i class="fas fa-map-marker-alt"></i> <strong>Address #2:</strong> Via Arrigo Boito, 10, 20121</li>
+                                                <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +302</li>
+                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+    <section class="section mt-0 mb-0 border-0">
+    <div class="container">
+        <div class="row">
+            <div class="featured-boxes featured-boxes-style-2">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-user icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Account Management</h4>
+                                <p class="px-3">Is opening and closing bank accounts a long and cumbersome activity in your company?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-feed icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Online Banking</h4>
+                                <p class="px-3">Our system is helping you bank wherever you are, wherever you go.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-screen-tablet icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Mobile Banking</h4>
+                                <p class="px-3">It’s easy to send and receive money or split the cost of a bill with friends and family right in our Mobile Banking App.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1500">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-credit-card icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Lines of Credit</h4>
+                                <p class="px-3">With a loan or line of credit from our bank, you can be prepared for life&#039;s expenses, whenever they happen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1300">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-badge icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Loans</h4>
+                                <p class="px-3">When you want to borrow a specific amount for a one-time need–whether you&#039;re looking to upgrade appliances, make home or auto repairs, or consolidate debt—then a bank loan may be your best solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-briefcase icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Investment</h4>
+                                <p class="px-3">You have ideas for the future. Whatever your vision, our Investment Services can help create a clear, easy-to-understand financial strategy, personalized for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container-fluid">
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/personal-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/personal-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Personal loan
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                A personal loan is a credit that is said to be &quot;unaffected&quot;. In fact, the amount borrowed from a personal loan does not correspond to the precise purchase of a good (car, motorcycle, real estate, etc.).
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/personal-loan.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-without-contribution.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Loan without contribution
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Do you have a home purchase project? Rest assured: borrowing without down payment is complicated, but certainly not impossible.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-without-contribution.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-without-contribution.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-between-individuals.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-between-individuals.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Loan between individuals
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                The credit or loan between individuals, or PAP / P2P, is also called the credit without banker, because generally the organizations of loan between individuals are not approved organizations or banks.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-between-individuals.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/consumer-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Consumer credit
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Consumer credit is a loan that concerns operations other than those relating to real estate. More specifically, it responds to a cash flow requirement of a borrower wishing to finance the purchase of consumer goods.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/consumer-credit.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/consumer-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/car-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/car-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Car loan
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Do you intend to buy a vehicle, but like a large majority of households, you do not have the capital to finance it?
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/car-loan.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/works-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Works credit
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Is your home in need of a facelift? Do you want to enlarge? Yes, but renovation or eco-renovation work, just like landscaping, often comes at a significant cost.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/works-credit.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/works-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">What an impeccable job you’ve done. You really made my day. Thank you so much.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">More than delighted. Fast, professional and clearly human service. An answer in less than 4 hours is quite incredible!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">This company is amazing! They are prompt, courteous, easily accessible, and they are helping me get out of debt!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="img/parallax/parallax-2.jpg">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Ready to get the money you need to get back to the good?</h3>
+                        <p class="mb-0">OPEN BANK INTERNATIONAL offers you the best of financial service.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="en/about.html" target="_blank" class="btn btn-modern text-2 btn-primary">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <div class="container py-4">
+    <div class="row py-3 justify-content-center">
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/legal-protection-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Legal Protection Insurance
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">In the event of a dispute, OPEN BANK INTERNATIONAL protects you and your loved ones! Thanks to the Legal Protection guarantee, benefit from full support to defend your rights and interests.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/legal-protection-insurance.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/income-maintenance-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Income Maintenance Insurance
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">In difficult times, OPEN BANK INTERNATIONAL is here to help! In the event of a hard blow, the income maintenance guarantee will allow you to meet your current expenses.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/income-maintenance-insurance.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/car-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Car Insurance
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">The 1958 law made automobile insurance compulsory. It requires that your car be insured at least with liability insurance, also called third-party insurance by insurers.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/car-insurance.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/home-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Home Insurance
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">For any tenant, Law No. 89-462 of July 6, 1989 specifies that he is obliged to insure himself against the risks for which he must respond as a tenant.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/home-insurance.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/loan-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Loan Insurance
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Obtaining long-term credit almost always involves taking out loan insurance, in order to allow the bank to protect itself from the risk of non-payment.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/loan-insurance.html">
+                                Learn more
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey call-to-action-in-footer">
+    <div class="container">
+        <div class="row text-center pb-4 mt-4">
+            <div class="owl-carousel owl-theme carousel-center-active-item mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-5.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-7.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+{% include 'en/footer.html' %}
+
+</div>
+    {% include 'en/racourcis.html' %}
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+</html>

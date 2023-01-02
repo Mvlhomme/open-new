@@ -1,0 +1,39 @@
+HTTrack3.49-2 launched on Sat, 24 Dec 2022 08:32:53 at https://one.open-int-bank.com/
+(winhttrack https://one.open-int-bank.com/ -O "/home/dick/websites/dede" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+08:32:59	Warning: 	Found for https://one.open-int-bank.com/
+08:32:59	Warning: 	File has moved from https://one.open-int-bank.com/ to https://one.open-int-bank.com/en
+08:34:46	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/img/apple-touch-icon.png (from https://one.open-int-bank.com/en)
+08:48:19	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/img/clients/client-1.jpg (from https://one.open-int-bank.com/en)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/css/owl.video.play.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/css/img/lazy.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/fonts/revicons/revicons.eot?5510888 (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/fonts/revicons/revicons.woff?5510888 (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/fonts/revicons/revicons.ttf?5510888 (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/fonts/revicons/revicons.svg?5510888 (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/css/openhand.cur (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/css/closedhand.cur (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/gridtile.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/gridtile_white.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/gridtile_3x3.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/gridtile_3x3_white.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/coloredbg.png (from https://one.open-int-bank.com/css/frontend.css)
+08:48:24	Error: 	"Not Found" (404) at link https://one.open-int-bank.com/assets/loader.gif (from https://one.open-int-bank.com/css/frontend.css)
+08:49:00	Warning: 	Retry after error -4 (No data (connection closed)) at link https://one.open-int-bank.com/hu/contact (from https://one.open-int-bank.com/en/contact)
+08:49:54	Warning: 	Retry after error -4 (No data (connection closed)) at link https://one.open-int-bank.com/pl/insurances (from https://one.open-int-bank.com/pl)
+08:50:09	Warning: 	Retry after error -4 (No data (connection closed)) at link https://one.open-int-bank.com/sk/investment (from https://one.open-int-bank.com/sk)
+08:50:23	Warning: 	Retry after error -2 (Connect Time Out) at link https://one.open-int-bank.com/bg/request-form (from https://one.open-int-bank.com/bg)
+08:50:25	Error: 	"Error when decompressing" (-1) at link https://one.open-int-bank.com/insurances (from https://one.open-int-bank.com/en/insurances)
+08:50:25	Warning: 	Retry after error -4 (No data (connection closed)) at link https://one.open-int-bank.com/about (from https://one.open-int-bank.com/el/about)
+08:50:25	Error: 	"Error when decompressing" (-1) at link https://one.open-int-bank.com/pl/insurances (from https://one.open-int-bank.com/pl)
+08:50:25	Error: 	Unable to save file /home/dick/websites/dede/one.open-int-bank.com/pl/insurances: Is a directory
+08:50:26	Warning: 	Found for https://one.open-int-bank.com/about
+08:50:26	Warning: 	File has moved from https://one.open-int-bank.com/about to https://one.open-int-bank.com/kk/about
+
+HTTrack Website Copier/3.49-2 mirror complete in 17 minutes 33 seconds : 570 links scanned, 544 files written (27260655 bytes overall) [10931359 bytes received at 10381 bytes/sec], 22779506 bytes transferred using HTTP compression in 581 files, ratio 24%, 9.3 requests per connection
+(19 errors, 9 warnings, 0 messages)

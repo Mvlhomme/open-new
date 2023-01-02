@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Assurance Habitation</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Sécurisez votre foyer">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Assurance Habitation</h1>
+                <span class="sub-title text-dark">Sécurisez votre foyer</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Assurance Habitation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Assurance habitation : que dit la loi ?</h2>
+                <h3>Locataire : une obligation</h3>
+                <p>Pour tout locataire, la loi loi n° 89-462 du 6 juillet 1989 précise qu’il est obligé de s’assurer contre les risques dont il doit répondre en tant que locataire. L’assurance habitation est donc un prérequis pour l’accès au logement et le bailleur peut demander une attestation annuelle de l’assurance habitation. Cette assurance permet de garantir l’indemnisation du propriétaire en cas de sinistre.</p>
+                <h3>Propriétaire : une forte recommandation</h3>
+                <p>La loi, contrairement aux locataires, n’impose pas aux propriétaires de souscrire à une assurance habitation. En revanche, la responsabilité civile, qui couvre les dommages matériels ou corporels causés à autrui est, elle indispensable. L’assurance Multi risques habitation couvrira le logement et les biens matériels des occupants du logement en cas de feux, dégâts des eaux, infractions, et autres types de sinistres.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

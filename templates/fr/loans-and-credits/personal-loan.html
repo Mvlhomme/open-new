@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Prêt personnel</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="DES PRÊTS FIABLES ET SANS TRACAS">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Prêt personnel</h1>
+                <span class="sub-title text-dark">DES PRÊTS FIABLES ET SANS TRACAS</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Prêt personnel</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Les avantages d’un prêt personnel</h2>
+                <p class="lead">Il arrive de ne pas avoir suffisamment de trésorerie pour financer le projet de ses rêves. Organiser un mariage, un voyage, changer de voiture ou faire des travaux sont des projets de vie coûteux qui nécessitent parfois un prêt personnel.</p>
+                <p>Chez COEM GROUP, on vous propose justement une nouvelle expérience de prêt personnel 100 % en ligne pour le financement de votre projet ; vous pouvez signer votre contrat à distance et télécharger directement vos documents nécessaires à la complétion de votre dossier de crédit personnel.
+Cette expérience de demande de prêt personnel en ligne se veut simple, rapide et transparente. Une solution de financement qui vous permet, en sus, de profiter d’un taux débiteur fixe annuel (ou taux annuel effectif global) particulièrement attractif. De quoi donner vie à votre projet sans avoir à vous soucier du lendemain !</p>
+
+                <h2>C&#039;est quoi, un prêt personnel ?</h2>
+                <p>Un prêt personnel est un crédit que l’on dit « non affecté ». En effet, le montant emprunté d’un prêt personnel ne correspond pas à l’achat précis d’un bien (voiture, moto, immobilier, etc.). Par conséquent, le prêt personnel ne se déclenche pas à la présentation d’une facture comme pour les crédits « affectés », mais répond simplement à un besoin de trésorerie des ménages.
+En définitive, l&#039;emprunteur est libre d’utiliser le montant du crédit comme bon lui semble, que ce soit pour le financement d’un bien de consommation (auto, réfrigérateur, alimentation...) ou pour toute autre prestation.
+Ce type de crédit peut être délivré aussi bien par une banque que par un organisme de financement spécialisé dans les prêts.</p>
+                <p>Le remboursement d&#039;un prêt personnel se fait classiquement chaque mois. Sa durée, stipulée sur le contrat, varie selon le montant de l&#039;emprunt et les capacités financières de l&#039;emprunteur. Les mensualités tiennent compte du montant total du crédit et de sa durée, du TAEG (taux annuel effectif global) ainsi que de l’assurance, si l&#039;emprunteur y a souscrit.</p>
+
+                <h2>Qu&#039;en est-il de l’assurance décès emprunteur ?</h2>
+                <p>Avant d’accorder le crédit, le prêteur peut sommer l’emprunteur de souscrire une assurance. Et ce, bien que la loi ne l’impose pas. Dans tous les cas, il est de l’intérêt de l’emprunteur de réfléchir à cette assurance facultative. Car en cas d’incident de paiement consécutif, par exemple, à une perte d’emploi ou à un décès, c’est l’assurance qui se chargera de rembourser le capital restant dû.</p>
+                <p class="lead">Il est par ailleurs important de savoir que, même si le prêteur vous propose d’assurer votre prêt personnel, vous restez libre de vous adresser à l’établissement de votre choix.</p>
+
+                <h2>Les pièces justificatives pour monter un dossier de prêt personnel</h2>
+                <p>L’acceptation d’un prêt personnel dépend principalement des ressources et du patrimoine du demandeur. Il est en effet crucial de s’assurer, en amont, que sa situation financière et son capital lui permettront de faire face aux mensualités de remboursement.</p>
+                <p>Ainsi, pour le montage de votre dossier, COEM GROUP demande les documents justificatifs exigés par la loi ou conformes aux pratiques des établissements bancaires. Néanmoins, nous ne vous demanderons pas de fournir des documents originaux : il vous suffira de télécharger vos pièces justificatives sur notre plateforme.</p>
+                <p>Enfin, il vous sera demandé de fournir un dossier complet pour pouvoir obtenir une offre de prêt.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

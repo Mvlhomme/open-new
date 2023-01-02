@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Cartes de Crédit</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Voir nos cartes de crédit">
+    <meta name="author" content="../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Cartes de Crédit</h1>
+                <span class="sub-title text-dark">Voir nos cartes de crédit</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Cartes de Crédit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="home-intro bg-secondary mb-0" id="home-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        Voir nos cartes de crédit
+                        <span>Obtenez 3% de remise en argent pendant les 12 premiers mois avec nos cartes de crédit.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section mt-0 mb-0">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="{% static 'ui/images/index7/card_1.jpg' %}" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Personnel</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Transfert de solde</h6></a>
+                            <p>Bon pour - transférer un solde avec des frais peu élevés</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="{% static 'ui/images/index7/card_2.jpg' %}" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Famille</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Famille royale</h6></a>
+                            <p>Bon pour - économiser de l&#039;argent sur vos vacances en famille</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="{% static 'ui/images/index7/card_3.jpg' %}" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Affraire</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Récompense Noir</h6></a>
+                            <p>Bon pour - Récompenses au pays et à l&#039;étranger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-color-white section-height-3 border-0 mt-0 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <aside class="sidebar mt-2">
+                        <h5 class="font-weight-bold">A votre attention</h5>
+                        <ol class="pl-3 text-primary">
+                            <li>Tous les champs sont obligatoires</li>
+                            <li>Vérifiez bien toutes vos données avant de soumettre le formulaire.</li>
+                        </ol>
+                    </aside>
+                </div>
+                <div class="col-lg-9 order-1 order-lg-2">
+
+                    <div class="overflow-hidden mb-1">
+                        <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">Demande de Cartes de Crédit</strong></h2>
+                    </div>
+                    <div class="overflow-hidden mb-4 pb-3">
+                        <p class="mb-0 text-primary">Faites votre demande maintenant et recevez votre carte de credit en 72H maximum.</p>
+                    </div>
+
+                    <div>
+    <form>
+                <div class="form-row">
+            <div class="form-group col-lg-6">
+                <label for="card_name" class="required font-weight-bold text-dark text-2">Nom de la Carte</label>
+                <select id="card_name" wire:model="card_name" class="form-control ">
+                    <option value="">Choose</option>
+                    <option value="personal">Personnel</option>
+                    <option value="family">Famille</option>
+                    <option value="business">Affraire</option>
+                </select>
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="profession" class="required font-weight-bold text-dark text-2">Votre profession</label>
+                <input id="profession" type="text" wire:model="profession" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="first_name" class="required font-weight-bold text-dark text-2">Prénom</label>
+                <input id="first_name" type="text" wire:model="first_name" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="last_name" class="required font-weight-bold text-dark text-2">Nom</label>
+                <input id="last_name" type="text" wire:model="last_name" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="email" class="required font-weight-bold text-dark text-2">Adresse Email</label>
+                <input id="email" type="email" wire:model="email" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="telephone" class="required font-weight-bold text-dark text-2">N° de Téléphone <em class="text-primary font-weight-normal">(avec l&#039;indicatif)</em></label>
+                <input id="telephone" type="tel" wire:model="telephone" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="country" class="required font-weight-bold text-dark text-2">Pays</label>
+                <input id="country" type="text" wire:model="country" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="city" class="required font-weight-bold text-dark text-2">Ville</label>
+                <input id="city" type="text" wire:model="city" class="form-control ">
+                            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Valider" class="btn btn-primary btn-modern">
+            </div>
+        </div>
+    </form>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

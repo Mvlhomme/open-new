@@ -1,0 +1,526 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Loans and Credits</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Our loan and credit service offers">
+    <meta name="author" content="../index.html">
+   {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+
+{% include 'en/header.html' %}
+
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Loans and Credits</h1>
+                <span class="sub-title text-dark">Our loan and credit service offers</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'en' %}">Home</a></li>
+                    <li class="active">Loans and Credits</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <section class="bg-color-grey-scale-3">
+    <div class="container pt-2">
+        <div class="row mt-5 mb-0 pb-5">
+            <div class="col-lg-6 pr-5">
+                <h2 class="font-weight-normal text-6 mb-2 pb-1">Payment Calculator</h2>
+                <p>Use the Payment Calculator to determine the monthly payment of your loan. These are just examples, actual loan amount will be determined upon application.</p>
+                <p class="lead">
+                    Estimate your Monthly Loan Payment
+                </p>
+                <p class="text-primary">Enter the loan amount as well as your currency and the duration (in months) of the repayment and get an estimate of the corresponding monthly payment.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="card" data-controller="calculator">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="currency" class="required font-weight-bold text-dark text-2">Currency</label>
+                            <input data-calculator-target="currency" data-action="input->calculator#calculate" id="currency" type="text" class="form-control" placeholder="Example : EURO">
+                            <span class="text-danger text-1" data-calculator-target="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount" class="required font-weight-bold text-dark text-2">Credit amount</label>
+                            <input data-calculator-target="amount" data-action="input->calculator#calculate" id="amount" type="text" class="form-control" placeholder="Example : 25000">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration" class="required font-weight-bold text-dark text-2">Repayment period <em class="text-primary">(months)</em></label>
+                            <input data-calculator-target="duration" data-action="input->calculator#calculate" id="duration" type="text" class="form-control" placeholder="Example : 76">
+                                                    </div>
+                    </div>
+                    <div class="card-footer bg-color-grey text-right">
+                        <p class="text-2 mb-0">Monthly Payment</p>
+                        <p class="text-7 mb-0" data-calculator-target="output"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container py-4">
+
+        <div class="row py-3 justify-content-center">
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'en_personal_loan' %}" class="text-decoration-none">
+                                <img src="{% static 'img/personal-loan.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_personal_loan' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Personal loan
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                A personal loan is a credit that is said to be &quot;unaffected&quot;. In fact, the amount borrowed from a personal loan does not correspond to the precise purchase of a good (car, motorcycle, real estate, etc.).
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'en_personal_loan' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="250">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'en_loan_without_contribution' %}" class="text-decoration-none">
+                                <img src="{% static 'img/loan-without-contribution.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_loan_without_contribution' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Loan without contribution
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Do you have a home purchase project? Rest assured: borrowing without down payment is complicated, but certainly not impossible.
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'en_loan_without_contribution' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'en_loan_between_individuals' %}" class="text-decoration-none">
+                                <img src="{% static 'img/loan-between-individuals.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_loan_between_individuals' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Loan between individuals
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">The credit or loan between individuals, or PAP / P2P, is also called the credit without banker, because generally the organizations of loan between individuals are not approved organizations or banks.</p>
+                            <p class="text-2">
+                                <a href="{% url 'en_loan_between_individuals' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="loans-and-credits/consumer-credit.html" class="text-decoration-none">
+                                <img src="{% static 'img/consumer-credit.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_consumer_credit' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Consumer credit
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">Consumer credit is a loan that concerns operations other than those relating to real estate. More specifically, it responds to a cash flow requirement of a borrower wishing to finance the purchase of consumer goods.</p>
+                            <p class="text-2">
+                                <a href="{% url 'en_consumer_credit' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'en_car_loan' %}" class="text-decoration-none">
+                                <img src="{% static 'img/car-loan.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_car_loan' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Car loan
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Do you intend to buy a vehicle, but like a large majority of households, you do not have the capital to finance it?
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'en_car_loan' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'en_works_credit' %}" class="text-decoration-none">
+                                <img src="{% static 'img/works-credit.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'en_works_credit' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Works credit
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Is your home in need of a facelift? Do you want to enlarge? Yes, but renovation or eco-renovation work, just like landscaping, often comes at a significant cost.
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'en_works_credit' %}">
+                                    Learn more
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section bg-color-primary section-height-3 border-0 mt-4 mb-0">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 py-3 mx-md-auto">
+                    <div class="row pt-2 clearfix">
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInRightShorter">
+                                <div class="feature-box-icon">
+                                    <i class="icon-user-following icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Fair credit</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        100% of the interest is paid to our professional investors (individuals and legal entities)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter">
+                                <div class="feature-box-icon">
+                                    <i class="icon-clock icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Quick credit</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        Upon receipt of your complete file, OPEN BANK INTERNATIONAL can give you an answer within 24 working hours by SMS in the case of an acceptance, and by email in the case of a refusal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                                <div class="feature-box-icon">
+                                    <i class="icon-calculator icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Transparent credit</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        100% of our customers benefit from a fixed rate loan with a fixed repayment term. No hidden costs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+                                <div class="feature-box-icon">
+                                    <i class="icon-mouse icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">100% Online</h4>
+                                    <p class="mb-4 text-color-light opacity-6">Completing your online application only takes a few minutes. Once submitted, keep an eye on your inbox for next steps.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">What an impeccable job you’ve done. You really made my day. Thank you so much.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">More than delighted. Fast, professional and clearly human service. An answer in less than 4 hours is quite incredible!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">This company is amazing! They are prompt, courteous, easily accessible, and they are helping me get out of debt!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+    {% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

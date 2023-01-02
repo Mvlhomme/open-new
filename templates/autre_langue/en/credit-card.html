@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Credit Cards</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="See our credit cards">
+    <meta name="author" content="../index.html">
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Credit Cards</h1>
+                <span class="sub-title text-dark">See our credit cards</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../en.html">Home</a></li>
+                    <li class="active">Credit Cards</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="home-intro bg-secondary mb-0" id="home-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        See our credit cards
+                        <span>Earn 3% Cash Back for the first 12 months with the our credit cards.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section mt-0 mb-0">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="../ui/images/index7/card_1.jpg" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Personal</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Balance Transfer</h6></a>
+                            <p>Good for - transferring a balance with a low fee</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="../ui/images/index7/card_2.jpg" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Family</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Royal Family</h6></a>
+                            <p>Good for - saving money on your family holidays</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 370px; margin-right: 30px;">
+                    <div class="saf_blog_thumb">
+                        <a href="javascript:void(0);" class="saf_blog_img">
+                            <img class="img-fluid" src="../ui/images/index7/card_3.jpg" alt="">
+                        </a>
+                        <div class="pt-3">
+                            <h5>Business</h5>
+                            <a href="javascript:void(0);"><h6 class="saf_blog_title">Reward Black</h6></a>
+                            <p>Good for - Rewards at home and abroad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-color-white section-height-3 border-0 mt-0 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <aside class="sidebar mt-2">
+                        <h5 class="font-weight-bold">To your attention</h5>
+                        <ol class="pl-3 text-primary">
+                            <li>All fields are mandatory</li>
+                            <li>Double check all your data before submitting the form.</li>
+                        </ol>
+                    </aside>
+                </div>
+                <div class="col-lg-9 order-1 order-lg-2">
+
+                    <div class="overflow-hidden mb-1">
+                        <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">Credit Cards Request</strong></h2>
+                    </div>
+                    <div class="overflow-hidden mb-4 pb-3">
+                        <p class="mb-0 text-primary">Apply now and receive your credit card within 72 hours maximum.</p>
+                    </div>
+
+                    <div wire:id="7BZFpIJPmplhncmat8LM" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;7BZFpIJPmplhncmat8LM&quot;,&quot;name&quot;:&quot;credit-card-request&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;en\/credit-card&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;7af2bc5a&quot;,&quot;data&quot;:{&quot;card_name&quot;:null,&quot;profession&quot;:null,&quot;first_name&quot;:null,&quot;last_name&quot;:null,&quot;email&quot;:null,&quot;telephone&quot;:null,&quot;country&quot;:null,&quot;city&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;2d490358657b751bd09b70b26932db258eb7bbdf6c1af79c0754db3e25bb0d57&quot;}}">
+    <form wire:submit.prevent="sendRequest">
+                <div class="form-row">
+            <div class="form-group col-lg-6">
+                <label for="card_name" class="required font-weight-bold text-dark text-2">Card Name</label>
+                <select id="card_name" wire:model="card_name" class="form-control ">
+                    <option value="">Choose</option>
+                    <option value="personal">Personal</option>
+                    <option value="family">Family</option>
+                    <option value="business">Business</option>
+                </select>
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="profession" class="required font-weight-bold text-dark text-2">Your Job</label>
+                <input id="profession" type="text" wire:model="profession" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="first_name" class="required font-weight-bold text-dark text-2">First Name</label>
+                <input id="first_name" type="text" wire:model="first_name" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="last_name" class="required font-weight-bold text-dark text-2">Last Name</label>
+                <input id="last_name" type="text" wire:model="last_name" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="email" class="required font-weight-bold text-dark text-2">Email Address</label>
+                <input id="email" type="email" wire:model="email" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="telephone" class="required font-weight-bold text-dark text-2">Phone number <em class="text-primary font-weight-normal">(with country code)</em></label>
+                <input id="telephone" type="tel" wire:model="telephone" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="country" class="required font-weight-bold text-dark text-2">Country</label>
+                <input id="country" type="text" wire:model="country" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="city" class="required font-weight-bold text-dark text-2">City</label>
+                <input id="city" type="text" wire:model="city" class="form-control ">
+                            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Validate" class="btn btn-primary btn-modern">
+            </div>
+        </div>
+    </form>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

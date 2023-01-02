@@ -1,0 +1,155 @@
+{% load static %}
+<footer id="footer" class="bg-color-secondary border-top-0 mt-0">
+    <div class="container py-4">
+        <div class="row py-5">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">NEWSLETTER</h5>
+                <p class="pr-1 text-color-light">Tenez-vous au courant des fonctionnalités et de la technologie de nos produits en constante évolution. Entrez votre adresse e-mail et abonnez-vous à notre newsletter.</p>
+                <div>
+                    <form class="mr-4 mb-3 mb-md-0">
+                        <div class="input-group input-group-rounded">
+                            <input class="form-control form-control-sm bg-light" placeholder="Adresse Email" type="email">
+                            <span class="input-group-append">
+                                <button class="btn btn-light text-color-dark" type="submit"><strong>GO!</strong></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">Liens</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="{% url 'fr' %}" class="text-4 text-white link-hover-style-1">
+                                Accueil
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_about' %}" class="text-4 text-white link-hover-style-1">
+                                Qui sommes-nous ?
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_contact' %}" class="text-4 text-white link-hover-style-1">
+                                Contact
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_faq' %}" class="text-4 text-white link-hover-style-1">
+                                FAQ
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_privacy_policy' %}" class="text-4 text-white link-hover-style-1">
+                                Politique de confidentialité
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="{% url 'fr_loans_and_credits' %}" class="text-4 text-white link-hover-style-1">
+                                Prêts et Crédits
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_insurances' %}" class="text-4 text-white link-hover-style-1">
+                                Assurances
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_investment' %}" class="text-4 text-white link-hover-style-1">
+                                Investissements
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="{% url 'fr_request_form' %}" class="text-4 text-white link-hover-style-1">
+                                Demande de crédit
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h5 class="text-3 mb-3 opacity-7">CONTACTEZ-NOUS</h5>
+                                    <ul class="list list-icons list-icons-lg">
+                        <li class="mb-1">
+                            <i class="fa fa-phone text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="tel:+302">
+                                    +302
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-envelope text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="mailto:info@coem-groups.com">
+                                    info@coem-groups.com
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-dot-circle text-color-light"></i>
+                            <p class="m-0 text-color-light">
+                                20, avenue de Paris 94811 Villejuif Cedex France
+                            </p>
+                        </li>
+                                                    <li class="mb-1">
+                                <i class="fa fa-dot-circle text-color-light"></i>
+                                <p class="m-0 text-color-light">
+                                    Via Arrigo Boito, 10, 20121
+                                </p>
+                            </li>
+                                                                    </ul>
+                    <ul class="social-icons">
+                        <li class="social-icons-facebook">
+                            <a href="#" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-twitter">
+                            <a href="#" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-linkedin">
+                            <a href="#" target="_blank" title="Linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright bg-color-dark bg-color-scale-overlay bg-color-scale-overlay-1">
+        <div class="bg-color-scale-overlay-wrapper">
+            <div class="container py-2">
+                <div class="row py-4">
+                    <div class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+                        <a href="fr.html" class="logo pr-0 pr-lg-3">
+                            <img alt="Porto Website Template" src="{% static 'img/logo.png' %}" class="opacity-5" height="70">
+                        </a>
+                    </div>
+                    <div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <p class="text-color-light">© Copyright 2023. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <nav id="sub-menu">
+                            <ul>
+                                <li class="border-0">
+                                    <i class="fas fa-angle-right text-color-light"></i>
+                                    <a href="{% url 'fr_privacy_policy' %}" class="ml-1 text-decoration-none text-color-light">
+                                        Politique de confidentialité
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

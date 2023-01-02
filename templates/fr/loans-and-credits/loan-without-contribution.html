@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Prêt sans apport</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="DES PRÊTS FIABLES ET SANS TRACAS">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Prêt sans apport</h1>
+                <span class="sub-title text-dark">DES PRÊTS FIABLES ET SANS TRACAS</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Prêt sans apport</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Comment emprunter sans apport ?</h2>
+                <p class="lead">Lorsque l’on a besoin d’un prêt perso ou d’un crédit immobilier pour un projet qui nous tient à cœur, débloquer une somme pour constituer un apport personnel n’est pas toujours facile. Pour éviter ce problème, les établissements de prêt proposent à leurs clients de faire des emprunts sans apport. Quels sont les avantages et les limites de cette formule ? Comment emprunter sans apport ? Dans quels cas un apport personnel est-il nécessaire ?</p>
+
+                <h2>Comment obtenir un emprunt sans apport personnel ?</h2>
+                <p>Avant d’accorder un crédit sans apport personnel, les établissements de prêt examinent la situation financière de l’emprunteur. Les nombreuses conditions à remplir peuvent être classées en 3 catégories :</p>
+                <ul>
+                    <li>une situation professionnelle stable, qui assure des revenus réguliers sur la durée. Concrètement, cela passe très souvent par un contrat de travail en C.D.I., avec une ancienneté de plusieurs années pour renforcer la solidité du dossier ;</li>
+                    <li>un reste à vivre confortable, qui autorise un niveau suffisant de dépenses courantes. En déduisant les échéances du montant des revenus, l’établissement de crédit calcule un reste à vivre. Celui-ci doit être suffisant pour préserver un niveau de vie satisfaisant une fois obtenu le prêt sans apport ;</li>
+                    <li>un historique financier sans faille, qui rassure sur la capacité à tenir ses engagements. Des remboursements sans défaut d’anciens crédits, et une bonne gestion de ses comptes dans le passé donnent confiance et augmentent les chances d’obtenir un emprunt sans apport personnel.</li>
+                </ul>
+
+                <h2>Quelles sont les limites de l&#039;apport personnel ?</h2>
+                <p>Malgré ces avantages financiers indéniables, il est parfois préférable de réaliser un crédit sans apport. C’est notamment le cas lorsque les taux proposés dépendent du montant de l’emprunt.</p>
+                <p>Exemple : 5 % de taux d’intérêt pour un montant inférieur à 10.000 € ou 3 % pour un montant supérieur ou égal à 10.000 €. L’acheteur de voiture de l’exemple ci-dessus a alors intérêt à emprunter sans apport s’il veut bénéficier du taux dégressif réduit.</p>
+                <p>Il faut également veiller à ne pas trop puiser dans son épargne de précaution pour réaliser son apport personnel. Conserver un minimum de trésorerie disponible est indispensable pour faire face à un imprévu.</p>
+                <p>Exemple : réaliser 2  000 € d’apport pour un prêt perso peut être risqué si cela revient à vider complètement un compte d’épargne de précaution. À l’inverse, cela peut être intéressant financièrement, si malgré cet apport de 2  000 €, l’emprunteur conserve un niveau d’épargne confortable.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

@@ -1,0 +1,359 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Loan request</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Quick credit application">
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Loan request</h1>
+                <span class="sub-title text-dark">Quick credit application</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'en' %}">Home</a></li>
+                    <li class="active">Loan request</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="home-intro bg-color-secondary mb-0" id="home-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        Let&#039;s start this application together
+                        <span>When you need a little financial help in your world, ours is here to help.</span>
+                    </p>
+                    <p>
+                        <em>
+                            Mortgage loan : 1.12% fixed interest rate. 1,000,000 € for 30 years
+                        </em>
+                    </p>
+                    <p>
+                        <em>
+                            Personal loan : 1.25% fixed interest rate. 1,000,000 € for 30 years
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section bg-color-grey section-height-3 border-0 mt-0 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <aside class="sidebar mt-2">
+                        <h5 class="font-weight-bold">To your attention</h5>
+                        <ol class="pl-3 text-primary">
+                            <li>All fields are mandatory</li>
+                            <li>Double check all your data before submitting the form.</li>
+                            <li>The loan amount must be accompanied by the currency of your choice.</li>
+                            <li>Please indicate the number of months for the repayment term.</li>
+                        </ol>
+                    </aside>
+                </div>
+                <div class="col-lg-9 order-1 order-lg-2">
+
+                    <div class="overflow-hidden mb-1">
+                        <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">Request form</strong></h2>
+                    </div>
+                    <div class="overflow-hidden mb-4 pb-3">
+                        <p class="mb-0 text-primary">A credit commits you and must be repaid. Check your repayment capacity before you commit</p>
+                    </div>
+
+                    <div wire:id="iVZ58DFaHfLRQ2pce4Kc" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;iVZ58DFaHfLRQ2pce4Kc&quot;,&quot;name&quot;:&quot;loan-request&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;en\/request-form&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;66bd5b72&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;telephone&quot;:null,&quot;whatsapp&quot;:null,&quot;country&quot;:null,&quot;city&quot;:null,&quot;amount&quot;:null,&quot;duration&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;368458fed5a0fb47c9c9e038c4e632938b47160811b712ab40e127b985d322cf&quot;}}">
+    <form wire:submit.prevent="sendRequest">
+                <div class="form-row">
+            <div class="form-group col-lg-6">
+                <label for="name" class="required font-weight-bold text-dark text-2">Full Name</label>
+                <input id="name" type="text" wire:model="name" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="email" class="required font-weight-bold text-dark text-2">Email Address</label>
+                <input id="email" type="email" wire:model="email" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="telephone" class="required font-weight-bold text-dark text-2">Phone number <em class="text-primary font-weight-normal">(with country code)</em></label>
+                <input id="telephone" type="tel" wire:model="telephone" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="whatsapp" class="required font-weight-bold text-dark text-2">Whatsapp number <em class="text-primary font-weight-normal">(with country code)</em></label>
+                <input id="whatsapp" type="tel" wire:model="whatsapp" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="country" class="required font-weight-bold text-dark text-2">Country</label>
+                <input id="country" type="text" wire:model="country" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="city" class="required font-weight-bold text-dark text-2">City</label>
+                <input id="city" type="text" wire:model="city" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="amount" class="required font-weight-bold text-dark text-2">Credit amount <em class="text-primary font-weight-normal">(with currency)</em></label>
+                <input id="amount" type="text" wire:model="amount" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="duration" class="required font-weight-bold text-dark text-2">Repayment period <em class="text-primary font-weight-normal">(months)</em></label>
+                <input id="duration" type="text" wire:model="duration" class="form-control ">
+                            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Validate" class="btn btn-primary btn-modern">
+            </div>
+        </div>
+    </form>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">What an impeccable job you’ve done. You really made my day. Thank you so much.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% url 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">More than delighted. Fast, professional and clearly human service. An answer in less than 4 hours is quite incredible!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% url 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">This company is amazing! They are prompt, courteous, easily accessible, and they are helping me get out of debt!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% url 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey content-align-center call-to-action-in-footer">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col-md-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h2 class="font-weight-normal text-7 mb-0">Discover our borrower insurance</h2>
+                        <p class="mb-0">You have questions about OPEN BANK INTERNATIONAL borrower insurance?</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="contact.html" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3 mt-5">Contact us</a><span class="arrow hlb d-none d-md-block" data-appear-animation="rotateInUpLeft" style="top: -90px; left: 70%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+        {% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+</html>

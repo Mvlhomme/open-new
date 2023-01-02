@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Mirrored from one.open-int-bank.com/es/insurances/home-insurance by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:50:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Seguro de hogar</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Asegure su hogar">
+    <meta name="author" content="../../index.html">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../img/apple-touch-icon.html">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../../css/frontend.css">
+    <!-- Head Libs -->
+    <script src="../../vendor/modernizr/modernizr.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+    <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 135, 'stickySetTop': '-135px', 'stickyChangeLogo': true}">
+    <div class="alert bg-color-tertiary mb-0 text-white text-center alert-dismissible" role="alert" style="border-radius: 0!important;background-color: #1A1A1A!important;">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <a href="#" class="text-white" style="text-decoration: none">
+            <strong>COVID-19 Support : </strong> Cómo realizar operaciones bancarias desde casa, administrar su cuenta, realizar transferencias, recibir su tarjeta de crédito.
+        </a>
+    </div>
+    <div class="header-body border-color-secondary border-bottom-0 box-shadow-none" data-sticky-header-style="{'minResolution': 0}" data-sticky-header-style-active="{'background-color': '#f7f7f7'}" data-sticky-header-style-deactive="{'background-color': '#FFF'}">
+        <div class="header-top header-top-borders bg-color-primary">
+            <div class="container h-100">
+                <div class="header-row h-100">
+    <div class="header-column justify-content-start">
+        <div class="header-row">
+            <nav class="header-nav-top">
+                <ul class="nav nav-pills">
+                    <li class="nav-item nav-item-borders py-2 d-sm-inline-flex">
+                        <a class="nav-link pl-0 text-color-white" href="../about.html">
+                            <i class="fas fa-angle-right"></i> Sobre nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-borders py-2 d-lg-inline-flex">
+                        <a class="nav-link text-color-white" href="../contact.html">
+                            <i class="fas fa-angle-right"></i> Contáctenos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header-column justify-content-end">
+        <div class="header-row">
+            <nav class="header-nav-top">
+                <ul class="nav nav-pills">
+                    <li class="nav-item dropdown nav-item-left-border d-sm-block">
+                        <a class="nav-link text-color-white" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" class="flag flag-us" alt="Spanish" />
+                            español
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="de" href="../../de/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" class="flag flag-es" alt="Deutsch" />
+                                    Deutsch
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="en" href="../../en/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" class="flag flag-es" alt="English" />
+                                    English
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="es" href="home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" class="flag flag-es" alt="español" />
+                                    español
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="fr" href="../../fr/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" class="flag flag-es" alt="français" />
+                                    français
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="hu" href="../../hu/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/hu.svg" class="flag flag-es" alt="magyar" />
+                                    magyar
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="nl" href="../../nl/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/nl.svg" class="flag flag-es" alt="Nederlands" />
+                                    Nederlands
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="pl" href="../../pl/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/pl.svg" class="flag flag-es" alt="polski" />
+                                    polski
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="pt" href="../../pt/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/pt.svg" class="flag flag-es" alt="português" />
+                                    português
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="ro" href="../../ro/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/ro.svg" class="flag flag-es" alt="română" />
+                                    română
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sk" href="../../sk/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/sk.svg" class="flag flag-es" alt="slovenčina" />
+                                    slovenčina
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sl" href="../../sl/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/sl.svg" class="flag flag-es" alt="slovenščina" />
+                                    slovenščina
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sv" href="../../sv/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/se.svg" class="flag flag-es" alt="svenska" />
+                                    svenska
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="0" href="../../en/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" class="flag flag-es" alt="Türkçe" />
+                                    Türkçe
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="cs" href="../../cs/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/cz.svg" class="flag flag-es" alt="čeština" />
+                                    čeština
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="el" href="../../el/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/gr.svg" class="flag flag-es" alt="Ελληνικά" />
+                                    Ελληνικά
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="bg" href="../../bg/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/bg.svg" class="flag flag-es" alt="български" />
+                                    български
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="ru" href="../../ru/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/ru.svg" class="flag flag-es" alt="русский" />
+                                    русский
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="kk" href="../../kk/insurances/home-insurance.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/kz.svg" class="flag flag-es" alt="қазақ тілі" />
+                                    қазақ тілі
+                                </a>
+                                                    </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="header-container container">
+            <div class="header-row py-2">
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-logo">
+    <a href="../../es.html">
+        <img alt="ONE BANK INTERNATIONAL" height="50" data-sticky-height="45" data-sticky-top="80" src="../../img/logo.png">
+    </a>
+</div>
+                    </div>
+                </div>
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <ul class="header-extra-info d-flex align-items-center mr-3">
+                                                        <li class="d-none d-sm-inline-flex">
+                                <div class="header-extra-info-text">
+                                    <label class="text-uppercase">DIRECCIÓN</label>
+                                    <strong><a href="#">20, avenue de Paris 94811 Villejuif Cedex France</a></strong>
+                                </div>
+                            </li>
+                                                                                    <li class="d-none d-sm-inline-flex">
+                                <div class="header-extra-info-text">
+                                    <label>CONTACTANOS</label>
+                                    <strong><a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></strong>
+                                </div>
+                            </li>
+                                                                                        <li>
+                                    <div class="header-extra-info-text">
+                                        <label class="text-uppercase">teléfono</label>
+                                        <strong><a href="tel:+302">+302</a></strong>
+                                    </div>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header-nav-bar mb-3 px-3 px-lg-0">
+                <div class="header-row">
+                    <div class="header-column">
+                        <div class="header-row justify-content-end">
+                            <div class="order-2 order-lg-1 header-nav header-nav-links justify-content-start" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'margin-left': '150px'}" data-sticky-header-style-deactive="{'margin-left': '0'}">
+                                <div class="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-dropdown-arrow header-nav-main-effect-3 header-nav-main-sub-effect-1">
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+    <li>
+        <a class="dropdown-item " href="../../es.html">Inicio</a>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="#">Banca Online</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../banking/current-account.html">Cuenta actual</a></li>
+            <li><a class="dropdown-item" href="../banking/saving-account.html">Cuenta de ahorro</a></li>
+            <li><a class="dropdown-item" href="../banking/mobile-banking.html">La banca móvil</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="../loans-and-credits.html">Préstamos y Créditos</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/personal-loan.html">Préstamo personal</a></li>
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/loan-without-contribution.html">Préstamo sin contribución</a></li>
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/loan-between-individuals.html">Préstamo entre particulares</a></li>
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/consumer-credit.html">El crédito al consumo</a></li>
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/car-loan.html">Préstamo de coche</a></li>
+            <li><a class="dropdown-item" href="../../en/loans-and-credits/works-credit.html">Crédito de obras</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="../insurances.html">Seguros</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../en/insurances/legal-protection-insurance.html">Seguro de protección legal</a></li>
+            <li><a class="dropdown-item" href="../../en/insurances/income-maintenance-insurance.html">Seguro de mantenimiento de ingresos</a></li>
+            <li><a class="dropdown-item" href="../../en/insurances/car-insurance.html">Seguro de auto</a></li>
+            <li><a class="dropdown-item" href="../../en/insurances/home-insurance.html">Seguro de hogar</a></li>
+            <li><a class="dropdown-item" href="../../en/insurances/loan-insurance.html">Seguro de préstamo</a></li>
+        </ul>
+    </li>
+    <li>
+        <a class="dropdown-item " href="../investment.html">Inversión</a>
+    </li>
+    <li>
+        <a class="dropdown-item " href="../credit-card.html">Tarjetas de crédito</a>
+    </li>
+</ul>
+                                    </nav>
+                                </div>
+                                <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2 mr-lg-3">
+                                <div class="header-nav-feature header-nav-features-search d-inline-flex">
+                                    <a class="btn btn-primary text-uppercase" href="../login.html">
+                                        <i class="fa fa-user-secret mr-2"></i>
+                                        Inicia Sesiòn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Seguro de hogar</h1>
+                <span class="sub-title text-dark">Asegure su hogar</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../../es.html">Inicio</a></li>
+                    <li class="active">Seguro de hogar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Seguro de hogar: ¿que dice la ley?</h2>
+                <h3>Inquilino: una obligación</h3>
+                <p>Para cualquier inquilino, la Ley N ° 89-462 de 6 de julio de 1989 especifica que está obligado a contratar un seguro contra los riesgos por los que debe responder como inquilino. Por tanto, el seguro de hogar es un requisito previo para el acceso a la vivienda y el arrendador puede solicitar un certificado anual de seguro de hogar. Este seguro garantiza una indemnización al propietario en caso de reclamación.</p>
+                <h3>Propietario: una fuerte recomendación</h3>
+                <p>La ley, a diferencia de los inquilinos, no requiere que los propietarios compren un seguro de hogar. Por otro lado, la responsabilidad civil, que cubre los daños materiales o corporales causados ​​a terceros, es fundamental. El seguro de hogar multirriesgo cubrirá el alojamiento y la propiedad de los ocupantes del alojamiento en caso de incendios, daños por agua, infracciones y otro tipo de reclamaciones.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    <footer id="footer" class="bg-color-secondary border-top-0 mt-0">
+    <div class="container py-4">
+        <div class="row py-5">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">BOLETIN INFORMATIVO</h5>
+                <p class="pr-1 text-color-light">Manténgase al día con las características y la tecnología de nuestros productos en constante evolución. Ingrese su dirección de correo electrónico y suscríbase a nuestro boletín.</p>
+                <div wire:id="AUrJgi01iscKvm2k47Kt" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;AUrJgi01iscKvm2k47Kt&quot;,&quot;name&quot;:&quot;newsletter&quot;,&quot;locale&quot;:&quot;es&quot;,&quot;path&quot;:&quot;es\/insurances\/home-insurance&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b1363953&quot;,&quot;data&quot;:{&quot;newsletterEmail&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;6233c98cb8a8402f9169ff671ed3208f1ba7d4e7217660e3808ff686ba6a8c19&quot;}}">
+                <form class="mr-4 mb-3 mb-md-0" wire:submit.prevent="sendNewsletter">
+        <div class="input-group input-group-rounded">
+            <input wire:model="newsletterEmail" class="form-control form-control-sm bg-light" placeholder="Dirección de correo electrónico" type="email">
+            <span class="input-group-append">
+                <button class="btn btn-light text-color-dark" type="submit"><strong>GO!</strong></button>
+            </span>
+        </div>
+    </form>
+</div>
+            </div>
+            <div class="col-md-6 col-lg-5 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">Enlaces</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="../../es.html" class="text-4 text-white link-hover-style-1">
+                                Inicio
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../about.html" class="text-4 text-white link-hover-style-1">
+                                Sobre nosotros
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../contact.html" class="text-4 text-white link-hover-style-1">
+                                Contacto
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../faq.html" class="text-4 text-white link-hover-style-1">
+                                FAQ
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../privacy-policy.html" class="text-4 text-white link-hover-style-1">
+                                Política de privacidad
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="../loans-and-credits.html" class="text-4 text-white link-hover-style-1">
+                                Préstamos y Créditos
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../insurances.html" class="text-4 text-white link-hover-style-1">
+                                Seguros
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../investment.html" class="text-4 text-white link-hover-style-1">
+                                Inversiones
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="../request-form.html" class="text-4 text-white link-hover-style-1">
+                                Solicitud de préstamo
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h5 class="text-3 mb-3 opacity-7">CONTÁCTENOS</h5>
+                                    <ul class="list list-icons list-icons-lg">
+                        <li class="mb-1">
+                            <i class="fa fa-phone text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="tel:+302">
+                                    +302
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-envelope text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="mailto:info@one.open-int-bank.com">
+                                    info@one.open-int-bank.com
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-dot-circle text-color-light"></i>
+                            <p class="m-0 text-color-light">
+                                20, avenue de Paris 94811 Villejuif Cedex France
+                            </p>
+                        </li>
+                                                    <li class="mb-1">
+                                <i class="fa fa-dot-circle text-color-light"></i>
+                                <p class="m-0 text-color-light">
+                                    Via Arrigo Boito, 10, 20121
+                                </p>
+                            </li>
+                                                                    </ul>
+                    <ul class="social-icons">
+                        <li class="social-icons-facebook">
+                            <a href="#" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-twitter">
+                            <a href="#" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-linkedin">
+                            <a href="#" target="_blank" title="Linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright bg-color-dark bg-color-scale-overlay bg-color-scale-overlay-1">
+        <div class="bg-color-scale-overlay-wrapper">
+            <div class="container py-2">
+                <div class="row py-4">
+                    <div class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+                        <a href="../../es.html" class="logo pr-0 pr-lg-3">
+                            <img alt="Porto Website Template" src="../../img/logo-footer.png" class="opacity-5" height="33">
+                        </a>
+                    </div>
+                    <div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <p class="text-color-light">© Copyright 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <nav id="sub-menu">
+                            <ul>
+                                <li class="border-0">
+                                    <i class="fas fa-angle-right text-color-light"></i>
+                                    <a href="../privacy-policy.html" class="ml-1 text-decoration-none text-color-light">
+                                        Política de privacidad
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+    <a href="../request-form.html" class="btn btn-sm btn-secondary" style="position:fixed;bottom:40px;right:40px;z-index:100;">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Solicita un préstamo
+    </a>
+    <a href="../register.html" class="btn btn-sm btn-primary" style="position:fixed;bottom:80px;right:40px;z-index:100;">
+        <i class="fas fa-user-plus mr-2"></i>
+        Abre tu cuenta
+    </a>
+<a href="https://api.whatsapp.com/send?phone=+302521888006&amp;text=Hello!"
+   class="float"
+   target="_blank"
+   style="position:fixed;bottom:120px;right:40px;text-align:center;font-size:15px;color:#00509D!important;z-index:100;text-decoration: none;font-weight: 400">
+
+    <i class="fab fa-whatsapp my-float" style="padding-top:5px;color: #ffffff!important;font-size:20px;width:30px;height:30px;background-color:#25d366;border-radius:50px;box-shadow: 0 0 4px #141414;"></i>
+</a>
+<!-- Vendor -->
+<script src="../../js/frontend.js"></script>
+<!-- Livewire Scripts -->
+
+<script src="../../livewire/livewireb1f3.js?id=54d078b2ce39327a1702" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        Nos gustaría recopilar datos de su dispositivo mientras utiliza este sitio web. Hacemos esto usando cookies. La recopilación de estos datos nos ayuda a brindarle la mejor experiencia, mantiene su cuenta segura, nos ayuda a brindar funciones de redes sociales y nos permite personalizar el contenido de los mensajes publicitarios y de servicios. Acepte las cookies para permitirnos recopilar sus datos de esta manera.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Aceptar
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+<!-- Mirrored from one.open-int-bank.com/es/insurances/home-insurance by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:50:25 GMT -->
+</html>

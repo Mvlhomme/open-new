@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Assurance Protection Juridique</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Bénéficiez d&#039;un accompagnement pour défendre vos droits et vos intérêts !">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Assurance Protection Juridique</h1>
+                <span class="sub-title text-dark">Bénéficiez d&#039;un accompagnement pour défendre vos droits et vos intérêts !</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Assurance Protection Juridique</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <p class="lead">En cas de litige, COEM GROUP vous accompagne et vous propose une offre couvrant l’ensemble de votre foyer ! Protégez vos intérêts et bénéficiez de l’assistance d’un juriste pour régler tous vos litiges.</p>
+                <p class="lead">Le saviez-vous ? Près de 7 français sur 10 ont déjà été confrontés à un litige, mais seulement 1 personne sur 2 déclare bien connaître ses droits. Avec l’Assurance Protection Juridique nous souhaitons vous permettre de défendre vos droits et vos intérêts en toute simplicité.</p>
+
+                <h2>Assurance Protection Juridique : en quoi cela consiste ?</h2>
+                <p>Cette assurance a été conçue pour répondre à deux besoins forts des ménages français : d’une part prévenir les litiges et d’autre part, les gérer et accompagner l’assuré dans ses démarches.</p>
+
+                <h3>Prévention</h3>
+                <p>Obtenez une réponse fiable et immédiate, anticipez le conflit et faites les bons choix juridiques :</p>
+                <ul>
+                    <li>Bénéficiez d’informations juridiques par téléphone du Lundi au Vendredi</li>
+                    <li>Faites valider juridiquement vos contrats par nos experts</li>
+                </ul>
+
+                <h3>Gestion</h3>
+                <ul>
+                    <li>Recourez à la gestion amiable des litiges, une véritable alternative face à des procédures judiciaires longues et parfois aléatoires</li>
+                    <li>Soyez accompagné tout au long des procédures judiciaires grâce à un traitement du conflit conforme aux dispositions légales</li>
+                    <li>Soyez rassuré : l&#039;assurance comprend une prise en charge des frais de justice</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    
+{% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

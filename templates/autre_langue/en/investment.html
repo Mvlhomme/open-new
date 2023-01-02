@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Investments</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Invest in OPEN BANK INTERNATIONAL">
+    <meta name="author" content="../index.html">
+    {% include 'en/head.html' %}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'en/header.html' %}
+
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Investments</h1>
+                <span class="sub-title text-dark">Invest in OPEN BANK INTERNATIONAL</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../en.html">Home</a></li>
+                    <li class="active">Investments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container pt-5">
+
+        <div class="row py-4 mb-2">
+            <div class="col-md-7 order-2">
+                <div class="overflow-hidden">
+                    <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">
+                        Professional investor
+                    </h2>
+                </div>
+                <div class="overflow-hidden mb-3">
+                    <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">
+                        Join us
+                    </p>
+                </div>
+                <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">
+                    OPEN BANK INTERNATIONAL is a credit institution and investment services provider founded in October 1992 with a European banking license. Our mission is to provide European households with transparent and competitive consumer loans, financed directly by professional investors *. Our 100% digital platform features cutting-edge technologies allowing us to offer competitive interest rates to borrowers and attractive returns to investors.
+                </p>
+                <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">
+                    We invest in depreciable household loans at fixed rate and constant monthly payments. The initial loan maturities are between 6 and 84 months, granted via the OPEN BANK INTERNATIONAL platform. Our portfolio of investments aims to provide stable and competitive returns with low volatility.
+                </p>
+                <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+                    <div class="col-lg-6">
+                        <a href="contact.html" class="btn btn-modern btn-dark mt-3">Get In Touch</a>
+                    </div>
+                    <div class="col-sm-6 text-lg-right my-4 my-lg-0">
+                        <strong class="text-uppercase text-1 mr-3 text-dark">FOLLOW US</strong>
+                                                    <ul class="social-icons float-lg-right">
+                                <li class="social-icons-facebook"><a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-icons-twitter"><a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-icons-linkedin"><a href="#" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                                            </div>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
+                <img src="../img/investments.jpg" class="img-fluid mb-2" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section class="section section-default border-0 mt-5 mb-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="1200">
+        <div class="container py-4">
+
+            <div class="row featured-boxes featured-boxes-style-4">
+                <div class="col-md-6 col-lg-4 my-2">
+                    <div class="m-0 featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1600">
+                        <div class="box-content p-0 text-left">
+                            <i class="icon-featured icon-magnifier-add icons text-12 m-0 p-0"></i>
+                            <h4 class="font-weight-bold text-color-dark">Diversification</h4>
+                            <p class="mb-0">We give you access to a new asset class allowing you to diversify your portfolio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 my-2">
+                    <div class="m-0 featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1400">
+                        <div class="box-content p-0 text-left">
+                            <i class="icon-featured icon-trophy icons text-12 m-0 p-0"></i>
+                            <h4 class="font-weight-bold text-color-dark">Efficiency</h4>
+                            <p class="mb-0">Target returns net of management fees and defaults of between + 2.5% and + 3.5% per year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 my-2">
+                    <div class="m-0 featured-box featured-box-primary featured-box-effect-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1400">
+                        <div class="box-content p-0 text-left">
+                            <i class="icon-featured icon-shield icons text-12 m-0 p-0"></i>
+                            <h4 class="font-weight-bold text-color-dark">Security</h4>
+                            <p class="mb-0">Our funds generate low volatility returns with low correlation to financial markets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="../img/parallax/parallax-2.jpg">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Ready to get the money you need to get back to the good?</h3>
+                        <p class="mb-0">OPEN BANK INTERNATIONAL offers you the best of financial service.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="about.html" target="_blank" class="btn btn-modern text-2 btn-primary">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+    </div>
+
+{% include 'en/footer.html' %}
+
+
+</div>
+    {% include 'en/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        We would like to collect data from your device while you use this website. We do this using cookies. Collecting this data helps us provide the best experience for you, keeps your account secure, helps us provide social media features and allows us to personalise advert and service message content. Please accept cookies to allow us to collect your data in this way.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Allow cookies
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+</html>

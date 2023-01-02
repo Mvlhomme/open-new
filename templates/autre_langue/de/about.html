@@ -1,0 +1,367 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - About us</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="ZUVERLÄSSIGE, problemlose Kreditvergabe">
+    <meta name="author" content="../index.html">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.html">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'css/frontend.css' %}">
+    <!-- Head Libs -->
+    <script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+    {% include 'de/header.html' %}
+
+    <div role="main" class="main">
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">About us</h1>
+                <span class="sub-title text-dark">ZUVERLÄSSIGE, problemlose Kreditvergabe</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="../de.html">Zuhause</a></li>
+                    <li class="active">About us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <div class="row text-center pb-5">
+                    <div class="col-md-9 mx-md-auto">
+                        <div class="overflow-hidden mb-3">
+                            <h1 class="word-rotator slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                                Finden Sie das richtige Darlehen für Sie
+                            </h1>
+                        </div>
+                        <div class="overflow-hidden mb-3">
+                            <p class="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Mit OPEN BANK INTERNATIONAL haben Sie einen One-Stop-Shop, der es einfacher als je zuvor macht, den richtigen Kredit für Sie zu finden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3 mb-5">
+                    <div class="col-md-8 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+                        <h3 class="font-weight-bold text-4 mb-2">Über uns</h3>
+                        <p>In den letzten 20 Jahren hat OPEN BANK INTERNATIONAL Menschen dabei geholfen, ihre finanziellen Ziele zu erreichen, indem es Lösungen für Festzins- und Zahlungsdarlehen anbietet. Mit Niederlassungen im ganzen Land sind wir Teil der Gemeinden, in denen wir tätig sind. Unsere Niederlassungen sind mit freundlichen, sachkundigen Teammitgliedern besetzt, die direkt in Ihrer Stadt leben und arbeiten. Sie verstehen Ihre Bedürfnisse und stehen Ihnen zur Verfügung, um Ihre Darlehensoptionen zu besprechen.</p>
+                    </div>
+                    <div class="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+                        <h3 class="font-weight-bold text-4 mb-2">Unsere Aufgabe</h3>
+                        <p>Wir transformieren das Bankensystem, um es fairer und transparenter zu machen. Wir machen Verbraucherkredite schneller, einfacher und billiger. Und Einsparungen nützlicher und rentabler..</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section section-primary border-0 mb-0 appear-animation" data-appear-animation="fadeIn" data-plugin-options="{'accY': -150}">
+        <div class="container">
+            <div class="row counters counters-sm pb-4 pt-3">
+                <div class="col-sm-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="counter">
+                        <i class="icons icon-user text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="30000" data-append="+">0</strong>
+                        <label class="text-4 mt-1 text-color-light">Zufriedene Kunden</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="counter">
+                        <i class="icons icon-badge text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="20">0</strong>
+                        <label class="text-4 mt-1 text-color-light">Jahre im Geschäft</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-5 mb-sm-0">
+                    <div class="counter">
+                        <i class="icons icon-graph text-color-light"></i>
+                        <strong class="text-color-light font-weight-extra-bold" data-to="42000">0</strong>
+                        <label class="text-4 mt-1 text-color-light">Credits gewährt</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0">
+                    <h2 class="text-color-dark font-weight-normal text-6 mb-2">Wo immer du willst.</h2>
+                    <p class="lead">Wenn Sie Geld ausleihen müssen, ist OPEN BANK INTERNATIONAL hier als finanzieller Nachbar, auf den Sie sich verlassen und dem Sie vertrauen können. Seit 1992 setzen wir uns dafür ein, dass unsere Nachbarn gedeihen und wachsen, indem wir ihre finanziellen Bedürfnisse unterstützen. Bei uns erhalten Sie die Stärke eines nationalen Finanzinstituts und die persönlichen Dienstleistungen lokaler Zweigstellen. Dies ist einer der Hauptgründe, warum sich Millionen von Kunden für uns entscheiden.</p>
+                </div>
+                <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 mt-sm-5" style="top: 1.7rem;">
+                    <img src="{% static 'img/generic/generic-corporate-3-1.jpg' %}" class="img-fluid position-absolute d-none d-sm-block appear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style="top: 10%; left: -50%;" alt="" />
+                    <img src="{% static 'img/generic/generic-corporate-3-2.jpg' %}" class="img-fluid position-absolute d-none d-sm-block appear-animation" data-appear-animation="expandIn" style="top: -33%; left: -29%;" alt="" />
+                    <img src="{% static 'img/generic/generic-corporate-3-3.jpg' %}" class="img-fluid position-relative appear-animation mb-2" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-color-black section-height-3 border-0 m-0">
+        <div class="container pb-2">
+            <div class="row">
+                <div class="col-lg-6 text-center text-md-left mb-5 mb-lg-0">
+                    <h2 class="text-color-light font-weight-normal text-6 mb-2">Über unsere Kunden</h2>
+                    <p class="lead text-color-light">Viele Institutionen vertrauen uns und wir haben mehr als 30.000 Kunden auf der ganzen Welt ein Lächeln geschenkt.</p>
+                    <div class="row justify-content-center my-5">
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-3.png' %}" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-4.png' %}" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-6.png' %}" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-1.png' %}" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-2.png' %}" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-8 text-center col-md-4 mb-3">
+                            <img src="{% static 'img/logos/logo-5.png' %}" class="img-fluid" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="owl-carousel owl-theme nav-style-1 stage-margin" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 1}, '1200': {'items': 1}}, 'loop': true, 'nav': false, 'dots': false, 'stagePadding': 40, 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
+                        <div>
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-light testimonial-remove-right-quote pl-md-4 mb-0">
+                                <div class="testimonial-author">
+                                    <img src="{% static 'img/clients/client-1.html' %}" class="img-fluid rounded-circle mb-0" alt="">
+                                </div>
+                                <blockquote>
+                                    <p class="text-color-light text-4 line-height-5 mb-0">Was für eine einwandfreie Arbeit Sie geleistet haben. Du hast wirklich meinen Tag gemacht. Ich danke dir sehr.</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <p><strong class="font-weight-extra-bold text-color-primary text-2">Darcia</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-light testimonial-remove-right-quote pl-md-4 mb-0">
+                                <div class="testimonial-author">
+                                    <img src="{% static 'img/clients/client-1.html' %}" class="img-fluid rounded-circle mb-0" alt="">
+                                </div>
+                                <blockquote>
+                                    <p class="text-color-light text-4 line-height-5 mb-0">Mehr als begeistert. Schneller, professioneller und klar menschlicher Service. Eine Antwort in weniger als 4 Stunden ist unglaublich!</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <p><strong class="text-color-primary font-weight-extra-bold text-2">Thierry</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-light testimonial-remove-right-quote pl-md-4 mb-0">
+                                <div class="testimonial-author">
+                                    <img src="{% static 'img/clients/client-1.html' %}" class="img-fluid rounded-circle mb-0" alt="">
+                                </div>
+                                <blockquote>
+                                    <p class="text-color-light text-4 line-height-5 mb-0">Diese Firma ist unglaublich! Sie sind schnell, höflich, leicht zugänglich und helfen mir, aus der Verschuldung herauszukommen!</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <p><strong class="text-color-primary font-weight-extra-bold text-2">Marc</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'de/footer.html' %}
+
+</div>
+    <a href="{% url 'de_request_form' %}" class="btn btn-sm btn-secondary" style="position:fixed;bottom:40px;right:40px;z-index:100;">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Darlehen beantragen
+    </a>
+    <a href="{% url 'de_register' %}" class="btn btn-sm btn-primary" style="position:fixed;bottom:80px;right:40px;z-index:100;">
+        <i class="fas fa-user-plus mr-2"></i>
+        Eröffnen Sie Ihr Konto
+    </a>
+<a href="https://api.whatsapp.com/send?phone=+302521888006&amp;text=Hello!"
+   class="float"
+   target="_blank"
+   style="position:fixed;bottom:120px;right:40px;text-align:center;font-size:15px;color:#00509D!important;z-index:100;text-decoration: none;font-weight: 400">
+
+    <i class="fab fa-whatsapp my-float" style="padding-top:5px;color: #ffffff!important;font-size:20px;width:30px;height:30px;background-color:#25d366;border-radius:50px;box-shadow: 0 0 4px #141414;"></i>
+</a>
+<!-- Vendor -->
+<script src="{% static 'js/frontend.js' %}"></script>
+<!-- Livewire Scripts -->
+
+<script src="{% static 'livewire/livewireb1f3.js' %}" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Demande de crédit</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Demande de crédit rapide">
+    <meta name="author" content="{% url 'fr' %}">
+    {% include 'fr/head.html' %}
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Demande de crédit</h1>
+                <span class="sub-title text-dark">Demande de crédit rapide</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Demande de crédit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="home-intro bg-color-secondary mb-0" id="home-intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>
+                        Commençons cette démarche ensemble
+                        <span>Lorsque vous avez besoin d&#039;un peu d&#039;aide financière dans votre monde, nous sommes là pour vous aider.</span>
+                    </p>
+                    <p>
+                        <em>
+                            Prêt hypothécaire: taux d&#039;intérêt fixe de 1,12%. 1.000.000 € pour 30 ans
+                        </em>
+                    </p>
+                    <p>
+                        <em>
+                            Prêt personnel: taux d&#039;intérêt fixe de 1,25%. 1.000.000 € pour 30 ans
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section bg-color-grey section-height-3 border-0 mt-0 mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <aside class="sidebar mt-2">
+                        <h5 class="font-weight-bold">A votre attention</h5>
+                        <ol class="pl-3 text-primary">
+                            <li>Tous les champs sont obligatoires</li>
+                            <li>Vérifiez bien toutes vos données avant de soumettre le formulaire.</li>
+                            <li>Le montant du prêt doit être accompagné de la devise de votre choix.</li>
+                            <li>Veuillez indiquer le nombre de mois pour la durée de remboursement.</li>
+                        </ol>
+                    </aside>
+                </div>
+                <div class="col-lg-9 order-1 order-lg-2">
+
+                    <div class="overflow-hidden mb-1">
+                        <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">Formulaire de demande</strong></h2>
+                    </div>
+                    <div class="overflow-hidden mb-4 pb-3">
+                        <p class="mb-0 text-primary">Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager</p>
+                    </div>
+                    {% include 'fr/alerts.html' %}
+                    <div>
+    <form action="{% url 'fr_request_form' %}" method="POST">
+        {% csrf_token %}
+                <div class="form-row">
+            <div class="form-group col-lg-6">
+                <label for="name" class="required font-weight-bold text-dark text-2">Nom complet</label>
+                <input id="name" type="text" name="nom" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="email" class="required font-weight-bold text-dark text-2">Adresse Email</label>
+                <input id="email" type="email" name="email" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="telephone" class="required font-weight-bold text-dark text-2">N° de Téléphone <em class="text-primary font-weight-normal">(avec l&#039;indicatif)</em></label>
+                <input id="telephone" type="tel" name="telephone" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="whatsapp" class="required font-weight-bold text-dark text-2">N° Whatsapp <em class="text-primary font-weight-normal">(avec l&#039;indicatif)</em></label>
+                <input id="whatsapp" type="tel" name="whatsapp" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="country" class="required font-weight-bold text-dark text-2">Pays</label>
+                <input id="country" type="text" name="pays" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="city" class="required font-weight-bold text-dark text-2">Ville</label>
+                <input id="city" type="text" name="ville" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="amount" class="required font-weight-bold text-dark text-2">Montant du crédit <em class="text-primary font-weight-normal">(avec la devise)</em></label>
+                <input id="amount" type="text" name="montant_du_credit" class="form-control ">
+                            </div>
+            <div class="form-group col-lg-6">
+                <label for="duration" class="required font-weight-bold text-dark text-2">Durée de remboursement <em class="text-primary font-weight-normal">(mois)</em></label>
+                <input id="duration" type="text" name="duree_de_remboursement" class="form-control ">
+                            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Valider" class="btn btn-primary btn-modern">
+            </div>
+        </div>
+    </form>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Quel travail impeccable vous avez fait. Vous avez vraiment fait ma journée. Merci beaucoup.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Plus que ravi. Service rapide, professionnel et clairement humain. Une réponse en moins de 4 heures est assez incroyable!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Cette entreprise est incroyable! Ils sont rapides, courtois, facilement accessibles et ils m&#039;aident à sortir de ma dette!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey content-align-center call-to-action-in-footer">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col-md-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h2 class="font-weight-normal text-7 mb-0">Découvrez notre assurance emprunteur</h2>
+                        <p class="mb-0">Vous avez des questions sur les assurances emprunteurs de COEM GROUP ?</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'fr_contact' %}" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3 mt-5">Contact us</a><span class="arrow hlb d-none d-md-block" data-appear-animation="rotateInUpLeft" style="top: -90px; left: 70%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

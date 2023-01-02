@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Compte Courant</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Produits de comptes courants">
+    <meta name="author" content="../../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Compte Courant</h1>
+                <span class="sub-title text-dark">Produits de comptes courants</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Compte Courant</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col">
+                <h2>Produits de comptes courants</h2>
+                <p>D&#039;une large gamme de produits de compte courant à des solutions bancaires pratiques telles que les services bancaires par Internet, les services bancaires mobiles et les paiements d&#039;impôts, nous rendons vos opérations bancaires faciles et sans tracas.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section bg-color-grey section-height-3 border-0 mt-0 mb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="text-uppercase">Premium</h3>
+                    <h4>Compte Smart Business 2.0</h4>
+                    <ul>
+                        <li>Un compte Smart Business spécial avec des privilèges spéciaux pour les entreprises haut de gamme</li>
+                        <li>Exigence de solde moyen trimestriel minimum de 10 000 000 sans autres frais que d&#039;entretien.</li>
+                        <li>Retours illimités de chèques, feuilles de chèques, transactions en succursale, traite à la demande / ordre de paiement</li>
+                    </ul>
+                    <a href="{% url 'fr_register' %}" class="btn btn-secondary">Ouvrez votre compte</a>
+                </div>
+                <div class="col">
+                    <img src="{% static 'ui/images/smart_business.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-dark section-height-3 border-0 mt-0 mb-0 text-color-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <img src="{% static 'ui/images/digital_current.jpg' %}" alt="">
+                </div>
+                <div class="col">
+                    <h3 class="text-uppercase text-color-white">Special</h3>
+                    <h4 class="text-color-white">Digital Current Account</h4>
+                    <ul>
+                        <li>Un compte unique adapté aux clients qui préfèrent effectuer toutes les transactions numériquement</li>
+                        <li>Aucune exigence de solde minimum</li>
+                        <li>Pas de frais sur les transactions en ligne effectuées via Internet Banking ou Mobile Banking</li>
+                    </ul>
+                    <a href="{% url 'fr_register' %}" class="btn btn-secondary">Ouvrez votre compte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-color-secondary section-height-3 border-0 mt-0 mb-0 text-color-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="text-uppercase text-color-white">Trade</h3>
+                    <h4 class="text-color-white">Trade Basic</h4>
+                    <ul>
+                        <li>Fongibilité pour maintenir un débit mensuel minimum de 5000 ou un solde mensuel moyen de 50000</li>
+                        <li>Frais de 0,12% sur les transactions commerciales telles que l&#039;importation anticipée, l&#039;importation directe et les factures</li>
+                        <li>Transactions non monétaires gratuites</li>
+                    </ul>
+                    <a href="{% url 'fr_register' %}" class="btn btn-primary">Ouvrez votre compte</a>
+                </div>
+                <div class="col">
+                    <img src="{% static 'ui/images/trade_basic.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+{% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+
+</body>
+
+</html>

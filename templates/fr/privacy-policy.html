@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Politique de confidentialité</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Politique de confidentialité">
+    <meta name="author" content="../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Politique de confidentialité</h1>
+                <span class="sub-title text-dark">Politique de confidentialité</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Politique de confidentialité</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container py-4">
+
+        <div class="row">
+            <div class="col">
+
+                <p class="lead">
+                    COEM GROUP is committed to respecting the individual rights of our customers. We are providing this privacy notice to inform you of our privacy and security practices regarding our relationship with you.
+                </p>
+                <h2 class="font-weight-normal text-7 mb-2">PRIVACY POLICY – <strong class="font-weight-extra-bold">ONLINE</strong></h2>
+                <p>This section describes COEM GROUP’s practices regarding information we receive about you during visits to this web site. The amount and type of information we receive depends on how you use this site. Please take a few minutes to read this supplement to our Privacy Policy so you may understand how your personal information is used and the measures we take to protect your personal information.</p>
+
+                <hr class="solid my-5">
+
+                <h2>NORMAL WEB SITE USAGE</h2>
+                <p>You can visit our web site to read product, investment, and company information, or use our on-line tools without revealing any personal information. The only information we collect and store during normal web site usage is the name of your Internet service provider, the web site you last visited, the pages you request, the date and time of those requests and the number of visits you made to our website.</p>
+                <p>We use this information to generate statistics and measure website activity in order to improve the usefulness of customer visits to our website. This same information may be shared with third parties in order to provide these services or to analyze, store, or aggregate the information. It may also be shared with other third parties, working with us to improve the services of COEM GROUP or our website. During normal web site usage, we do not collect or store personally identifiable information such as name, mailing address, email address, phone number, or Social Security number.</p>
+
+                <h2>ON-LINE COLLECTION OF PERSONALLY IDENTIFIABLE INFORMATION</h2>
+                <p>Occasionally, COEM GROUP will request personally identifiable information in order to provide the web site visitor with a service or correspondence (e.g., promotions and mailed brochures), or access to services like the WCC MyAccount portal. This information, such as name, mailing address, email address, type of request, and possibly additional information, is collected and stored in a manner appropriate to the nature of the request as determined by COEM GROUP and is used to fulfill your request. Whenever we request such information, we will clearly explain how it will be used. If you tell us that the information should not be used as a basis for further contact, we will respect your request. The information you provide is used by COEM GROUP to improve the services we provide you. This information may also be provided to agencies for use on behalf of COEM GROUP in accordance with our Privacy Policy.</p>
+                <p>Please note that COEM GROUP’s website may provide links to third party sites not controlled by COEM GROUP. We suggest that you check the specific privacy policy of any site before providing any personally identifiable information.</p>
+
+                <h2>ELECTRONIC MAIL SENT TO US THAT CONTAINS PERSONAL INFORMATION</h2>
+                <p>Internet users may decide to send COEM GROUP personally identifying information, for example, in an electronic mail message containing information about your COEM GROUP account. COEM GROUP will only use this information to identify the user as a COEM GROUP customer and to determine how to respond to the electronic mail. We will use this information for the purpose identified in the email message and to enhance our understanding of you in order to improve our services to you.</p>
+
+                <h2>COEM GROUP’S INTERNET SERVICES</h2>
+                <p>To use COEM GROUP’s Internet services, such as WCC MyAccount access or Electronic Funds Transfer or Enrollment, we require a certain amount of personally identifying information (e.g., name, Social Security number, account number and other applicable information) we can use to verify you as a COEM GROUP customer. We use this to identify and access data in the existing relationship we have with you in order to provide you with the requested services. We request email addresses as an alternate means of contacting you. Providing your email address is optional, except when you request an Internet delivered service, then it is necessary for us to have your email address in order to honor your request. We may also use this information to enhance our understanding of you and improve our services.</p>
+
+                <h2>WHAT ARE COOKIES?</h2>
+                <p>A “cookie” is a small line of text that is stored within your browser when you visit a cookie-enabled website. As you browse the Web, cookie-enabled sites will send cookies to your browser, along with pages. Your browser probably has options that will let you control whether the browser accepts cookies, rejects cookies, or notifies you each time a cookie is sent to you.</p>
+                <p>If your browser is set to reject cookies, cookie-enabled websites will not recognize you when you return. This provides you with anonymity, but it also makes it very difficult to offer you customized services. It is also less secure than using cookies, because all of your specific data must be sent to the website each time you view a page. Accepting cookies means your private data can stay at the Web server, and the only information transmitted over the Internet is your ID cookie.</p>
+                <p>If your browser is set to accept cookies, any cookies that are sent to your browser are stored in your computer for a period of time. There are a few different types of cookies. A “session” cookie is stored only in your computer’s working memory (RAM) and only lasts for your browsing session. When you close all of your browser’s windows, or when you shut down your computer, the session cookie disappears forever. A “permanent” cookie is stored on your computer’s hard drive until a specified date, which could be tomorrow, next week, or 10 years from now. Permanent cookies stay on your computer until either a) they expire, b) they are overwritten with newer cookies, c) you manually remove them.</p>
+                <p>We use permanent cookies to supply visitors to our site with a customized experience. These cookies do not involve personally identifiable information. We also use session cookies to customize your experience during a session, to aid in your navigation and use of the site, to develop generic web site metrics and other similar uses.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <title>Mon Compte - COEM GROUP</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+        <link rel="apple-touch-icon" href="https://one.open-int-bank.com/img/apple-touch-icon.png">
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+        <link href="https://one.open-int-bank.com/client_assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/animate/animate.css" rel="stylesheet" type="text/css"/>
+        <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/promise-polyfill.js"></script>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css"/>
+        <!--  BEGIN CUSTOM STYLE FILE  -->
+        <link rel="stylesheet" type="text/css" href="https://one.open-int-bank.com/client_assets/plugins/dropify/dropify.min.css">
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/users/account-setting.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/assets/css/users/user-profile.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/select2/select2.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://one.open-int-bank.com/client_assets/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+        <link href="https://one.open-int-bank.com/client_assets/plugins/noUiSlider/nouislider.min.css" rel="stylesheet" type="text/css">
+        <link href="https://one.open-int-bank.com/client_assets/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+        <link href="https://one.open-int-bank.com/client_assets/plugins/noUiSlider/custom-nouiSlider.css" rel="stylesheet" type="text/css">
+        <link href="https://one.open-int-bank.com/client_assets/plugins/bootstrap-range-Slider/bootstrap-slider.css" rel="stylesheet" type="text/css">
+        <!--  END CUSTOM STYLE FILE  -->
+        <style>
+            @media (min-width: 992px) {
+                .topbar-nav.header #topbar {
+                    background: #EC0000!important;
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu:not(:last-child) > a {
+                    border-right: 1px solid #EC0000;
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu.active > a > div svg:not(.feather-chevron-down) {
+                    color: #1A1A1A;
+                    fill: rgba(255, 213, 1, 0.2);
+                }
+
+                .topbar-nav.header nav#topbar ul.menu-categories li.menu.active > a > div span {
+                    color: #1A1A1A;
+                    font-weight: 700;
+                }
+            }
+
+            .widget-account-invoice-one .invoice-box h5 {
+                color: #EC0000;
+            }
+
+            .btn-danger {
+                color: #fff !important;
+                background-color: #EC0000;
+                border-color: #EC0000;
+            }
+
+            .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media .media-body h6 {
+                color: #EC0000;
+            }
+
+            .widget-activity-four .tm-action-btn button {
+                color: #EC0000;
+            }
+
+            .widget-activity-three .mt-container {
+                height: 230px;
+            }
+
+            .user-profile .widget-content-area .user-info-list ul.contacts-block {
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body class="sidebar-noneoverflow">
+        <!--  BEGIN NAVBAR  -->
+        <div class="header-container">
+            {% include 'fr/header_compte.html' %}
+        </div>
+        <!--  END NAVBAR  -->
+        <!--  BEGIN MAIN CONTAINER  -->
+        <div class="main-container" id="container">
+            <div class="overlay"></div>
+            <div class="search-overlay"></div>
+            <!--  BEGIN TOPBAR  -->
+            {% include 'fr/topbar.html' %}
+            <!--  END TOPBAR  -->
+            <!--  BEGIN CONTENT AREA  -->
+            <div id="content" class="main-content">
+                <div class="layout-px-spacing">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="font-weight-lighter">Mon Profil</h3>
+                        </div>
+                    </div>
+                    <div class="row layout-spacing">
+                        <!-- Content -->
+                        <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 layout-top-spacing">
+                            <div class="user-profile layout-spacing">
+                                <div class="widget-content widget-content-area">
+                                    <div class="d-flex justify-content-between">
+                                        <h3 class="">Info</h3>
+                                        <a href="#" class="mt-2 edit-profile">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3">
+                                                <path d="M12 20h9"></path>
+                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="text-center user-info">
+                                        <img src="https://one.open-int-bank.com/client_assets/assets/img/90x90.jpg" alt="avatar">
+                                        <p class="">{{user.full_name}}</p>
+                                    </div>
+                                    <div class="user-info-list">
+                                        <div class="">
+                                            <ul class="contacts-block list-unstyled">
+                                                <li class="contacts-block__item">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee">
+                                                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                                                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                                                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                                                    </svg>
+                                                </li>
+                                                <li class="contacts-block__item">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                    -
+                                
+                                                </li>
+                                                <li class="contacts-block__item">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                        <circle cx="12" cy="10" r="3"></circle>
+                                                    </svg>
+                                                    {{user.city}}, {{user.pays}}
+                                
+                                                </li>
+                                                <li class="contacts-block__item">
+                                                    <a href="mailto:example@mail.com">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                                        </svg>
+                                                        {{user.email}}
+                                    
+                                                    </a>
+                                                </li>
+                                                <li class="contacts-block__item">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                                    </svg>
+                                                    {{user.phone_number}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-6 col-md-7 col-sm-12 layout-top-spacing">
+                            <form method="POST" action="{% url 'fr_profile' %}" accept-charset="UTF-8">
+                               {% csrf_token %}
+                                <div class="skills layout-spacing ">
+                                    <div class="widget-content widget-content-area">
+                                        <h3 class="">Identité</h3>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="name" class="control-label ">Nom</label>
+                                                    {{user_form.first_name}}
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name" class="control-label ">Prenom</label>
+                                                    {{user_form.last_name}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                <div class="bio layout-spacing ">
+                                    <div class="widget-content widget-content-area">
+                                        <h3 class="">Profil</h3>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="job" class="control-label ">Job</label>
+                                                    {{profile_form.job}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="birthday" class="control-label ">Date de Naissance</label>
+                                                    {{profile_form.birthday}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="gender" class="control-label ">Gender</label>
+                                                    {{profile_form.sexe}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="nationality" class="control-label ">Nationality</label>
+                                                    {{profile_form.nationality}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="country" class="control-label ">Country</label>
+                                                    {{user_form.pays}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="city" class="control-label ">City</label>
+                                                    {{user_form.city}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="address" class="control-label ">Address</label>
+                                                    {{profile_form.adresse}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="phone" class="control-label ">Telephone</label>
+                                                    {{user_form.phone_number}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="postal_code" class="control-label ">Postal Code</label>
+                                                    {{profile_form.code_postale}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="preferred_language" class="control-label ">Preferred Language</label>
+                                                    {{user_form.langue}}
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row layout-top-spacing">
+                                    <div id="fuSingleFile" class="col-lg-12 layout-spacing">
+                                        <div class="statbox widget box box-shadow">
+                                            <div class="widget-header">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                        <h4>Pièce d &#039;Identité</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content widget-content-area">
+                                                <div class="custom-file-container" data-upload-id="myFirstImage">
+                                                    <label>
+                                                        Télécharger <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">x</a>
+                                                    </label>
+                                                    <label class="custom-file-container__custom-file">
+                                                        <input class="custom-file-container__custom-file__custom-file-input" accept="image/*" maxlength="10485760" name="profile_picture" type="file">
+                                                        <input type="hidden" name="profile_picture" value="10485760"/>
+                                                        <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                                    </label>
+                                                    <div class="custom-file-container__image-preview"></div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                                <button type="submit" id="multiple-messages" class="btn btn-danger float-right mb-4">Sauvegarder les modifications</button>
+                                            </div>
+                            </form>
+                            
+                                
+
+                                
+                            
+                            </div>
+                    </div>
+                </div>
+                <!--  END CONTENT AREA  -->
+            </div>
+            <!-- END MAIN CONTAINER -->
+            <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+            <script src="https://one.open-int-bank.com/client_assets/assets/js/libs/jquery-3.1.1.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/bootstrap/js/popper.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/assets/js/app.js"></script>
+            <script>
+                $(document).ready(function() {
+                    App.init();
+                });
+            </script>
+            <script src="https://one.open-int-bank.com/client_assets/assets/js/custom.js"></script>
+            <!-- END GLOBAL MANDATORY SCRIPTS -->
+            <script src="https://one.open-int-bank.com/client_assets/assets/js/scrollspyNav.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/sweetalert2.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/sweetalerts/custom-sweetalert.js"></script>
+            <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+            <script src="https://one.open-int-bank.com/client_assets/plugins/dropify/dropify.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/blockui/jquery.blockUI.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/assets/js/users/account-settings.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/file-upload/file-upload-with-preview.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/select2/select2.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/select2/custom-select2.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/flatpickr/flatpickr.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/noUiSlider/nouislider.min.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/flatpickr/custom-flatpickr.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/noUiSlider/custom-nouiSlider.js"></script>
+            <script src="https://one.open-int-bank.com/client_assets/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js"></script>
+            <script>
+                var firstUpload = new FileUploadWithPreview('myFirstImage')
+                var f1 = flatpickr(document.getElementById('basicFlatpickr'));
+            </script>
+            <!--  END CUSTOM SCRIPTS FILE  -->
+    </body>
+</html>

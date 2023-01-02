@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>My Account | ONE BANK INTERNATIONAL </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../img/apple-touch-icon.html">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="{% static 'ui/css/auth.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="form">
+<div class="form-container">
+    <div class="form-form">
+        <div class="form-form-wrap">
+            <div class="form-container">
+                <div class="form-content">
+
+                    
+    <h1 class="">Password Recovery</h1>
+    <p class="signup-link">Enter your email and instructions will sent to you!</p>
+        <form class="text-left" method="POST" action="https://one.open-int-bank.com/en/password/email">
+        <div class="form">
+            <input type="hidden" name="_token" value="qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT">            <div id="email-field" class="field-wrapper input">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus placeholder="E-Mail Address">
+                            </div>
+            <div class="d-sm-flex justify-content-between">
+                <div class="field-wrapper">
+                    <button type="submit" class="btn btn-auth" value="">Reset</button>
+                </div>
+            </div>
+
+            <div class="field-wrapper terms_condition mt-5">
+                <div class="n-chk new-checkbox checkbox-outline-primary">
+                    <a href="{% url 'en_login' %}">  Back to Login page </a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+                    <p class="terms-conditions mt-3">© 2019 All Rights Reserved. <a href="{% url 'en' %}">ONE BANK INTERNATIONAL</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-image">
+        <div class="l-image" style="background-image: url({% static 'img/online-banking.png' %});" >
+        </div>
+    </div>
+</div>
+<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+<script src="{% static 'ui/js/auth.js' %}"></script>
+<script>
+    feather.replace()
+</script>
+</body>
+
+</html>

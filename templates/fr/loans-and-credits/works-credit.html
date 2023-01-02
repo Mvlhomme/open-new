@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Crédit travaux</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="DES PRÊTS FIABLES ET SANS TRACAS">
+    <meta name="author" content="{% url 'fr' %}">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Crédit travaux</h1>
+                <span class="sub-title text-dark">DES PRÊTS FIABLES ET SANS TRACAS</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Crédit travaux</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <div class="container">
+
+        <div class="row pt-5">
+            <div class="col">
+
+                <p class="lead">Votre logement a besoin d’un coup de neuf ? Vous souhaitez agrandir ? Oui, mais les travaux de rénovation ou d’éco-rénovation, tout comme les travaux d’aménagement, ont souvent un coût important. Pour concrétiser votre projet, optez pour un crédit travaux ! COEM GROUP vous accompagne, vous conseille et vous propose un prêt travaux pas cher, que vous pouvez contracter en ligne en quelques minutes seulement. Focus sur ce type de prêt consommation !</p>
+
+                <h2>Qu&#039;est-ce qu’un crédit travaux ?</h2>
+                <p>Le prêt travaux est un type de prêt personnel qui peut être affecté à la réalisation des travaux, c’est-à-dire qui ne pourra être utilisé que pour l’accomplissement desdits travaux. Cette solution d&#039;emprunt est d’ailleurs de plus en plus plébiscitée par les ménages qui souhaitent embellir ou rénover leur habitation. D’autant plus qu’elle s’applique aussi bien à une résidence principale qu’à une résidence locative ou secondaire.</p>
+                <p>Octroyé par une banque ou un établissement de crédit, le crédit travaux appartient à la catégorie des crédits à la consommation. Le crédit travaux permet à l’emprunteur de financer des travaux de quelque nature que ce soit. Il peut par exemple s’agir de :</p>
+                <ul>
+                    <li>Travaux d&#039;entretien (toiture, canalisations, jardin, parc de stationnement, électricité...) ;</li>
+                    <li>Travaux d&#039;aménagement (combles, cuisine, véranda, salle de bains, etc.) ;</li>
+                    <li>Travaux d’agrandissement (extension par le biais d’une véranda, surélévation du logement, aménagement des combles...) ;</li>
+                    <li>Travaux de décoration (peinture, crépis, tapisserie...);</li>
+                    <li>Travaux de rénovation ou d&#039;amélioration de la performance énergétique (isolation des combles, isolation du toit, remplacement de fenêtres, amélioration du système de chauffage...).</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+    {% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

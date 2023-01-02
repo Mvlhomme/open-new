@@ -1,0 +1,436 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>COEM GROUP - Prêts et Crédits</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="Nos offres de services en matière de prêt et crédit">
+    <meta name="author" content="../index.html">
+    {% include 'fr/head.html' %}
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+{% include 'fr/header.html' %}
+
+    <div role="main" class="main">
+
+                    <section class="page-header page-header-modern bg-color-light-scale-1 page-header-md mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="text-dark">Prêts et Crédits</h1>
+                <span class="sub-title text-dark">Nos offres de services en matière de prêt et crédit</span>
+            </div>
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right">
+                    <li><a href="{% url 'fr' %}">Accueil</a></li>
+                    <li class="active">Prêts et Crédits</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <section class="bg-color-grey-scale-3">
+    <div class="container pt-2">
+        <div class="row mt-5 mb-0 pb-5">
+            <div class="col-lg-6 pr-5">
+                <h2 class="font-weight-normal text-6 mb-2 pb-1">Calculateur de paiement</h2>
+                <p>Utilisez le calculateur de paiement pour déterminer le paiement mensuel de votre prêt. Ce ne sont que des exemples, le montant réel du prêt sera déterminé lors de la demande.</p>
+                <p class="lead">
+                    Estimez votre paiement mensuel de prêt
+                </p>
+                <p class="text-primary">Entrez le montant du prêt ainsi que votre devise et la durée (en mois) du remboursement et obtenez une extimation du paiement mensuel correspondant.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="card" data-controller="calculator">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="currency" class="required font-weight-bold text-dark text-2">Devise</label>
+                            <input data-calculator-target="currency" data-action="input->calculator#calculate" id="currency" type="text" class="form-control" placeholder="Exemple : EURO">
+                            <span class="text-danger text-1" data-calculator-target="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount" class="required font-weight-bold text-dark text-2">Montant du crédit</label>
+                            <input data-calculator-target="amount" data-action="input->calculator#calculate" id="amount" type="text" class="form-control" placeholder="Exemple : 25000">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration" class="required font-weight-bold text-dark text-2">Durée de remboursement <em class="text-primary">(mois)</em></label>
+                            <input data-calculator-target="duration" data-action="input->calculator#calculate" id="duration" type="text" class="form-control" placeholder="Exemple : 76">
+                                                    </div>
+                    </div>
+                    <div class="card-footer bg-color-grey text-right">
+                        <p class="text-2 mb-0">Paiement Mensuel</p>
+                        <p class="text-7 mb-0" data-calculator-target="output"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container py-4">
+
+        <div class="row py-3 justify-content-center">
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_personal_loan' %}" class="text-decoration-none">
+                                <img src="{% static 'img/personal-loan.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_personal_loan' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Prêt personnel
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Un prêt personnel est un crédit que l’on dit « non affecté ». En effet, le montant emprunté d’un prêt personnel ne correspond pas à l’achat précis d’un bien (voiture, moto, immobilier, etc.).
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_personal_loan' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="250">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_loan_without_contribution' %}" class="text-decoration-none">
+                                <img src="{% static 'img/loan-without-contribution.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_loan_without_contribution' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Prêt sans apport
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Vous avez un projet d&#039;achat de logement ? Rassurez-vous : emprunter sans apport est compliqué, mais certainement pas impossible.
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_loan_without_contribution' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_loan_between_individuals' %}" class="text-decoration-none">
+                                <img src="{% static 'img/loan-between-individuals.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_loan_between_individuals' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Prêt entre particuliers
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">Le crédit ou prêt entre particuliers, ou PAP/P2P, est aussi appelé le crédit sans banquier, car généralement les organismes de prêt entre particuliers ne sont pas des organismes agréés ou des banques.</p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_loan_between_individuals' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_consumer_credit' %}" class="text-decoration-none">
+                                <img src="{% static 'img/consumer-credit.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_consumer_credit' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Crédit à la consommation
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">Le crédit à la consommation est un prêt qui concerne les opérations autres que celles relatives à l&#039;immobilier. Il répond plus particulièrement à un besoin de trésorerie d’un emprunteur souhaitant financer l’achat de biens de consommation.</p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_consumer_credit' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_car_loan' %}" class="text-decoration-none">
+                                <img src="{% static 'img/car-loan.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_car_loan' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Prêt Auto
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Vous avez l’intention d’acquérir un véhicule, mais comme une grande majorité de ménages, vous ne disposez pas du capital nécessaire à son financement ?
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_car_loan' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-8 col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
+                <article>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{% url 'fr_works_credit' %}" class="text-decoration-none">
+                                <img src="{% static 'img/works-credit.jpg' %}" class="img-fluid hover-effect-2 mb-3" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <a href="{% url 'fr_works_credit' %}" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                    Crédit travaux
+                                </a>
+                            </h4>
+                            <p class="mb-2 lead text-4">
+                                Votre logement a besoin d’un coup de neuf ? Vous souhaitez agrandir ? Oui, mais les travaux de rénovation ou d’éco-rénovation, tout comme les travaux d’aménagement, ont souvent un coût important.
+                            </p>
+                            <p class="text-2">
+                                <a href="{% url 'fr_works_credit' %}">
+                                    En savoir plus
+                                    <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="section bg-color-primary section-height-3 border-0 mt-4 mb-0">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 py-3 mx-md-auto">
+                    <div class="row pt-2 clearfix">
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInRightShorter">
+                                <div class="feature-box-icon">
+                                    <i class="icon-user-following icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Un crédit juste</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        100% des intérêts sont reversés à nos investisseurs professionnels (particuliers et personnes morales)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter">
+                                <div class="feature-box-icon">
+                                    <i class="icon-clock icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Un crédit rapide</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        A réception de votre dossier complet, COEM GROUP peut vous faire une réponse dans les 24h ouvrées par SMS dans le cas d’une acceptation, et par email dans le cas d’un refus.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 reverse appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                                <div class="feature-box-icon">
+                                    <i class="icon-calculator icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">Un crédit transparent</h4>
+                                    <p class="mb-4 text-color-light opacity-6">
+                                        100% de nos clients bénéficient d’un crédit à taux fixe et à échéance de remboursement fixe. Aucun frais caché
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+                                <div class="feature-box-icon">
+                                    <i class="icon-mouse icons text-color-light"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="mb-2 text-5 text-color-light">100% En ligne</h4>
+                                    <p class="mb-4 text-color-light opacity-6">Remplir votre demande en ligne ne prend que quelques minutes. Une fois soumis, gardez un œil sur votre boîte de réception pour les prochaines étapes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Quel travail impeccable vous avez fait. Vous avez vraiment fait ma journée. Merci beaucoup.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Plus que ravi. Service rapide, professionnel et clairement humain. Une réponse en moins de 4 heures est assez incroyable!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Cette entreprise est incroyable! Ils sont rapides, courtois, facilement accessibles et ils m&#039;aident à sortir de ma dette!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="{% static 'img/clients/client-1.html' %}" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+{% include 'fr/footer.html' %}
+
+</div>
+    {% include 'fr/racourcis.html' %}
+</body>
+</html>

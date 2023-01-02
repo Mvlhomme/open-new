@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<!-- Mirrored from one.open-int-bank.com/bg by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:41:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ONE BANK INTERNATIONAL - Welcome</title>
+    <meta name="keywords" content="loan, credit, prêt, crédit" />
+    <meta name="description" content="ONE BANK INTERNATIONAL - Най-доброто от онлайн кредит">
+    <meta name="author" content="index.html">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.html">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/frontend.css">
+    <!-- Head Libs -->
+    <script src="vendor/modernizr/modernizr.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script>
+
+        (() => {
+            const application = Stimulus.Application.start()
+
+            application.register("calculator", class extends Stimulus.Controller {
+                static targets = [ "currency", "amount", "duration", "output", "error" ]
+
+                calculate() {
+                    let currency = this.currencyTarget.value
+                    let amount = parseFloat(this.amountTarget.value)
+                    let duration = parseInt(this.durationTarget.value)
+                    let monthly = parseFloat(`${(amount + (amount * 0.03))}`) / duration
+
+                    if (!isNaN(parseInt(currency))) {
+                        this.errorTarget.textContent = 'Incorrect format'
+                    } else {
+                        this.errorTarget.textContent = ''
+                    }
+
+                    if (isNaN(monthly)) {
+                        this.outputTarget.textContent = 0
+                    } else {
+                        this.outputTarget.textContent = Math.round(monthly * 100) / 100 + ' ' + currency
+                    }
+                }
+            })
+        })()
+    </script>
+</head>
+<body class="" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+
+<div class="body">
+    <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 135, 'stickySetTop': '-135px', 'stickyChangeLogo': true}">
+    <div class="alert bg-color-tertiary mb-0 text-white text-center alert-dismissible" role="alert" style="border-radius: 0!important;background-color: #1A1A1A!important;">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <a href="#" class="text-white" style="text-decoration: none">
+            <strong>COVID-19 Support : </strong> Как да банкирате от вкъщи, да управлявате сметката си, да извършвате преводи, да получавате кредитната си карта.
+        </a>
+    </div>
+    <div class="header-body border-color-secondary border-bottom-0 box-shadow-none" data-sticky-header-style="{'minResolution': 0}" data-sticky-header-style-active="{'background-color': '#f7f7f7'}" data-sticky-header-style-deactive="{'background-color': '#FFF'}">
+        <div class="header-top header-top-borders bg-color-primary">
+            <div class="container h-100">
+                <div class="header-row h-100">
+    <div class="header-column justify-content-start">
+        <div class="header-row">
+            <nav class="header-nav-top">
+                <ul class="nav nav-pills">
+                    <li class="nav-item nav-item-borders py-2 d-sm-inline-flex">
+                        <a class="nav-link pl-0 text-color-white" href="bg/about.html">
+                            <i class="fas fa-angle-right"></i> За нас
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-borders py-2 d-lg-inline-flex">
+                        <a class="nav-link text-color-white" href="bg/contact.html">
+                            <i class="fas fa-angle-right"></i> Свържете се с нас
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header-column justify-content-end">
+        <div class="header-row">
+            <nav class="header-nav-top">
+                <ul class="nav nav-pills">
+                    <li class="nav-item dropdown nav-item-left-border d-sm-block">
+                        <a class="nav-link text-color-white" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://flagicons.lipis.dev/flags/4x3/bg.svg" class="flag flag-us" alt="Bulgarian" />
+                            български
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="de" href="de.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" class="flag flag-es" alt="Deutsch" />
+                                    Deutsch
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="en" href="en.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" class="flag flag-es" alt="English" />
+                                    English
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="es" href="es.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" class="flag flag-es" alt="español" />
+                                    español
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="fr" href="fr.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" class="flag flag-es" alt="français" />
+                                    français
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="hu" href="hu.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/hu.svg" class="flag flag-es" alt="magyar" />
+                                    magyar
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="nl" href="nl.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/nl.svg" class="flag flag-es" alt="Nederlands" />
+                                    Nederlands
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="pl" href="pl.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/pl.svg" class="flag flag-es" alt="polski" />
+                                    polski
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="pt" href="pt.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/pt.svg" class="flag flag-es" alt="português" />
+                                    português
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="ro" href="ro.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/ro.svg" class="flag flag-es" alt="română" />
+                                    română
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sk" href="sk.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/sk.svg" class="flag flag-es" alt="slovenčina" />
+                                    slovenčina
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sl" href="sl.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/sl.svg" class="flag flag-es" alt="slovenščina" />
+                                    slovenščina
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="sv" href="sv.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/se.svg" class="flag flag-es" alt="svenska" />
+                                    svenska
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="0" href="index.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" class="flag flag-es" alt="Türkçe" />
+                                    Türkçe
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="cs" href="cs.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/cz.svg" class="flag flag-es" alt="čeština" />
+                                    čeština
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="el" href="el.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/gr.svg" class="flag flag-es" alt="Ελληνικά" />
+                                    Ελληνικά
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="bg" href="bg.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/bg.svg" class="flag flag-es" alt="български" />
+                                    български
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="ru" href="ru.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/ru.svg" class="flag flag-es" alt="русский" />
+                                    русский
+                                </a>
+                                                            <a class="dropdown-item text-capitalize" rel="alternate" hreflang="kk" href="kk.html">
+                                    <img src="https://flagicons.lipis.dev/flags/4x3/kz.svg" class="flag flag-es" alt="қазақ тілі" />
+                                    қазақ тілі
+                                </a>
+                                                    </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="header-container container">
+            <div class="header-row py-2">
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-logo">
+    <a href="bg.html">
+        <img alt="ONE BANK INTERNATIONAL" height="50" data-sticky-height="45" data-sticky-top="80" src="img/logo.png">
+    </a>
+</div>
+                    </div>
+                </div>
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <ul class="header-extra-info d-flex align-items-center mr-3">
+                                                        <li class="d-none d-sm-inline-flex">
+                                <div class="header-extra-info-text">
+                                    <label class="text-uppercase">Адрес</label>
+                                    <strong><a href="#">20, avenue de Paris 94811 Villejuif Cedex France</a></strong>
+                                </div>
+                            </li>
+                                                                                    <li class="d-none d-sm-inline-flex">
+                                <div class="header-extra-info-text">
+                                    <label>ИЗПРАТЕТЕ ИМЕЙЛ</label>
+                                    <strong><a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></strong>
+                                </div>
+                            </li>
+                                                                                        <li>
+                                    <div class="header-extra-info-text">
+                                        <label class="text-uppercase">телефон</label>
+                                        <strong><a href="tel:+302">+302</a></strong>
+                                    </div>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header-nav-bar mb-3 px-3 px-lg-0">
+                <div class="header-row">
+                    <div class="header-column">
+                        <div class="header-row justify-content-end">
+                            <div class="order-2 order-lg-1 header-nav header-nav-links justify-content-start" data-sticky-header-style="{'minResolution': 991}" data-sticky-header-style-active="{'margin-left': '150px'}" data-sticky-header-style-deactive="{'margin-left': '0'}">
+                                <div class="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-dropdown-arrow header-nav-main-effect-3 header-nav-main-sub-effect-1">
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+    <li>
+        <a class="dropdown-item active" href="bg.html">У дома</a>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="#">Банкиране</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="bg/banking/current-account.html">Текуща сметка</a></li>
+            <li><a class="dropdown-item" href="bg/banking/saving-account.html">Спестовна сметка</a></li>
+            <li><a class="dropdown-item" href="bg/banking/mobile-banking.html">Мобилно банкиране</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="bg/loans-and-credits.html">Заеми и кредити</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="en/loans-and-credits/personal-loan.html">Личен заем</a></li>
+            <li><a class="dropdown-item" href="en/loans-and-credits/loan-without-contribution.html">Заем без вноска</a></li>
+            <li><a class="dropdown-item" href="en/loans-and-credits/loan-between-individuals.html">Заем между физически лица</a></li>
+            <li><a class="dropdown-item" href="en/loans-and-credits/consumer-credit.html">Потребителски кредит</a></li>
+            <li><a class="dropdown-item" href="en/loans-and-credits/car-loan.html">Заем за кола</a></li>
+            <li><a class="dropdown-item" href="en/loans-and-credits/works-credit.html">Работи кредит</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-item dropdown-toggle " href="bg/insurances.html">Застраховки</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="en/insurances/legal-protection-insurance.html">Застраховка за правна защита</a></li>
+            <li><a class="dropdown-item" href="en/insurances/income-maintenance-insurance.html">Застраховка за поддържане на доходи</a></li>
+            <li><a class="dropdown-item" href="en/insurances/car-insurance.html">Автомобилна застраховка</a></li>
+            <li><a class="dropdown-item" href="en/insurances/home-insurance.html">Жилищна застраховка</a></li>
+            <li><a class="dropdown-item" href="en/insurances/loan-insurance.html">Кредитна застраховка</a></li>
+        </ul>
+    </li>
+    <li>
+        <a class="dropdown-item " href="bg/investment.html">Инвестиция</a>
+    </li>
+    <li>
+        <a class="dropdown-item " href="bg/credit-card.html">Кредитни карти</a>
+    </li>
+</ul>
+                                    </nav>
+                                </div>
+                                <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2 mr-lg-3">
+                                <div class="header-nav-feature header-nav-features-search d-inline-flex">
+                                    <a class="btn btn-primary text-uppercase" href="bg/login.html">
+                                        <i class="fa fa-user-secret mr-2"></i>
+                                        Клиентска зона
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div role="main" class="main">
+
+        
+        
+    <section class="section section-concept section-no-border section-dark section-angled section-angled-reverse pt-5 m-0" id="section-concept" style="background-size: cover; background-position: center; animation-duration: 750ms; animation-delay: 300ms; animation-fill-mode: forwards;" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="img/landing/header_bg.jpg">
+    <div class="container">
+        <div class="row align-items-center pt-3 justify-content-center" style="margin-top: 50px!important;margin-bottom: 50px!important;">
+            
+            <div class="col-lg-8 mb-3 text-center">
+                <img src="img/logo-big.png" class="img-fluid" alt="" style="height: 100px"/>
+                
+                <h1 class="font-weight-bold text-12 line-height-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" data-appear-animation-duration="750">ONE BANK INTERNATIONAL</h1>
+                <p class="custom-font-size-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900" data-appear-animation-duration="750">Лесно, бързо, приятелски</p>
+                <a href="bg/register.html" class="btn btn-primary text-uppercase">
+                    Отворете вашия акаунт
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="home-intro mb-0" id="home-intro">
+    <div class="container">
+
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <p class="mb-0">
+                    Отворете сметка и се възползвайте от 150 € при откриване на сметката
+                    <span>ONE BANK INTERNATIONAL</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="container mt-5">
+
+    <div class="row pt-4 appear-animation" data-appear-animation="fadeInUpShorter">
+        <div class="col-lg-7 pr-lg-5">
+            <h2 class="font-weight-normal line-height-1">Кредит, в по-проста форма</h2>
+            <p class="lead">
+                Във OPEN BANK INTERNATIONAL получаването на личен заем никога не е било по-бързо и лесно. Достоверна марка, ние предлагаме най-добрата в класа услуга, за да ви помогнем да постигнете финансовите си цели, за да можете да започнете да изграждате гнездото си.
+            </p>
+            <p>
+                Мисията на OPEN BANK INTERNATIONAL е да трансформира начина, по който вземате пари назаем. OPEN BANK INTERNATIONAL ви помага да получите достъп до много различни видове заеми от един доверен кредитор, като същевременно персонализирате възможностите си за финансиране от уюта на вашия дом. Процесът на кандидатстване е лесен, персонализиран и незабавен, без да влияе на кредитния Ви рейтинг.
+            </p>
+
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-user text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Вие имате доход.</h4>
+                            <p class="mb-4">Но вие търсите достъп до повече пари.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4 mb-lg-0">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-fast-forward text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Искате пари бързо.</h4>
+                            <p class="mb-4">Повечето клиенти могат да очакват да видят средствата си в банковата си сметка за един работен ден.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-arrow-circle-up text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Искате да направите промяна.</h4>
+                            <p class="mb-4">Всеки има различна история по отношение на финансите, но вие сте готови да направите нещо по въпроса.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 mb-4">
+                        <div class="feature-box-icon">
+                            <i class="fa fa-hands-helping text-color-primary"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-4 mb-0">Искате пари безпроблемно.</h4>
+                            <p class="mb-4">Ние улесняваме нещата с бърз процес на кандидатстване, който може да ви одобри за минути.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-5">
+            <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+            <div class="small">
+                <img src="img/img1.jpg" alt="" class="img-fluid">
+            </div>
+
+            <ul class="list list-icons list-icons-style-3 mt-5">
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Адрес :</strong> 20, avenue de Paris 94811 Villejuif Cedex France</li>
+
+                                    <li><i class="fas fa-map-marker-alt"></i> <strong>Адрес #2:</strong> Via Arrigo Boito, 10, 20121</li>
+                                                <li><i class="fas fa-phone"></i> <strong>Телефон:</strong> +302</li>
+                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@one.open-int-bank.com">info@one.open-int-bank.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+    <section class="section mt-0 mb-0 border-0">
+    <div class="container">
+        <div class="row">
+            <div class="featured-boxes featured-boxes-style-2">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="700">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-user icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Управление на профила</h4>
+                                <p class="px-3">Откриването и затварянето на банкови сметки е дълга и тромава дейност във вашата компания?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="900">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-feed icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Онлайн банкиране</h4>
+                                <p class="px-3">Нашата система ви помага да правите банки, където и да сте, където и да отидете.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-screen-tablet icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Мобилно банкиране</h4>
+                                <p class="px-3">Лесно е да изпращате и получавате пари или да разделяте цената на сметката с приятели и семейство директно в нашето приложение за мобилно банкиране.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1500">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-credit-card icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Кредитни линии</h4>
+                                <p class="px-3">С заем или кредитна линия от нашата банка можете да сте готови за разходите за живота, когато и да се случат.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1300">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-badge icons text-color-primary bg-color-grey"></i>
+                                <h4 class="font-weight-bold">Кредити</h4>
+                                <p class="px-3">Когато искате да вземете назаем конкретна сума за еднократна нужда - независимо дали искате да надстроите уредите, да направите домашни или автомобилни ремонти или да консолидирате дълг - тогава банковият заем може да бъде най-доброто ви решение.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1100">
+                        <div class="featured-box featured-box-effect-4">
+                            <div class="box-content">
+                                <i class="icon-featured icon-briefcase icons text-color-light bg-color-primary"></i>
+                                <h4 class="font-weight-bold">Инвестиция</h4>
+                                <p class="px-3">Имате идеи за бъдещето. Каквато и да е вашата визия, нашите инвестиционни услуги могат да ви помогнат да създадете ясна, лесна за разбиране финансова стратегия, персонализирана за вас.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container-fluid">
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/personal-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/personal-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Личен заем
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Личният заем е кредит, за който се казва, че е „незасегнат“. Всъщност сумата, заета от личен заем, не съответства на точната покупка на стока (кола, мотоциклет, недвижим имот и т.н.).
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/personal-loan.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-without-contribution.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Заем без вноска
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Имате ли проект за покупка на дом? Бъдете сигурни: заемането без първоначална вноска е сложно, но със сигурност не е невъзможно.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-without-contribution.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-without-contribution.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/loan-between-individuals.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/loan-between-individuals.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Заем между физически лица
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Кредитът или заемът между физически лица, или PAP / P2P, се нарича още кредит без банкер, тъй като по принцип организациите на заеми между физически лица не са одобрени организации или банки.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/loan-between-individuals.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/consumer-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Потребителски кредит
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Потребителският кредит е заем, който се отнася до операции, различни от тези, свързани с недвижими имоти. По-конкретно, той отговаря на изискването за паричен поток на кредитополучател, който желае да финансира покупката на потребителски стоки.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/consumer-credit.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/consumer-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 p-0">
+            <section class="parallax section section-parallax custom-parallax-bg-pos-left custom-sec-left h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/car-loan.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+        <div class="col-lg-6 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row m-0">
+                    <div class="col-half-section col-half-section-left">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/car-loan.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Заем за кола
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Възнамерявате ли да си купите превозно средство, но като по-голямата част от домакинствата нямате капитал, който да го финансира?
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/car-loan.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row align-items-center bg-color-grey">
+        <div class="col-lg-6 order-2 order-lg-1 p-0">
+            <section class="section section-no-border h-100 m-0">
+                <div class="row justify-content-end m-0">
+                    <div class="col-half-section col-half-section-right custom-text-align-right">
+                        <div class="overflow-hidden">
+                            <h4 class="mb-0 appear-animation" data-appear-animation="maskUp">
+                                <a href="en/loans-and-credits/works-credit.html" class="text-4 font-weight-bold pt-2 d-block text-dark text-decoration-none pb-1">
+                                    Работи кредит
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="overflow-hidden mb-2">
+                            <p class="mb-0 lead text-4 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                Има ли нужда домът ви от фейслифт? Искате ли да увеличите? Да, но работата по обновяването или екореновирането, също като озеленяването, често има значителни разходи.
+                            </p>
+                        </div>
+                        <p class="text-2 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <a href="en/loans-and-credits/works-credit.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 p-0">
+            <section class="parallax section section-parallax h-100 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'horizontalPosition': '100%'}" data-image-src="https://one.open-int-bank.com/img/works-credit.jpg" style="min-height: 315px;">
+            </section>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'autoplay': true, 'autoplayTimeout': 3000}">
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Каква безупречна работа сте свършили. Ти наистина ми направи деня. Много благодаря.</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Darcia</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Повече от възхитен. Бързо, професионално и ясно човешко обслужване. Отговор за по-малко от 4 часа е доста невероятен!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Thierry</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial testimonial-primary">
+                        <blockquote>
+                            <p class="mb-0">Тази компания е невероятна! Те са бързи, учтиви, лесно достъпни и ми помагат да се измъкна от дълга!</p>
+                        </blockquote>
+                        <div class="testimonial-arrow-down"></div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-thumbnail">
+                                <img src="img/clients/client-1.html" class="rounded-circle" alt="">
+                            </div>
+                            <p><strong class="font-weight-extra-bold">Marc</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="parallax section section-text-light section-parallax mb-0 mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '210%'}" data-image-src="img/parallax/parallax-2.jpg">
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h3>Готови ли сте да получите парите, необходими за връщане към доброто?</h3>
+                        <p class="mb-0">OPEN BANK INTERNATIONAL Ви предлага най-доброто от финансовите услуги.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="bg/about.html" target="_blank" class="btn btn-modern text-2 btn-primary">За нас</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <div class="container py-4">
+    <div class="row py-3 justify-content-center">
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/legal-protection-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Застраховка за правна защита
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">В случай на спор, OPEN BANK INTERNATIONAL защитава Вас и Вашите близки! Благодарение на гаранцията за правна защита, възползвайте се от пълната подкрепа за защита на вашите права и интереси.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/legal-protection-insurance.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/income-maintenance-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Застраховка за поддържане на доходи
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">В трудни моменти OPEN BANK INTERNATIONALА е тук, за да помогне! В случай на силен удар, гаранцията за поддържане на доходите ще ви позволи да покриете текущите си разходи.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/income-maintenance-insurance.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/car-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Автомобилна застраховка
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Законът от 1958 г. прави автомобилната застраховка задължителна. Изисква се автомобилът ви да бъде застрахован поне с застраховка „Гражданска отговорност“, наричана още застраховка от трета страна от застрахователите.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/car-insurance.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/home-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Жилищна застраховка
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">За всеки наемател Закон № 89-462 от 6 юли 1989 г. уточнява, че той е длъжен да се застрахова срещу рисковете, за които трябва да отговори като наемател.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/home-insurance.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+            <article>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="text-decoration-none">
+                            <img src="img/loan-insurance.jpg" class="img-fluid hover-effect-2 mb-3" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="mb-0">
+                            <a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">
+                                Кредитна застраховка
+                            </a>
+                        </h4>
+                        <p class="mb-2 lead text-4">Получаването на дългосрочен кредит почти винаги включва сключване на застраховка за кредит, за да може банката да се предпази от риска от неплащане.</p>
+                        <p class="text-2">
+                            <a href="en/insurances/loan-insurance.html">
+                                Научете повече
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</div>
+
+    <section class="call-to-action call-to-action-strong-grey call-to-action-in-footer">
+    <div class="container">
+        <div class="row text-center pb-4 mt-4">
+            <div class="owl-carousel owl-theme carousel-center-active-item mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-5.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-7.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+    <footer id="footer" class="bg-color-secondary border-top-0 mt-0">
+    <div class="container py-4">
+        <div class="row py-5">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">БЮЛЕТИН</h5>
+                <p class="pr-1 text-color-light">Продължавайте с нашите постоянно развиващи се характеристики и технологии на продукта. Въведете вашия имейл адрес и се абонирайте за нашия бюлетин.</p>
+                <div wire:id="VKo40FrqhqLl8vkbwF9P" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;VKo40FrqhqLl8vkbwF9P&quot;,&quot;name&quot;:&quot;newsletter&quot;,&quot;locale&quot;:&quot;bg&quot;,&quot;path&quot;:&quot;bg&quot;,&quot;method&quot;:&quot;GET&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;13eebe52&quot;,&quot;data&quot;:{&quot;newsletterEmail&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;b89ed3592d0708a310f67bf66e7bc92c14a1066aaf2c2ba515305e0d72b5d3b7&quot;}}">
+                <form class="mr-4 mb-3 mb-md-0" wire:submit.prevent="sendNewsletter">
+        <div class="input-group input-group-rounded">
+            <input wire:model="newsletterEmail" class="form-control form-control-sm bg-light" placeholder="Имейл адрес" type="email">
+            <span class="input-group-append">
+                <button class="btn btn-light text-color-dark" type="submit"><strong>GO!</strong></button>
+            </span>
+        </div>
+    </form>
+</div>
+            </div>
+            <div class="col-md-6 col-lg-5 mb-4 mb-lg-0">
+                <h5 class="text-3 mb-3 opacity-7">Връзки</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="bg.html" class="text-4 text-white link-hover-style-1">
+                                У дома
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/about.html" class="text-4 text-white link-hover-style-1">
+                                За нас
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/contact.html" class="text-4 text-white link-hover-style-1">
+                                Контакт
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/faq.html" class="text-4 text-white link-hover-style-1">
+                                FAQ
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/privacy-policy.html" class="text-4 text-white link-hover-style-1">
+                                Политика за поверителност
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="mb-1">
+                            <a href="bg/loans-and-credits.html" class="text-4 text-white link-hover-style-1">
+                                Заеми и кредити
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/insurances.html" class="text-4 text-white link-hover-style-1">
+                                Застраховки
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/investment.html" class="text-4 text-white link-hover-style-1">
+                                Инвестиции
+                            </a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="bg/request-form" class="text-4 text-white link-hover-style-1">
+                                Искане за заем
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h5 class="text-3 mb-3 opacity-7">СВЪРЖЕТЕ СЕ С НАС</h5>
+                                    <ul class="list list-icons list-icons-lg">
+                        <li class="mb-1">
+                            <i class="fa fa-phone text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="tel:+302">
+                                    +302
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-envelope text-color-light"></i>
+                            <p class="m-0">
+                                <a class="text-color-light" href="mailto:info@one.open-int-bank.com">
+                                    info@one.open-int-bank.com
+                                </a>
+                            </p>
+                        </li>
+                        <li class="mb-1">
+                            <i class="fa fa-dot-circle text-color-light"></i>
+                            <p class="m-0 text-color-light">
+                                20, avenue de Paris 94811 Villejuif Cedex France
+                            </p>
+                        </li>
+                                                    <li class="mb-1">
+                                <i class="fa fa-dot-circle text-color-light"></i>
+                                <p class="m-0 text-color-light">
+                                    Via Arrigo Boito, 10, 20121
+                                </p>
+                            </li>
+                                                                    </ul>
+                    <ul class="social-icons">
+                        <li class="social-icons-facebook">
+                            <a href="#" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-twitter">
+                            <a href="#" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="social-icons-linkedin">
+                            <a href="#" target="_blank" title="Linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright bg-color-dark bg-color-scale-overlay bg-color-scale-overlay-1">
+        <div class="bg-color-scale-overlay-wrapper">
+            <div class="container py-2">
+                <div class="row py-4">
+                    <div class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+                        <a href="bg.html" class="logo pr-0 pr-lg-3">
+                            <img alt="Porto Website Template" src="img/logo-footer.png" class="opacity-5" height="33">
+                        </a>
+                    </div>
+                    <div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+                        <p class="text-color-light">© Copyright 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <nav id="sub-menu">
+                            <ul>
+                                <li class="border-0">
+                                    <i class="fas fa-angle-right text-color-light"></i>
+                                    <a href="bg/privacy-policy.html" class="ml-1 text-decoration-none text-color-light">
+                                        Политика за поверителност
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+    <a href="bg/request-form" class="btn btn-sm btn-secondary" style="position:fixed;bottom:40px;right:40px;z-index:100;">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Поискайте заем
+    </a>
+    <a href="bg/register.html" class="btn btn-sm btn-primary" style="position:fixed;bottom:80px;right:40px;z-index:100;">
+        <i class="fas fa-user-plus mr-2"></i>
+        Отворете вашия акаунт
+    </a>
+<a href="https://api.whatsapp.com/send?phone=+302521888006&amp;text=Hello!"
+   class="float"
+   target="_blank"
+   style="position:fixed;bottom:120px;right:40px;text-align:center;font-size:15px;color:#00509D!important;z-index:100;text-decoration: none;font-weight: 400">
+
+    <i class="fab fa-whatsapp my-float" style="padding-top:5px;color: #ffffff!important;font-size:20px;width:30px;height:30px;background-color:#25d366;border-radius:50px;box-shadow: 0 0 4px #141414;"></i>
+</a>
+<!-- Vendor -->
+<script src="js/frontend.js"></script>
+<!-- Livewire Scripts -->
+
+<script src="livewire/livewireb1f3.js?id=54d078b2ce39327a1702" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'qPOCPhm6Kj8uDMyvcPXsdn388meIrNjs5ybhfwKT';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+<div class="js-cookie-consent cookie-consent p-4 bg-color-light-scale-2 text-color-primary font-weight-bold shadow-lg" style="position:fixed;bottom:160px;right:20px;left:20px;z-index:10000;border-radius: 10px">
+
+    <h2 class="pb-0 mb-0">Cookies</h2>
+
+    <span class="cookie-consent__message">
+        Бихме искали да събираме данни от вашето устройство, докато използвате този уебсайт. Правим това с помощта на бисквитки. Събирането на тези данни ни помага да осигурим най-доброто изживяване за вас, поддържа профила ви в безопасност, помага ни да предоставим функции на социалните медии и ни позволява да персонализираме съдържанието на реклами и съобщения за услуги. Моля, приемете бисквитки, за да ни позволите да събираме вашите данни по този начин.
+    </span>
+    <br>
+    <button class="js-cookie-consent-agree cookie-consent__agree btn bg-color-primary text-white text-uppercase float-right">
+        Приемам
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'one.open-int-bank.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + ';samesite=lax';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+</body>
+
+<!-- Mirrored from one.open-int-bank.com/bg by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Dec 2022 07:43:43 GMT -->
+</html>
