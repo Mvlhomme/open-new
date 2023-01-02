@@ -14,8 +14,8 @@ SECRET_KEY = 'django-insecure-kk(pbb$-eeyf@w(5$bfwf69&-hozr&-q3e5lfgcg=t0pp20epk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -114,14 +114,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'static'
-STATICFILES_DIRS = [
-    'openbank/static',
-]
+# STATIC_ROOT = BASE_DIR /'static'
+# STATICFILES_DIRS = [
+#     'openbank/static',
+# ]
 
 # STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR /'static'),
-# STATICFILES_DIRS = os.path.join(BASE_DIR, /'static')
+STATIC_ROOT = os.path.join(BASE_DIR /'static'),
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Configuration de fichier media
 MEDIA_URL = '/media/'
